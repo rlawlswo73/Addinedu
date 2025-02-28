@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1100</width>
+    <height>730</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>700</width>
+     <height>700</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="optionStream">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>20</y>
+     <width>371</width>
+     <height>541</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Streaming Option</string>
+   </property>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>351</width>
+      <height>511</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QVBoxLayout" name="Blur">
+       <item>
+        <widget class="QCheckBox" name="chBlur">
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Blur</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="blurSlider">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="Cartoon">
+       <item>
+        <widget class="QCheckBox" name="chCartoon">
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Cartoon Filter</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="cartoonSlider">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="Gamma">
+       <item>
+        <widget class="QCheckBox" name="chGamma">
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Gamma</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="gammaSlider">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="Gaussian">
+       <item>
+        <widget class="QCheckBox" name="chGaussian">
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Gaussian blur</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="gaussianSlider">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="Histogram">
+       <item>
+        <widget class="QCheckBox" name="chHistogram">
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Histogram Equalization</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="Sketch">
+       <item>
+        <widget class="QCheckBox" name="chSketch">
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Sketch</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="btnCamera">
+   <property name="geometry">
+    <rect>
+     <x>720</x>
+     <y>10</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Camera On</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnCapture">
+   <property name="geometry">
+    <rect>
+     <x>720</x>
+     <y>60</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Capture</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnRecord">
+   <property name="geometry">
+    <rect>
+     <x>910</x>
+     <y>60</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Recoding Start</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnFileOpen">
+   <property name="geometry">
+    <rect>
+     <x>910</x>
+     <y>10</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>File Open</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="Category">
+   <property name="geometry">
+    <rect>
+     <x>720</x>
+     <y>105</y>
+     <width>371</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Category</string>
+   </property>
+   <widget class="QSplitter" name="splitter">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>351</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <widget class="QRadioButton" name="rbStream">
+     <property name="text">
+      <string>Streaming</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rbVideo">
+     <property name="text">
+      <string>Video</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rbImage">
+     <property name="text">
+      <string>Image</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="optionImage">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>10</y>
+     <width>371</width>
+     <height>541</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Image Option</string>
+   </property>
+   <widget class="QWidget" name="layoutWidget_7">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>351</width>
+      <height>511</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <layout class="QVBoxLayout" name="Blur_2">
+       <item>
+        <widget class="QCheckBox" name="chBlur_2">
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Blur</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="blurSlider_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="Bilateral_2">
+       <item>
+        <widget class="QCheckBox" name="chBilateral_2">
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Bilateral Filter</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="SigmaSpace_2">
+         <item>
+          <widget class="QLabel" name="sigmaSpace_2">
+           <property name="text">
+            <string>SigmaSpace</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSlider" name="bilateralSlider_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="SigmaColor_2">
+         <item>
+          <widget class="QLabel" name="sigmaColor_2">
+           <property name="text">
+            <string>SigmaColor</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSlider" name="bilateralSlider_1">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="Cartoon_2">
+       <item>
+        <widget class="QCheckBox" name="chCartoon_2">
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Cartoon Filter</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="cartoonSlider_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="Gamma_2">
+         <item>
+          <widget class="QCheckBox" name="chGamma_2">
+           <property name="font">
+            <font>
+             <pointsize>16</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Gamma</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSlider" name="gammaSlider_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="Gaussian_2">
+       <item>
+        <widget class="QCheckBox" name="chGaussian_2">
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Gaussian blur</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="gaussianSlider_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="Histogram_2">
+       <item>
+        <widget class="QCheckBox" name="chHistogram_2">
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Histogram Equalization</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <layout class="QFormLayout" name="formLayout">
+         <item row="0" column="0">
+          <widget class="QPushButton" name="btnDrawCircle">
+           <property name="text">
+            <string>Circle</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QPushButton" name="btnDrawFLline">
+           <property name="text">
+            <string>Free LIne</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QPushButton" name="btnDrawSquare">
+           <property name="text">
+            <string>Square</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QPushButton" name="btnDrawSLIne">
+           <property name="text">
+            <string>Straight LIne</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="RGB">
+           <property name="text">
+            <string> RGB : </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="RGB_R">
+           <property name="text">
+            <string> R : </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="R_Edit"/>
+         </item>
+         <item>
+          <widget class="QLabel" name="RGB_G">
+           <property name="text">
+            <string> G : </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="G_Edit"/>
+         </item>
+         <item>
+          <widget class="QLabel" name="RGB_B">
+           <property name="text">
+            <string> B : </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="B_Edit"/>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="Sketch_2">
+       <item>
+        <widget class="QCheckBox" name="chSketch_2">
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Sketch</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="optionVideo">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>590</y>
+     <width>371</width>
+     <height>541</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Please Choose Category</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="recStat">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>20</y>
+     <width>51</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>● REC</string>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>btnCapture</tabstop>
+  <tabstop>btnRecord</tabstop>
+  <tabstop>btnFileOpen</tabstop>
+  <tabstop>btnCamera</tabstop>
+  <tabstop>rbStream</tabstop>
+  <tabstop>rbVideo</tabstop>
+  <tabstop>rbImage</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

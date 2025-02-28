@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>971</width>
+    <height>686</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="base_map">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>80</y>
+     <width>951</width>
+     <height>591</height>
+    </rect>
+   </property>
+   <property name="mouseTracking">
+    <bool>true</bool>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::AutoText</enum>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="x_StartPoint">
+   <property name="geometry">
+    <rect>
+     <x>127</x>
+     <y>14</y>
+     <width>113</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="y_StartPoint">
+   <property name="geometry">
+    <rect>
+     <x>127</x>
+     <y>44</y>
+     <width>113</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="x_EndPoint">
+   <property name="geometry">
+    <rect>
+     <x>372</x>
+     <y>14</y>
+     <width>113</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="y_EndPoint">
+   <property name="geometry">
+    <rect>
+     <x>372</x>
+     <y>44</y>
+     <width>113</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="startPoint">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>StartPoint : </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="endPoint">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>10</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>EndPoint : </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="x_StartPointLabel">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>10</y>
+     <width>21</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>X :</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="y_StartPointLabel">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>40</y>
+     <width>21</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Y :</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="x_EndPointLabel">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>10</y>
+     <width>21</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>X :</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="y_EndPointLabel">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>40</y>
+     <width>21</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Y :</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="moveAction">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>10</y>
+     <width>91</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Start</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="grid_map">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>80</y>
+     <width>951</width>
+     <height>591</height>
+    </rect>
+   </property>
+   <property name="mouseTracking">
+    <bool>true</bool>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::AutoText</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="mapCreatebtn">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>10</y>
+     <width>91</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Create</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="mapClear">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>10</y>
+     <width>131</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Clear</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="fillCollision">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>10</y>
+     <width>91</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Fill</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

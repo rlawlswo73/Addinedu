@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>577</width>
+    <height>425</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QTextEdit" name="Input">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>371</width>
+     <height>71</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="Output">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>100</y>
+     <width>371</width>
+     <height>311</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Add">
+   <property name="geometry">
+    <rect>
+     <x>398</x>
+     <y>40</y>
+     <width>121</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="FontUbuntu">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>90</y>
+     <width>121</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Ubuntu</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="FontNanumGothic">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>120</y>
+     <width>121</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>NanumGothic</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Red">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>170</y>
+     <width>121</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Red</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Green">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>200</y>
+     <width>121</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Green</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Blue">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>230</y>
+     <width>121</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Blue</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="SetFontSize">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>320</y>
+     <width>121</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>SetFontSize</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="FontSize">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>290</y>
+     <width>121</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="inputMethodHints">
+    <set>Qt::ImhDigitsOnly</set>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

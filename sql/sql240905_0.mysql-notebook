@@ -1,0 +1,1724 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "\\about\nuse amrbase;\ndesc celeb;\nSELECT * FROM celeb\nSELECT name, age from celeb where age=29 ORDER BY age\n\nSELECT name, age from celeb where age!=29 ORDER BY age\n\nSELECT name, age from celeb where age>29 ORDER BY age\n\nSELECT name, age from celeb where age<29 ORDER BY age\n\nSELECT name, age from celeb where age>=29 ORDER BY age\n\nSELECT name, age from celeb where age<=29 ORDER BY age\n\nSELECT name, age from celeb where age<>29 ORDER BY age\n\nSELECT name, age from celeb where age<=30 ORDER BY age\nselect name, sex, job_title, agency from celeb where name='아이유';\nselect name, job_title, agency from celeb where AGENCY<>'YG엔터테이먼트' ORDER BY AGENCY;\nselect name, sex, agency from celeb where sex='M' order by age DESC, AGENCY ASC;\nselect sex, agency, name, age from celeb where age<=50 ORDER BY sex ASC, agency DESC, NAME ASC;",
+    "options": {
+        "tabSize": 4,
+        "indentSize": 4,
+        "insertSpaces": true,
+        "defaultEOL": "LF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 23,
+                    "column": 72
+                },
+                "position": {
+                    "lineNumber": 23,
+                    "column": 72
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 20,
+                "column": 1
+            },
+            "firstPositionDeltaTop": 109
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "content": "Welcome to the MySQL Shell - DB Notebook.\n\nPress Ctrl+Enter to execute the code block.\n\nExecute \\sql to switch to SQL, \\js to JavaScript and \\ts to TypeScript mode.\nExecute \\help or \\? for help;",
+                            "language": "ansi"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 2,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "6eada304-8d9c-4174-dea6-b75e65a2c3b0",
+                            "content": "OK, 0 records retrieved in 0.338ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 3,
+                "end": 3,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "97826327-af30-47d0-a10a-06514fb72d57"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 11
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "326398b6-8223-49c2-d081-6187c716143e",
+                    "resultId": "97826327-af30-47d0-a10a-06514fb72d57",
+                    "rows": [
+                        {
+                            "0": "ID",
+                            "1": "int",
+                            "2": "NO",
+                            "3": "PRI",
+                            "4": null,
+                            "5": "auto_increment"
+                        },
+                        {
+                            "0": "NAME",
+                            "1": "varchar(32)",
+                            "2": "NO",
+                            "3": "",
+                            "4": "",
+                            "5": ""
+                        },
+                        {
+                            "0": "BIRTHDAY",
+                            "1": "date",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "AGE",
+                            "1": "int",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "SEX",
+                            "1": "char(1)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "JOB_TITLE",
+                            "1": "varchar(32)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "AGENCY",
+                            "1": "varchar(32)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Field",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Type",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Null",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Key",
+                            "field": "3",
+                            "dataType": {
+                                "type": 43,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Default",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Extra",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 7 records retrieved in 1.744ms"
+                    },
+                    "totalRowCount": 7,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "desc celeb",
+                    "updatable": false
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 4,
+                "end": 4,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "46750a36-93f1-4184-8f09-8a1233b5d572"
+                    ]
+                },
+                "currentHeight": 167,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 19
+                        },
+                        "contentStart": 0,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "326398b6-8223-49c2-d081-6187c716143e",
+                    "resultId": "46750a36-93f1-4184-8f09-8a1233b5d572",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "아이유",
+                            "2": "1993-05-16",
+                            "3": 29,
+                            "4": "F",
+                            "5": "가수, 텔런트",
+                            "6": "EDAM엔터테이먼트"
+                        },
+                        {
+                            "0": 2,
+                            "1": "이미주",
+                            "2": "1994-09-23",
+                            "3": 28,
+                            "4": "F",
+                            "5": "가수",
+                            "6": "울림엔터테이먼트"
+                        },
+                        {
+                            "0": 3,
+                            "1": "송강",
+                            "2": "1994-04-23",
+                            "3": 28,
+                            "4": "M",
+                            "5": "텔런트",
+                            "6": "나무엑터스"
+                        },
+                        {
+                            "0": 4,
+                            "1": "강동원",
+                            "2": "1981-01-18",
+                            "3": 41,
+                            "4": "M",
+                            "5": "영화배우, 텔런트",
+                            "6": "YG엔터테이먼트"
+                        },
+                        {
+                            "0": 5,
+                            "1": "유재석",
+                            "2": "1972-08-14",
+                            "3": 50,
+                            "4": "M",
+                            "5": "MC, 개그맨",
+                            "6": "안테나"
+                        },
+                        {
+                            "0": 6,
+                            "1": "차승원",
+                            "2": "1970-06-07",
+                            "3": 48,
+                            "4": "M",
+                            "5": "영화배우, 모델",
+                            "6": "YG엔터테이먼트"
+                        },
+                        {
+                            "0": 7,
+                            "1": "이수현",
+                            "2": "1999-05-04",
+                            "3": 23,
+                            "4": "F",
+                            "5": "가수",
+                            "6": "YG엔터테이먼트"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": true,
+                            "nullable": false,
+                            "autoIncrement": true
+                        },
+                        {
+                            "title": "NAME",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "BIRTHDAY",
+                            "field": "2",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "AGE",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "SEX",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "JOB_TITLE",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "AGENCY",
+                            "field": "6",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 7 records retrieved in 0.496ms"
+                    },
+                    "totalRowCount": 7,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT * FROM celeb",
+                    "updatable": true,
+                    "fullTableName": "celeb"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 5,
+                "end": 5,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "5799008b-36f5-45cf-90c4-bb89ea6534f4"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 53
+                        },
+                        "contentStart": 0,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "326398b6-8223-49c2-d081-6187c716143e",
+                    "resultId": "5799008b-36f5-45cf-90c4-bb89ea6534f4",
+                    "rows": [
+                        {
+                            "0": "아이유",
+                            "1": 29
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "name",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "age",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 0.437ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT name, age from celeb where age=29 ORDER BY age",
+                    "updatable": false,
+                    "fullTableName": "celeb"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 6,
+                "end": 7,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "de432bfd-fec2-4e14-cff0-58a52ed14a97"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 55
+                        },
+                        "contentStart": 1,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "326398b6-8223-49c2-d081-6187c716143e",
+                    "resultId": "de432bfd-fec2-4e14-cff0-58a52ed14a97",
+                    "rows": [
+                        {
+                            "0": "이수현",
+                            "1": 23
+                        },
+                        {
+                            "0": "이미주",
+                            "1": 28
+                        },
+                        {
+                            "0": "송강",
+                            "1": 28
+                        },
+                        {
+                            "0": "강동원",
+                            "1": 41
+                        },
+                        {
+                            "0": "차승원",
+                            "1": 48
+                        },
+                        {
+                            "0": "유재석",
+                            "1": 50
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "name",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "age",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 6 records retrieved in 1.428ms"
+                    },
+                    "totalRowCount": 6,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "\nSELECT name, age from celeb where age!=29 ORDER BY age",
+                    "updatable": false,
+                    "fullTableName": "celeb"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 8,
+                "end": 9,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "a4a7b189-60c9-4b6e-947e-912dbb3751e2"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 54
+                        },
+                        "contentStart": 1,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "326398b6-8223-49c2-d081-6187c716143e",
+                    "resultId": "a4a7b189-60c9-4b6e-947e-912dbb3751e2",
+                    "rows": [
+                        {
+                            "0": "강동원",
+                            "1": 41
+                        },
+                        {
+                            "0": "차승원",
+                            "1": 48
+                        },
+                        {
+                            "0": "유재석",
+                            "1": 50
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "name",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "age",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 3 records retrieved in 1.736ms"
+                    },
+                    "totalRowCount": 3,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "\nSELECT name, age from celeb where age>29 ORDER BY age",
+                    "updatable": false,
+                    "fullTableName": "celeb"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 10,
+                "end": 11,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "26188cf4-0bd9-43f1-c56e-246a22366929"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 54
+                        },
+                        "contentStart": 1,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "326398b6-8223-49c2-d081-6187c716143e",
+                    "resultId": "26188cf4-0bd9-43f1-c56e-246a22366929",
+                    "rows": [
+                        {
+                            "0": "이수현",
+                            "1": 23
+                        },
+                        {
+                            "0": "이미주",
+                            "1": 28
+                        },
+                        {
+                            "0": "송강",
+                            "1": 28
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "name",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "age",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 3 records retrieved in 0.404ms"
+                    },
+                    "totalRowCount": 3,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "\nSELECT name, age from celeb where age<29 ORDER BY age",
+                    "updatable": false,
+                    "fullTableName": "celeb"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 12,
+                "end": 13,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "75ac7922-2b1b-4dc0-e012-70b487c7cb0e"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 55
+                        },
+                        "contentStart": 1,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "326398b6-8223-49c2-d081-6187c716143e",
+                    "resultId": "75ac7922-2b1b-4dc0-e012-70b487c7cb0e",
+                    "rows": [
+                        {
+                            "0": "아이유",
+                            "1": 29
+                        },
+                        {
+                            "0": "강동원",
+                            "1": 41
+                        },
+                        {
+                            "0": "차승원",
+                            "1": 48
+                        },
+                        {
+                            "0": "유재석",
+                            "1": 50
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "name",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "age",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 0.576ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "\nSELECT name, age from celeb where age>=29 ORDER BY age",
+                    "updatable": false,
+                    "fullTableName": "celeb"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 14,
+                "end": 15,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "ebe8647a-bddc-4348-e9b9-dc5df9eb6660"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 55
+                        },
+                        "contentStart": 1,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "326398b6-8223-49c2-d081-6187c716143e",
+                    "resultId": "ebe8647a-bddc-4348-e9b9-dc5df9eb6660",
+                    "rows": [
+                        {
+                            "0": "이수현",
+                            "1": 23
+                        },
+                        {
+                            "0": "이미주",
+                            "1": 28
+                        },
+                        {
+                            "0": "송강",
+                            "1": 28
+                        },
+                        {
+                            "0": "아이유",
+                            "1": 29
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "name",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "age",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 0.454ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "\nSELECT name, age from celeb where age<=29 ORDER BY age",
+                    "updatable": false,
+                    "fullTableName": "celeb"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 16,
+                "end": 17,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "bf4e8173-8e91-419b-b9d6-b95b007a66b2"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 55
+                        },
+                        "contentStart": 1,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "326398b6-8223-49c2-d081-6187c716143e",
+                    "resultId": "bf4e8173-8e91-419b-b9d6-b95b007a66b2",
+                    "rows": [
+                        {
+                            "0": "이수현",
+                            "1": 23
+                        },
+                        {
+                            "0": "이미주",
+                            "1": 28
+                        },
+                        {
+                            "0": "송강",
+                            "1": 28
+                        },
+                        {
+                            "0": "강동원",
+                            "1": 41
+                        },
+                        {
+                            "0": "차승원",
+                            "1": 48
+                        },
+                        {
+                            "0": "유재석",
+                            "1": 50
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "name",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "age",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 6 records retrieved in 0.558ms"
+                    },
+                    "totalRowCount": 6,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "\nSELECT name, age from celeb where age<>29 ORDER BY age",
+                    "updatable": false,
+                    "fullTableName": "celeb"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 18,
+                "end": 19,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "59ca284c-4f61-4e7f-8d67-af57ec046c68"
+                    ]
+                },
+                "currentHeight": 171,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 55
+                        },
+                        "contentStart": 1,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "326398b6-8223-49c2-d081-6187c716143e",
+                    "resultId": "59ca284c-4f61-4e7f-8d67-af57ec046c68",
+                    "rows": [
+                        {
+                            "0": "이수현",
+                            "1": 23
+                        },
+                        {
+                            "0": "이미주",
+                            "1": 28
+                        },
+                        {
+                            "0": "송강",
+                            "1": 28
+                        },
+                        {
+                            "0": "아이유",
+                            "1": 29
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "name",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "age",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 0.414ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "\nSELECT name, age from celeb where age<=30 ORDER BY age",
+                    "updatable": false,
+                    "fullTableName": "celeb"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 20,
+                "end": 20,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "f5be6cfa-9045-4088-dbf8-f4068fba15b2"
+                    ]
+                },
+                "currentHeight": 93,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 64
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "326398b6-8223-49c2-d081-6187c716143e",
+                    "resultId": "f5be6cfa-9045-4088-dbf8-f4068fba15b2",
+                    "rows": [
+                        {
+                            "0": "아이유",
+                            "1": "F",
+                            "2": "가수, 텔런트",
+                            "3": "EDAM엔터테이먼트"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "name",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "sex",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "job_title",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "agency",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 0.455ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select name, sex, job_title, agency from celeb where name='아이유'",
+                    "updatable": false,
+                    "fullTableName": "celeb"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 21,
+                "end": 21,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "334386f7-06a5-43f8-8a97-1fd237983ce7"
+                    ]
+                },
+                "currentHeight": 171,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 83
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "326398b6-8223-49c2-d081-6187c716143e",
+                    "resultId": "334386f7-06a5-43f8-8a97-1fd237983ce7",
+                    "rows": [
+                        {
+                            "0": "아이유",
+                            "1": "가수, 텔런트",
+                            "2": "EDAM엔터테이먼트"
+                        },
+                        {
+                            "0": "송강",
+                            "1": "텔런트",
+                            "2": "나무엑터스"
+                        },
+                        {
+                            "0": "유재석",
+                            "1": "MC, 개그맨",
+                            "2": "안테나"
+                        },
+                        {
+                            "0": "이미주",
+                            "1": "가수",
+                            "2": "울림엔터테이먼트"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "name",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "job_title",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "agency",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 0.482ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select name, job_title, agency from celeb where AGENCY<>'YG엔터테이먼트' ORDER BY AGENCY",
+                    "updatable": false,
+                    "fullTableName": "celeb"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 22,
+                "end": 22,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "4c921376-6e45-4acd-9b32-6fecf3492346"
+                    ]
+                },
+                "currentHeight": 171,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 80
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "326398b6-8223-49c2-d081-6187c716143e",
+                    "resultId": "4c921376-6e45-4acd-9b32-6fecf3492346",
+                    "rows": [
+                        {
+                            "0": "유재석",
+                            "1": "M",
+                            "2": "안테나"
+                        },
+                        {
+                            "0": "차승원",
+                            "1": "M",
+                            "2": "YG엔터테이먼트"
+                        },
+                        {
+                            "0": "강동원",
+                            "1": "M",
+                            "2": "YG엔터테이먼트"
+                        },
+                        {
+                            "0": "송강",
+                            "1": "M",
+                            "2": "나무엑터스"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "name",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "sex",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "agency",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 0.389ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select name, sex, agency from celeb where sex='M' order by age DESC, AGENCY ASC",
+                    "updatable": false,
+                    "fullTableName": "celeb"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 23,
+                "end": 23,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 95
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}

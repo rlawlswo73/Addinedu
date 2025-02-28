@@ -1,0 +1,1 @@
+insert into price_index values (%s, %s, %s);

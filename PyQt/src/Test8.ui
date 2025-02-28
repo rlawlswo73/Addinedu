@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>742</width>
+    <height>625</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>180</y>
+     <width>741</width>
+     <height>441</height>
+    </rect>
+   </property>
+   <column>
+    <property name="text">
+     <string>ID</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Name</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Birthday</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Age</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Sex</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>JobTitle</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Agency</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>741</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Search Celeb</string>
+   </property>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>100</y>
+      <width>60</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>JobTitle</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>60</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Sex</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>33</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>BirthDay : Start</string>
+    </property>
+   </widget>
+   <widget class="QDateEdit" name="editBirthday_start">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>30</y>
+      <width>121</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="displayFormat">
+     <string>yyyyMMdd</string>
+    </property>
+    <property name="calendarPopup">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnSearch">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>40</y>
+      <width>290</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Search</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>34</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>End</string>
+    </property>
+   </widget>
+   <widget class="QDateEdit" name="editBirthday_end">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>30</y>
+      <width>121</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="displayFormat">
+     <string>yyyyMMdd</string>
+    </property>
+    <property name="calendarPopup">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>130</y>
+      <width>60</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Agency</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="cbSex">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>70</y>
+      <width>121</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="cbJobtitle">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>100</y>
+      <width>181</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="cbAgency">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>130</y>
+      <width>181</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnClear">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>70</y>
+      <width>141</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Clear</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

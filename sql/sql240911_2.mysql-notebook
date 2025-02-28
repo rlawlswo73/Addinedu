@@ -1,0 +1,2921 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "\\about\nuse amrbase;\ndesc celeb;\ndesc oil_price;\ndesc refueling;\nselect * from celeb;\nselect * from oil_price;\nselect * from refueling;\nselect r.이름 name, round(r.top_price/o.가격, 2) liter, top_price, o.가격\nfrom oil_price o, (\n    select 이름, max(금액) top_price, 주유소\n    from refueling\n    group by 이름, 주유소\n) r\nwhere (o.상호 = r.주유소)\nGROUP by 이름\nORDER BY liter DESC;\nselect r.gas_station, r.date, r.max_price\nfrom oil_price o, (\n    select 주유소 gas_station, min(주유일) date, MAX(금액) max_price\n    from refueling\n    group by gas_station\n) r\ngroup by r.gas_station\nORDER BY r.max_price DESC, date desc;\nselect r.주유소 gas_station, min(r.주유일) date, MAX(r.금액) max_price\nfrom refueling r, oil_price o\nwhere r.주유소=o.상호\ngroup by r.주유소\nORDER BY max_price DESC, date desc;\nselect DISTINCT 주유소 from refueling;\nselect DISTINCT 이름 from refueling;\nselect DISTINCT 상호 from oil_price;\nselect 이름, max(금액) top_price, 주유소\nfrom refueling\ngroup by 이름, 주유소\n\nselect 이름, max(금액) top_price, 주유소\nfrom refueling\ngroup by 이름\nselect 주유소 gas_station, min(주유일) date, MAX(금액) max_price\nfrom refueling\ngroup by gas_station\nselect 주유소, min(주유일) date, 금액\nfrom refueling\nGROUP BY 주유소;\nselect 주유소, max(금액)\nfrom refueling\ngroup by 주유소;\nselect 주유소, max(금액), (select min(주유일) from refueling where 금액 = max(금액) group by 주유소)\nfrom refueling\ngroup by 주유소;\n\n\n\n\n\n\n\n\n\n\n\n\n",
+    "options": {
+        "tabSize": 4,
+        "indentSize": 4,
+        "insertSpaces": true,
+        "defaultEOL": "LF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 23,
+                    "column": 4
+                },
+                "position": {
+                    "lineNumber": 23,
+                    "column": 4
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 18,
+                "column": 1
+            },
+            "firstPositionDeltaTop": 143
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "content": "Welcome to the MySQL Shell - DB Notebook.\n\nPress Ctrl+Enter to execute the code block.\n\nExecute \\sql to switch to SQL, \\js to JavaScript and \\ts to TypeScript mode.\nExecute \\help or \\? for help;",
+                            "language": "ansi"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 2,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "842648fc-628d-4aae-a523-8ab4b29791cb",
+                            "content": "OK, 0 records retrieved in 7.553ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 12,
+                            "length": 0
+                        },
+                        "contentStart": 12,
+                        "state": 2
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 3,
+                "end": 5,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "8113cbb3-d704-485c-82dd-60c74846a32f",
+                        "5eba5879-18b3-4293-e259-b09e6dccfe44",
+                        "dcc39d96-102f-4a51-cfe0-56b97f24de87"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 2,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 11
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 11,
+                            "length": 16
+                        },
+                        "contentStart": 13,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 27,
+                            "length": 16
+                        },
+                        "contentStart": 29,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "2f84fdaa-48d5-4dd9-b99a-4fa6f9d1409d",
+                    "resultId": "8113cbb3-d704-485c-82dd-60c74846a32f",
+                    "rows": [
+                        {
+                            "0": "ID",
+                            "1": "int",
+                            "2": "NO",
+                            "3": "PRI",
+                            "4": null,
+                            "5": "auto_increment"
+                        },
+                        {
+                            "0": "NAME",
+                            "1": "varchar(32)",
+                            "2": "NO",
+                            "3": "",
+                            "4": "",
+                            "5": ""
+                        },
+                        {
+                            "0": "BIRTHDAY",
+                            "1": "date",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "AGE",
+                            "1": "int",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "SEX",
+                            "1": "char(1)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "JOB_TITLE",
+                            "1": "varchar(32)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "AGENCY",
+                            "1": "varchar(32)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Field",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Type",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Null",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Key",
+                            "field": "3",
+                            "dataType": {
+                                "type": 43,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Default",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Extra",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 7 records retrieved in 8.538ms"
+                    },
+                    "totalRowCount": 7,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "desc celeb",
+                    "updatable": false
+                },
+                {
+                    "tabId": "2f84fdaa-48d5-4dd9-b99a-4fa6f9d1409d",
+                    "resultId": "5eba5879-18b3-4293-e259-b09e6dccfe44",
+                    "rows": [
+                        {
+                            "0": "ID",
+                            "1": "int",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "상호",
+                            "1": "varchar(16)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "주소",
+                            "1": "varchar(255)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "가격",
+                            "1": "int",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "셀프",
+                            "1": "char(1)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "상표",
+                            "1": "varchar(16)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "구",
+                            "1": "varchar(8)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Field",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Type",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Null",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Key",
+                            "field": "3",
+                            "dataType": {
+                                "type": 43,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Default",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Extra",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 7 records retrieved in 5.714ms"
+                    },
+                    "totalRowCount": 7,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 1,
+                    "sql": "\ndesc oil_price",
+                    "updatable": false
+                },
+                {
+                    "tabId": "2f84fdaa-48d5-4dd9-b99a-4fa6f9d1409d",
+                    "resultId": "dcc39d96-102f-4a51-cfe0-56b97f24de87",
+                    "rows": [
+                        {
+                            "0": "ID",
+                            "1": "int",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "이름",
+                            "1": "varchar(16)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "주유소",
+                            "1": "varchar(16)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "주유일",
+                            "1": "date",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "금액",
+                            "1": "int",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Field",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Type",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Null",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Key",
+                            "field": "3",
+                            "dataType": {
+                                "type": 43,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Default",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Extra",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 7.917ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 2,
+                    "sql": "\ndesc refueling",
+                    "updatable": false
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 6,
+                "end": 8,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "110650da-ea03-47b1-a794-5f4f9bbcea77",
+                        "77f3ab60-3080-4fe6-ecf2-08c03b06432e",
+                        "4ffb06d4-d1a5-42f6-cc45-59915f43fe2f"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 3,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 20
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 20,
+                            "length": 25
+                        },
+                        "contentStart": 21,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 45,
+                            "length": 25
+                        },
+                        "contentStart": 46,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "2f84fdaa-48d5-4dd9-b99a-4fa6f9d1409d",
+                    "resultId": "110650da-ea03-47b1-a794-5f4f9bbcea77",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "아이유",
+                            "2": "1993-05-16",
+                            "3": 29,
+                            "4": "F",
+                            "5": "가수, 텔런트",
+                            "6": "EDAM엔터테이먼트"
+                        },
+                        {
+                            "0": 2,
+                            "1": "이미주",
+                            "2": "1994-09-23",
+                            "3": 28,
+                            "4": "F",
+                            "5": "가수",
+                            "6": "울림엔터테이먼트"
+                        },
+                        {
+                            "0": 3,
+                            "1": "송강",
+                            "2": "1994-04-23",
+                            "3": 28,
+                            "4": "M",
+                            "5": "텔런트",
+                            "6": "나무엑터스"
+                        },
+                        {
+                            "0": 4,
+                            "1": "강동원",
+                            "2": "1981-01-18",
+                            "3": 41,
+                            "4": "M",
+                            "5": "영화배우, 텔런트",
+                            "6": "YG엔터테이먼트"
+                        },
+                        {
+                            "0": 5,
+                            "1": "유재석",
+                            "2": "1972-08-14",
+                            "3": 50,
+                            "4": "M",
+                            "5": "MC, 개그맨",
+                            "6": "안테나"
+                        },
+                        {
+                            "0": 6,
+                            "1": "차승원",
+                            "2": "1970-06-07",
+                            "3": 48,
+                            "4": "M",
+                            "5": "영화배우, 모델",
+                            "6": "YG엔터테이먼트"
+                        },
+                        {
+                            "0": 7,
+                            "1": "이수현",
+                            "2": "1999-05-04",
+                            "3": 23,
+                            "4": "F",
+                            "5": "가수",
+                            "6": "YG엔터테이먼트"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": true,
+                            "nullable": false,
+                            "autoIncrement": true
+                        },
+                        {
+                            "title": "NAME",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "BIRTHDAY",
+                            "field": "2",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "AGE",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "SEX",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "JOB_TITLE",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "AGENCY",
+                            "field": "6",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 7 records retrieved in 5.211ms"
+                    },
+                    "totalRowCount": 7,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from celeb",
+                    "updatable": true,
+                    "fullTableName": "celeb"
+                },
+                {
+                    "tabId": "2f84fdaa-48d5-4dd9-b99a-4fa6f9d1409d",
+                    "resultId": "77f3ab60-3080-4fe6-ecf2-08c03b06432e",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "타이거주유소",
+                            "2": "서울 은평구 수색로 188(중산동)",
+                            "3": 1484,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "은평구"
+                        },
+                        {
+                            "0": 2,
+                            "1": "(주)명연에너지",
+                            "2": "서울 은평구 수색로 236(수색동)",
+                            "3": 1485,
+                            "4": "Y",
+                            "5": "현대오일뱅크",
+                            "6": "은평구"
+                        },
+                        {
+                            "0": 3,
+                            "1": "성락주유소",
+                            "2": "서울 영등포구 가마산로 414(신길동)",
+                            "3": 1498,
+                            "4": "Y",
+                            "5": "S-OIL",
+                            "6": "영등포구"
+                        },
+                        {
+                            "0": 4,
+                            "1": "(주)MS주유소",
+                            "2": "서울특별시 영등포구 대림로 230(대림동)",
+                            "3": 1498,
+                            "4": "N",
+                            "5": "현대오일뱅크",
+                            "6": "영등포구"
+                        },
+                        {
+                            "0": 5,
+                            "1": "쌍문주유소",
+                            "2": "서울특별시 도봉구 도봉로 547(쌍문동)",
+                            "3": 1509,
+                            "4": "Y",
+                            "5": "S-OIL",
+                            "6": "도봉구"
+                        },
+                        {
+                            "0": 6,
+                            "1": "21세기주유소",
+                            "2": "서울 동작구 시흥대로 616(신대방동)",
+                            "3": 1598,
+                            "4": "Y",
+                            "5": "SK에너지",
+                            "6": "동작구"
+                        },
+                        {
+                            "0": 7,
+                            "1": "살피재주유소",
+                            "2": "서울 동작구 상도로 334(상도동)",
+                            "3": 1635,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "동작구"
+                        },
+                        {
+                            "0": 8,
+                            "1": "뉴서울(강남)",
+                            "2": "서울 강남구 언주로 716(논현동)",
+                            "3": 2160,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "강남구"
+                        },
+                        {
+                            "0": 9,
+                            "1": "신길주유소",
+                            "2": "서울특별시 영등포구 신길로 74(신길동)",
+                            "3": 1498,
+                            "4": "Y",
+                            "5": "GS칼텍스",
+                            "6": "영등포구"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상호",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주소",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "가격",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "셀프",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상표",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "구",
+                            "field": "6",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 9 records retrieved in 6.356ms"
+                    },
+                    "totalRowCount": 9,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 1,
+                    "sql": "\nselect * from oil_price",
+                    "updatable": false,
+                    "fullTableName": "oil_price"
+                },
+                {
+                    "tabId": "2f84fdaa-48d5-4dd9-b99a-4fa6f9d1409d",
+                    "resultId": "4ffb06d4-d1a5-42f6-cc45-59915f43fe2f",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "유재석",
+                            "2": "뉴서울(강남)",
+                            "3": "2021-10-01",
+                            "4": 50000
+                        },
+                        {
+                            "0": 2,
+                            "1": "이미주",
+                            "2": "뉴서울(강남)",
+                            "3": "2021-10-01",
+                            "4": 120000
+                        },
+                        {
+                            "0": 3,
+                            "1": "이효리",
+                            "2": "제주주유소",
+                            "3": "2021-10-03",
+                            "4": 80000
+                        },
+                        {
+                            "0": 4,
+                            "1": "아이유",
+                            "2": "타이거주유소",
+                            "3": "2021-10-03",
+                            "4": 80000
+                        },
+                        {
+                            "0": 5,
+                            "1": "유재석",
+                            "2": "뉴서울(강남)",
+                            "3": "2021-10-03",
+                            "4": 60000
+                        },
+                        {
+                            "0": 6,
+                            "1": "강동원",
+                            "2": "타이거주유소",
+                            "3": "2021-10-10",
+                            "4": 50000
+                        },
+                        {
+                            "0": 7,
+                            "1": "유재석",
+                            "2": "쌍문주유소",
+                            "3": "2021-10-10",
+                            "4": 60000
+                        },
+                        {
+                            "0": 8,
+                            "1": "이미주",
+                            "2": "타이거주유소",
+                            "3": "2021-10-10",
+                            "4": 50000
+                        },
+                        {
+                            "0": 9,
+                            "1": "아이유",
+                            "2": "뉴서울(강남)",
+                            "3": "2021-10-14",
+                            "4": 150000
+                        },
+                        {
+                            "0": 10,
+                            "1": "아이유",
+                            "2": "뉴서울(강남)",
+                            "3": "2021-10-14",
+                            "4": 120000
+                        },
+                        {
+                            "0": 11,
+                            "1": "유재석",
+                            "2": "쌍문주유소",
+                            "3": "2021-10-14",
+                            "4": 80000
+                        },
+                        {
+                            "0": 12,
+                            "1": "유재석",
+                            "2": "뉴서울(강남)",
+                            "3": "2021-10-16",
+                            "4": 110000
+                        },
+                        {
+                            "0": 13,
+                            "1": "이미주",
+                            "2": "타이거주유소",
+                            "3": "2021-10-16",
+                            "4": 50000
+                        },
+                        {
+                            "0": 14,
+                            "1": "이효리",
+                            "2": "제주주유소",
+                            "3": "2021-10-20",
+                            "4": 80000
+                        },
+                        {
+                            "0": 15,
+                            "1": "이상순",
+                            "2": "제주주유소",
+                            "3": "2021-10-20",
+                            "4": 50000
+                        },
+                        {
+                            "0": 16,
+                            "1": "이상순",
+                            "2": "타이거주유소",
+                            "3": "2021-10-20",
+                            "4": 140000
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "이름",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주유소",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주유일",
+                            "field": "3",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "금액",
+                            "field": "4",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 16 records retrieved in 6.363ms"
+                    },
+                    "totalRowCount": 16,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 2,
+                    "sql": "\nselect * from refueling",
+                    "updatable": false,
+                    "fullTableName": "refueling"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 9,
+                "end": 17,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "377383fa-9b92-4648-f894-607e6255ef49"
+                    ]
+                },
+                "currentHeight": 252.890625,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 223
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "2f84fdaa-48d5-4dd9-b99a-4fa6f9d1409d",
+                    "resultId": "377383fa-9b92-4648-f894-607e6255ef49",
+                    "rows": [
+                        {
+                            "0": "이상순",
+                            "1": "94.34",
+                            "2": 140000,
+                            "3": 1484
+                        },
+                        {
+                            "0": "아이유",
+                            "1": "53.91",
+                            "2": 80000,
+                            "3": 1484
+                        },
+                        {
+                            "0": "유재석",
+                            "1": "53.02",
+                            "2": 80000,
+                            "3": 1509
+                        },
+                        {
+                            "0": "강동원",
+                            "1": "33.69",
+                            "2": 50000,
+                            "3": 1484
+                        },
+                        {
+                            "0": "이미주",
+                            "1": "33.69",
+                            "2": 50000,
+                            "3": 1484
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "name",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "liter",
+                            "field": "1",
+                            "dataType": {
+                                "type": 10,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 65,
+                                "numericScale": 30,
+                                "parameterFormatType": "TwoOrOneOrZero",
+                                "synonyms": [
+                                    "FIXED",
+                                    "NUMERIC",
+                                    "DEC"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "top_price",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "가격",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 7.446ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select r.이름 name, round(r.top_price/o.가격, 2) liter, top_price, o.가격\nfrom oil_price o, (\n    select 이름, max(금액) top_price, 주유소\n    from refueling\n    group by 이름,주유소\n) r\nwhere (o.상호 = r.주유소)\nGROUP by 이름\nORDER BY liter DESC",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 18,
+                "end": 25,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "f7edc296-e7b0-458b-c8bd-fafa6467ebae"
+                    ]
+                },
+                "currentHeight": 180.5,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 231
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 231,
+                            "length": 4
+                        },
+                        "contentStart": 230,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "2f84fdaa-48d5-4dd9-b99a-4fa6f9d1409d",
+                    "resultId": "f7edc296-e7b0-458b-c8bd-fafa6467ebae",
+                    "rows": [
+                        {
+                            "0": "뉴서울(강남)",
+                            "1": "2021-10-01",
+                            "2": 150000
+                        },
+                        {
+                            "0": "타이거주유소",
+                            "1": "2021-10-03",
+                            "2": 140000
+                        },
+                        {
+                            "0": "쌍문주유소",
+                            "1": "2021-10-10",
+                            "2": 80000
+                        },
+                        {
+                            "0": "제주주유소",
+                            "1": "2021-10-03",
+                            "2": 80000
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "gas_station",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "date",
+                            "field": "1",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "max_price",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 8.023ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select r.gas_station, r.date, r.max_price\nfrom oil_price o, (\n    select 주유소 gas_station, min(주유일) date, MAX(금액) max_price\n    from refueling\n    group by gas_station\n) r\n\ngroup by r.gas_station\nORDER BY r.max_price DESC, date desc",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 26,
+                "end": 30,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "1ee1aa15-a6c1-4cdd-9a07-0128bbeee31b"
+                    ]
+                },
+                "currentHeight": 180.5,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 160
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "2f84fdaa-48d5-4dd9-b99a-4fa6f9d1409d",
+                    "resultId": "1ee1aa15-a6c1-4cdd-9a07-0128bbeee31b",
+                    "rows": [
+                        {
+                            "0": "뉴서울(강남)",
+                            "1": "2021-10-01",
+                            "2": 150000
+                        },
+                        {
+                            "0": "타이거주유소",
+                            "1": "2021-10-03",
+                            "2": 140000
+                        },
+                        {
+                            "0": "쌍문주유소",
+                            "1": "2021-10-10",
+                            "2": 80000
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "gas_station",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "date",
+                            "field": "1",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "max_price",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 3 records retrieved in 10.289ms"
+                    },
+                    "totalRowCount": 3,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select r.주유소 gas_station, min(r.주유일) date, MAX(r.금액) max_price\nfrom refueling r, oil_price o\nwhere r.주유소=o.상호\ngroup by r.주유소\nORDER BY max_price DESC, date desc",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 31,
+                "end": 32,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "97e1fc63-f98f-47f9-9b88-63b01c4c7839",
+                        "d829ad6d-1bcb-4f3a-a161-97ca4d031cad"
+                    ]
+                },
+                "currentHeight": 217.7062530517578,
+                "currentSet": 2,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 35
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 35,
+                            "length": 35
+                        },
+                        "contentStart": 36,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "2f84fdaa-48d5-4dd9-b99a-4fa6f9d1409d",
+                    "resultId": "97e1fc63-f98f-47f9-9b88-63b01c4c7839",
+                    "rows": [
+                        {
+                            "0": "뉴서울(강남)"
+                        },
+                        {
+                            "0": "제주주유소"
+                        },
+                        {
+                            "0": "타이거주유소"
+                        },
+                        {
+                            "0": "쌍문주유소"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "주유소",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 12.366ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select DISTINCT 주유소 from refueling",
+                    "updatable": false,
+                    "fullTableName": ""
+                },
+                {
+                    "tabId": "2f84fdaa-48d5-4dd9-b99a-4fa6f9d1409d",
+                    "resultId": "d829ad6d-1bcb-4f3a-a161-97ca4d031cad",
+                    "rows": [
+                        {
+                            "0": "유재석"
+                        },
+                        {
+                            "0": "이미주"
+                        },
+                        {
+                            "0": "이효리"
+                        },
+                        {
+                            "0": "아이유"
+                        },
+                        {
+                            "0": "강동원"
+                        },
+                        {
+                            "0": "이상순"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "이름",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 6 records retrieved in 11.711ms"
+                    },
+                    "totalRowCount": 6,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 1,
+                    "sql": "\nselect DISTINCT 이름 from refueling",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 33,
+                "end": 33,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "578f7cf9-f65b-4280-87f9-5c64b09759f8"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 34
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "2f84fdaa-48d5-4dd9-b99a-4fa6f9d1409d",
+                    "resultId": "578f7cf9-f65b-4280-87f9-5c64b09759f8",
+                    "rows": [
+                        {
+                            "0": "타이거주유소"
+                        },
+                        {
+                            "0": "(주)명연에너지"
+                        },
+                        {
+                            "0": "성락주유소"
+                        },
+                        {
+                            "0": "(주)MS주유소"
+                        },
+                        {
+                            "0": "쌍문주유소"
+                        },
+                        {
+                            "0": "21세기주유소"
+                        },
+                        {
+                            "0": "살피재주유소"
+                        },
+                        {
+                            "0": "뉴서울(강남)"
+                        },
+                        {
+                            "0": "신길주유소"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "상호",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 9 records retrieved in 7.544ms"
+                    },
+                    "totalRowCount": 9,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select DISTINCT 상호 from oil_price",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 34,
+                "end": 36,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "a68d5fb5-d5a6-4845-eb2d-43d0f1252948"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 65
+                        },
+                        "contentStart": 0,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "2f84fdaa-48d5-4dd9-b99a-4fa6f9d1409d",
+                    "resultId": "a68d5fb5-d5a6-4845-eb2d-43d0f1252948",
+                    "rows": [
+                        {
+                            "0": "유재석",
+                            "1": 110000,
+                            "2": "뉴서울(강남)"
+                        },
+                        {
+                            "0": "이미주",
+                            "1": 120000,
+                            "2": "뉴서울(강남)"
+                        },
+                        {
+                            "0": "이효리",
+                            "1": 80000,
+                            "2": "제주주유소"
+                        },
+                        {
+                            "0": "아이유",
+                            "1": 80000,
+                            "2": "타이거주유소"
+                        },
+                        {
+                            "0": "강동원",
+                            "1": 50000,
+                            "2": "타이거주유소"
+                        },
+                        {
+                            "0": "유재석",
+                            "1": 80000,
+                            "2": "쌍문주유소"
+                        },
+                        {
+                            "0": "이미주",
+                            "1": 50000,
+                            "2": "타이거주유소"
+                        },
+                        {
+                            "0": "아이유",
+                            "1": 150000,
+                            "2": "뉴서울(강남)"
+                        },
+                        {
+                            "0": "이상순",
+                            "1": 50000,
+                            "2": "제주주유소"
+                        },
+                        {
+                            "0": "이상순",
+                            "1": 140000,
+                            "2": "타이거주유소"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "이름",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "top_price",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주유소",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 10 records retrieved in 8.706ms"
+                    },
+                    "totalRowCount": 10,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select 이름, max(금액) top_price, 주유소\nfrom refueling\ngroup by 이름, 주유소",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 37,
+                "end": 37,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 1,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 38,
+                "end": 40,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "6f0e97fc-e79a-4a4e-9cd8-77aee342fe2e"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 60
+                        },
+                        "contentStart": 0,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "2f84fdaa-48d5-4dd9-b99a-4fa6f9d1409d",
+                    "resultId": "6f0e97fc-e79a-4a4e-9cd8-77aee342fe2e",
+                    "rows": [
+                        {
+                            "0": "유재석",
+                            "1": 110000,
+                            "2": "뉴서울(강남)"
+                        },
+                        {
+                            "0": "이미주",
+                            "1": 120000,
+                            "2": "뉴서울(강남)"
+                        },
+                        {
+                            "0": "이효리",
+                            "1": 80000,
+                            "2": "제주주유소"
+                        },
+                        {
+                            "0": "아이유",
+                            "1": 150000,
+                            "2": "타이거주유소"
+                        },
+                        {
+                            "0": "강동원",
+                            "1": 50000,
+                            "2": "타이거주유소"
+                        },
+                        {
+                            "0": "이상순",
+                            "1": 140000,
+                            "2": "제주주유소"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "이름",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "top_price",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주유소",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 6 records retrieved in 8.324ms"
+                    },
+                    "totalRowCount": 6,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select 이름, max(금액) top_price, 주유소\nfrom refueling\ngroup by 이름",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 41,
+                "end": 43,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "5b38d060-052b-478d-8e2c-a8f006f1fb7c"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 92
+                        },
+                        "contentStart": 0,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "2f84fdaa-48d5-4dd9-b99a-4fa6f9d1409d",
+                    "resultId": "5b38d060-052b-478d-8e2c-a8f006f1fb7c",
+                    "rows": [
+                        {
+                            "0": "뉴서울(강남)",
+                            "1": "2021-10-01",
+                            "2": 150000
+                        },
+                        {
+                            "0": "제주주유소",
+                            "1": "2021-10-03",
+                            "2": 80000
+                        },
+                        {
+                            "0": "타이거주유소",
+                            "1": "2021-10-03",
+                            "2": 140000
+                        },
+                        {
+                            "0": "쌍문주유소",
+                            "1": "2021-10-10",
+                            "2": 80000
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "gas_station",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "date",
+                            "field": "1",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "max_price",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 14.923ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select 주유소 gas_station, min(주유일) date, MAX(금액) max_price\nfrom refueling\ngroup by gas_station",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 44,
+                "end": 46,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "810cbef7-fcfc-4d17-cb90-beabfc468ab2"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 58
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "2f84fdaa-48d5-4dd9-b99a-4fa6f9d1409d",
+                    "resultId": "810cbef7-fcfc-4d17-cb90-beabfc468ab2",
+                    "rows": [
+                        {
+                            "0": "뉴서울(강남)",
+                            "1": "2021-10-01",
+                            "2": 50000
+                        },
+                        {
+                            "0": "제주주유소",
+                            "1": "2021-10-03",
+                            "2": 80000
+                        },
+                        {
+                            "0": "타이거주유소",
+                            "1": "2021-10-03",
+                            "2": 80000
+                        },
+                        {
+                            "0": "쌍문주유소",
+                            "1": "2021-10-10",
+                            "2": 60000
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "주유소",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "date",
+                            "field": "1",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "금액",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 6.057ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select 주유소, min(주유일) date, 금액\nfrom refueling\nGROUP BY 주유소",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 47,
+                "end": 49,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "04c8a78a-222a-4a5d-eeb0-466868b5bae0"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 48
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "2f84fdaa-48d5-4dd9-b99a-4fa6f9d1409d",
+                    "resultId": "04c8a78a-222a-4a5d-eeb0-466868b5bae0",
+                    "rows": [
+                        {
+                            "0": "뉴서울(강남)",
+                            "1": 150000
+                        },
+                        {
+                            "0": "제주주유소",
+                            "1": 80000
+                        },
+                        {
+                            "0": "타이거주유소",
+                            "1": 140000
+                        },
+                        {
+                            "0": "쌍문주유소",
+                            "1": 80000
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "주유소",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "max(금액)",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 10.658ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select 주유소, max(금액)\nfrom refueling\ngroup by 주유소",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 50,
+                "end": 52,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 0,
+                            "index": 0,
+                            "content": "MySQL Error (1111): ClassicSession.run_sql: Invalid use of group function",
+                            "language": "ansi"
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": ""
+                    }
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 114
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 53,
+                "end": 53,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 54,
+                "end": 54,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 55,
+                "end": 55,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 56,
+                "end": 56,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 57,
+                "end": 57,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 58,
+                "end": 58,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 59,
+                "end": 59,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 60,
+                "end": 60,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 61,
+                "end": 61,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 62,
+                "end": 62,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 63,
+                "end": 63,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 64,
+                "end": 64,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 65,
+                "end": 65,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}

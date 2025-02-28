@@ -1,0 +1,1896 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "\\about\nuse amrbase;\nselect * from celeb;\nselect * from snl_show;\nselect concat('concat', ' ', 'test');\nselect concat('이름:', name) from celeb;\nselect name as '이름' from celeb;\nselect name as '이름', agency as '소속사' from celeb;\nselect concat(name, ' : ', job_title) as profile from celeb\nselect s.season, s.episode, c.name, c.job_title\nfrom celeb as c, snl_show as s\nwhere c.name=s.host;\nselect concat(s.season, '-', s.episode, '(', s.broadcast_date, ')') as '방송정보',\nconcat(c.name, '(', c.job_title, ')') AS '출연자정보'\nfrom celeb as c, snl_show as s\nwhere c.name = s.host;\nselect concat(s.season, '-', s.episode, '(', s.broadcast_date, ')') '방송정보',\nCONCAT(c.name, '(', c.job_title, ')') '출연지정보'\nfrom celeb c, snl_show s\nwhere c.name = s.host;\nselect concat('이름 :', c.name, ', 소속사 :', c.agency) '연예인 정보'\nfrom celeb c\nwhere c.name like '___';\nselect c.agency '소속사 정보', concat('나이 :', c.age, '(', c.sex,')') '신상정보', concat(s.season, '-', s.episode, '방송날짜 :', s.broadcast_date) '출연정보'\nfrom celeb c, snl_show s\nwhere name=host and \n(c.agency like '__%엔터테이먼트')\nORDER BY s.broadcast_date DESC\nSELECT agency FROM celeb;\nSELECT DISTINCT agency FROM celeb;\nSELECT sex, job_title FROM celeb WHERE job_title like '%가수%';\nSELECT DISTINCT sex, job_title FROM celeb WHERE job_title like '%가수%';\n",
+    "options": {
+        "tabSize": 4,
+        "indentSize": 4,
+        "insertSpaces": true,
+        "defaultEOL": "LF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 33,
+                    "column": 1
+                },
+                "position": {
+                    "lineNumber": 33,
+                    "column": 1
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 30,
+                "column": 1
+            },
+            "firstPositionDeltaTop": 87
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "content": "Welcome to the MySQL Shell - DB Notebook.\n\nPress Ctrl+Enter to execute the code block.\n\nExecute \\sql to switch to SQL, \\js to JavaScript and \\ts to TypeScript mode.\nExecute \\help or \\? for help;",
+                            "language": "ansi"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 2,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "98580c4f-2392-4019-d25e-26da253d7402",
+                            "content": "OK, 0 records retrieved in 0.368ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 12,
+                            "length": 0
+                        },
+                        "contentStart": 11,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 3,
+                "end": 3,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "220d4334-ec64-434c-e004-da12aafb3da1"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 20
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "07113b82-f507-434e-96ca-687980f233e2",
+                    "resultId": "220d4334-ec64-434c-e004-da12aafb3da1",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "아이유",
+                            "2": "1993-05-16",
+                            "3": 29,
+                            "4": "F",
+                            "5": "가수, 텔런트",
+                            "6": "EDAM엔터테이먼트"
+                        },
+                        {
+                            "0": 2,
+                            "1": "이미주",
+                            "2": "1994-09-23",
+                            "3": 28,
+                            "4": "F",
+                            "5": "가수",
+                            "6": "울림엔터테이먼트"
+                        },
+                        {
+                            "0": 3,
+                            "1": "송강",
+                            "2": "1994-04-23",
+                            "3": 28,
+                            "4": "M",
+                            "5": "텔런트",
+                            "6": "나무엑터스"
+                        },
+                        {
+                            "0": 4,
+                            "1": "강동원",
+                            "2": "1981-01-18",
+                            "3": 41,
+                            "4": "M",
+                            "5": "영화배우, 텔런트",
+                            "6": "YG엔터테이먼트"
+                        },
+                        {
+                            "0": 5,
+                            "1": "유재석",
+                            "2": "1972-08-14",
+                            "3": 50,
+                            "4": "M",
+                            "5": "MC, 개그맨",
+                            "6": "안테나"
+                        },
+                        {
+                            "0": 6,
+                            "1": "차승원",
+                            "2": "1970-06-07",
+                            "3": 48,
+                            "4": "M",
+                            "5": "영화배우, 모델",
+                            "6": "YG엔터테이먼트"
+                        },
+                        {
+                            "0": 7,
+                            "1": "이수현",
+                            "2": "1999-05-04",
+                            "3": 23,
+                            "4": "F",
+                            "5": "가수",
+                            "6": "YG엔터테이먼트"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": true,
+                            "nullable": false,
+                            "autoIncrement": true
+                        },
+                        {
+                            "title": "NAME",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "BIRTHDAY",
+                            "field": "2",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "AGE",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "SEX",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "JOB_TITLE",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "AGENCY",
+                            "field": "6",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 7 records retrieved in 1.504ms"
+                    },
+                    "totalRowCount": 7,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from celeb",
+                    "updatable": true,
+                    "fullTableName": "celeb"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 4,
+                "end": 4,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "f6a720c3-e676-4f03-cca0-46faad541abd"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 23
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "07113b82-f507-434e-96ca-687980f233e2",
+                    "resultId": "f6a720c3-e676-4f03-cca0-46faad541abd",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": 8,
+                            "2": 7,
+                            "3": "2020-09-05",
+                            "4": "강동원"
+                        },
+                        {
+                            "0": 2,
+                            "1": 8,
+                            "2": 8,
+                            "3": "2020-09-12",
+                            "4": "유재석"
+                        },
+                        {
+                            "0": 3,
+                            "1": 8,
+                            "2": 9,
+                            "3": "2020-09-19",
+                            "4": "차승원"
+                        },
+                        {
+                            "0": 4,
+                            "1": 8,
+                            "2": 10,
+                            "3": "2020-09-26",
+                            "4": "이수현"
+                        },
+                        {
+                            "0": 5,
+                            "1": 9,
+                            "2": 1,
+                            "3": "2021-09-04",
+                            "4": "이병헌"
+                        },
+                        {
+                            "0": 6,
+                            "1": 9,
+                            "2": 2,
+                            "3": "2021-09-11",
+                            "4": "하지원"
+                        },
+                        {
+                            "0": 7,
+                            "1": 9,
+                            "2": 3,
+                            "3": "2021-09-18",
+                            "4": "제시"
+                        },
+                        {
+                            "0": 8,
+                            "1": 9,
+                            "2": 4,
+                            "3": "2021-09-25",
+                            "4": "조정석"
+                        },
+                        {
+                            "0": 9,
+                            "1": 9,
+                            "2": 5,
+                            "3": "2021-10-02",
+                            "4": "조여정"
+                        },
+                        {
+                            "0": 10,
+                            "1": 9,
+                            "2": 6,
+                            "3": "2021-10-09",
+                            "4": "옥주현"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": true,
+                            "nullable": false,
+                            "autoIncrement": true
+                        },
+                        {
+                            "title": "season",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "episode",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "broadcast_date",
+                            "field": "3",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "host",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 10 records retrieved in 0.601ms"
+                    },
+                    "totalRowCount": 10,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from snl_show",
+                    "updatable": true,
+                    "fullTableName": "snl_show"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 5,
+                "end": 5,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "f89cbb45-940b-4ec6-d2ec-b626d5982d3b"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 37
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "07113b82-f507-434e-96ca-687980f233e2",
+                    "resultId": "f89cbb45-940b-4ec6-d2ec-b626d5982d3b",
+                    "rows": [
+                        {
+                            "0": "concat test"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "concat('concat', ' ', 'test')",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 0.31ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select concat('concat', ' ', 'test')",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 6,
+                "end": 6,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "913da922-f3eb-47b2-a760-9eed9a3291cd"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 38
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "07113b82-f507-434e-96ca-687980f233e2",
+                    "resultId": "913da922-f3eb-47b2-a760-9eed9a3291cd",
+                    "rows": [
+                        {
+                            "0": "이름:아이유"
+                        },
+                        {
+                            "0": "이름:이미주"
+                        },
+                        {
+                            "0": "이름:송강"
+                        },
+                        {
+                            "0": "이름:강동원"
+                        },
+                        {
+                            "0": "이름:유재석"
+                        },
+                        {
+                            "0": "이름:차승원"
+                        },
+                        {
+                            "0": "이름:이수현"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "concat('이름:', name)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 7 records retrieved in 0.429ms"
+                    },
+                    "totalRowCount": 7,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select concat('이름:', name) from celeb",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 7,
+                "end": 7,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "6f9b6229-4489-4dd8-d37a-14080085c41f"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 31
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "07113b82-f507-434e-96ca-687980f233e2",
+                    "resultId": "6f9b6229-4489-4dd8-d37a-14080085c41f",
+                    "rows": [
+                        {
+                            "0": "아이유"
+                        },
+                        {
+                            "0": "이미주"
+                        },
+                        {
+                            "0": "송강"
+                        },
+                        {
+                            "0": "강동원"
+                        },
+                        {
+                            "0": "유재석"
+                        },
+                        {
+                            "0": "차승원"
+                        },
+                        {
+                            "0": "이수현"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "이름",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 7 records retrieved in 0.431ms"
+                    },
+                    "totalRowCount": 7,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select name as '이름' from celeb",
+                    "updatable": false,
+                    "fullTableName": "celeb"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 8,
+                "end": 8,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "94936aad-420e-4587-ceff-87c917d46535"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 48
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "07113b82-f507-434e-96ca-687980f233e2",
+                    "resultId": "94936aad-420e-4587-ceff-87c917d46535",
+                    "rows": [
+                        {
+                            "0": "아이유",
+                            "1": "EDAM엔터테이먼트"
+                        },
+                        {
+                            "0": "이미주",
+                            "1": "울림엔터테이먼트"
+                        },
+                        {
+                            "0": "송강",
+                            "1": "나무엑터스"
+                        },
+                        {
+                            "0": "강동원",
+                            "1": "YG엔터테이먼트"
+                        },
+                        {
+                            "0": "유재석",
+                            "1": "안테나"
+                        },
+                        {
+                            "0": "차승원",
+                            "1": "YG엔터테이먼트"
+                        },
+                        {
+                            "0": "이수현",
+                            "1": "YG엔터테이먼트"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "이름",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "소속사",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 7 records retrieved in 0.857ms"
+                    },
+                    "totalRowCount": 7,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select name as '이름', agency as '소속사' from celeb",
+                    "updatable": false,
+                    "fullTableName": "celeb"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 9,
+                "end": 9,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "8e6c647b-86a6-4bf7-8f32-0901b10aa45f"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 59
+                        },
+                        "contentStart": 0,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "07113b82-f507-434e-96ca-687980f233e2",
+                    "resultId": "8e6c647b-86a6-4bf7-8f32-0901b10aa45f",
+                    "rows": [
+                        {
+                            "0": "아이유 : 가수, 텔런트"
+                        },
+                        {
+                            "0": "이미주 : 가수"
+                        },
+                        {
+                            "0": "송강 : 텔런트"
+                        },
+                        {
+                            "0": "강동원 : 영화배우, 텔런트"
+                        },
+                        {
+                            "0": "유재석 : MC, 개그맨"
+                        },
+                        {
+                            "0": "차승원 : 영화배우, 모델"
+                        },
+                        {
+                            "0": "이수현 : 가수"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "profile",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 7 records retrieved in 0.361ms"
+                    },
+                    "totalRowCount": 7,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select concat(name, ' : ', job_title) as profile from celeb",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 10,
+                "end": 12,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "93658971-246d-43eb-b3cf-4748fbd6fb91"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 99
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "07113b82-f507-434e-96ca-687980f233e2",
+                    "resultId": "93658971-246d-43eb-b3cf-4748fbd6fb91",
+                    "rows": [
+                        {
+                            "0": 8,
+                            "1": 7,
+                            "2": "강동원",
+                            "3": "영화배우, 텔런트"
+                        },
+                        {
+                            "0": 8,
+                            "1": 8,
+                            "2": "유재석",
+                            "3": "MC, 개그맨"
+                        },
+                        {
+                            "0": 8,
+                            "1": 9,
+                            "2": "차승원",
+                            "3": "영화배우, 모델"
+                        },
+                        {
+                            "0": 8,
+                            "1": 10,
+                            "2": "이수현",
+                            "3": "가수"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "season",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "episode",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "name",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "job_title",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 0.498ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select s.season, s.episode, c.name, c.job_title\nfrom celeb as c, snl_show as s\nwhere c.name=s.host",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 13,
+                "end": 16,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "93d0bf92-71f0-4676-9aac-e21bd09840b3"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 181
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "07113b82-f507-434e-96ca-687980f233e2",
+                    "resultId": "93d0bf92-71f0-4676-9aac-e21bd09840b3",
+                    "rows": [
+                        {
+                            "0": "8-7(2020-09-05)",
+                            "1": "강동원(영화배우, 텔런트)"
+                        },
+                        {
+                            "0": "8-8(2020-09-12)",
+                            "1": "유재석(MC, 개그맨)"
+                        },
+                        {
+                            "0": "8-9(2020-09-19)",
+                            "1": "차승원(영화배우, 모델)"
+                        },
+                        {
+                            "0": "8-10(2020-09-26)",
+                            "1": "이수현(가수)"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "방송정보",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "출연자정보",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 0.543ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select concat(s.season, '-', s.episode, '(', s.broadcast_date, ')') as '방송정보',\nconcat(c.name, '(', c.job_title, ')') AS '출연자정보'\nfrom celeb as c, snl_show as s\nwhere c.name = s.host",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 17,
+                "end": 20,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "030dab2a-72ff-422b-82c2-f8c5d943fada"
+                    ]
+                },
+                "currentHeight": 173.6875,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 169
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "07113b82-f507-434e-96ca-687980f233e2",
+                    "resultId": "030dab2a-72ff-422b-82c2-f8c5d943fada",
+                    "rows": [
+                        {
+                            "0": "8-7(2020-09-05)",
+                            "1": "강동원(영화배우, 텔런트)"
+                        },
+                        {
+                            "0": "8-8(2020-09-12)",
+                            "1": "유재석(MC, 개그맨)"
+                        },
+                        {
+                            "0": "8-9(2020-09-19)",
+                            "1": "차승원(영화배우, 모델)"
+                        },
+                        {
+                            "0": "8-10(2020-09-26)",
+                            "1": "이수현(가수)"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "방송정보",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "출연지정보",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 0.545ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select concat(s.season, '-', s.episode, '(', s.broadcast_date, ')') '방송정보',\nCONCAT(c.name, '(', c.job_title, ')') '출연지정보'\nfrom celeb c, snl_show s\nwhere c.name = s.host",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 21,
+                "end": 23,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "611667f2-1adb-4e0e-aa92-f6a99c624119"
+                    ]
+                },
+                "currentHeight": 226.078125,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 97
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "07113b82-f507-434e-96ca-687980f233e2",
+                    "resultId": "611667f2-1adb-4e0e-aa92-f6a99c624119",
+                    "rows": [
+                        {
+                            "0": "이름 :아이유, 소속사 :EDAM엔터테이먼트"
+                        },
+                        {
+                            "0": "이름 :이미주, 소속사 :울림엔터테이먼트"
+                        },
+                        {
+                            "0": "이름 :강동원, 소속사 :YG엔터테이먼트"
+                        },
+                        {
+                            "0": "이름 :유재석, 소속사 :안테나"
+                        },
+                        {
+                            "0": "이름 :차승원, 소속사 :YG엔터테이먼트"
+                        },
+                        {
+                            "0": "이름 :이수현, 소속사 :YG엔터테이먼트"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "연예인 정보",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 6 records retrieved in 0.495ms"
+                    },
+                    "totalRowCount": 6,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select concat('이름 :', c.name, ', 소속사 :', c.agency) '연예인 정보'\nfrom celeb c\nwhere c.name like '___'",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 24,
+                "end": 28,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "6c568127-caa2-4871-b9c7-d5ae1b8d05b6"
+                    ]
+                },
+                "currentHeight": 147.5,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 244
+                        },
+                        "contentStart": 0,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "07113b82-f507-434e-96ca-687980f233e2",
+                    "resultId": "6c568127-caa2-4871-b9c7-d5ae1b8d05b6",
+                    "rows": [
+                        {
+                            "0": "YG엔터테이먼트",
+                            "1": "나이 :23(F)",
+                            "2": "8-10방송날짜 :2020-09-26"
+                        },
+                        {
+                            "0": "YG엔터테이먼트",
+                            "1": "나이 :48(M)",
+                            "2": "8-9방송날짜 :2020-09-19"
+                        },
+                        {
+                            "0": "YG엔터테이먼트",
+                            "1": "나이 :41(M)",
+                            "2": "8-7방송날짜 :2020-09-05"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "소속사 정보",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "신상정보",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "출연정보",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 3 records retrieved in 0.656ms"
+                    },
+                    "totalRowCount": 3,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select c.agency '소속사 정보', concat('나이 :', c.age, '(', c.sex,')') '신상정보', concat(s.season, '-', s.episode, '방송날짜 :', s.broadcast_date) '출연정보'\nfrom celeb c, snl_show s\nwhere name=host and \n(c.agency like '__%엔터테이먼트')\nORDER BY s.broadcast_date DESC",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 29,
+                "end": 29,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "4ee6b658-e3ab-4b7e-cd1c-d36f8349af9b"
+                    ]
+                },
+                "currentHeight": 249.28125,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 25
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "07113b82-f507-434e-96ca-687980f233e2",
+                    "resultId": "4ee6b658-e3ab-4b7e-cd1c-d36f8349af9b",
+                    "rows": [
+                        {
+                            "0": "EDAM엔터테이먼트"
+                        },
+                        {
+                            "0": "울림엔터테이먼트"
+                        },
+                        {
+                            "0": "나무엑터스"
+                        },
+                        {
+                            "0": "YG엔터테이먼트"
+                        },
+                        {
+                            "0": "안테나"
+                        },
+                        {
+                            "0": "YG엔터테이먼트"
+                        },
+                        {
+                            "0": "YG엔터테이먼트"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "agency",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 7 records retrieved in 1.502ms"
+                    },
+                    "totalRowCount": 7,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT agency FROM celeb",
+                    "updatable": false,
+                    "fullTableName": "celeb"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 30,
+                "end": 30,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "70b031cc-457d-41f7-f4c1-e25da8633dc0"
+                    ]
+                },
+                "currentHeight": 196.890625,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 34
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "07113b82-f507-434e-96ca-687980f233e2",
+                    "resultId": "70b031cc-457d-41f7-f4c1-e25da8633dc0",
+                    "rows": [
+                        {
+                            "0": "EDAM엔터테이먼트"
+                        },
+                        {
+                            "0": "울림엔터테이먼트"
+                        },
+                        {
+                            "0": "나무엑터스"
+                        },
+                        {
+                            "0": "YG엔터테이먼트"
+                        },
+                        {
+                            "0": "안테나"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "agency",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 0.417ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT DISTINCT agency FROM celeb",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 31,
+                "end": 31,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "2104692e-bf7f-4f13-9a26-2c140aa9c9ba"
+                    ]
+                },
+                "currentHeight": 144.5,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 61
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "07113b82-f507-434e-96ca-687980f233e2",
+                    "resultId": "2104692e-bf7f-4f13-9a26-2c140aa9c9ba",
+                    "rows": [
+                        {
+                            "0": "F",
+                            "1": "가수, 텔런트"
+                        },
+                        {
+                            "0": "F",
+                            "1": "가수"
+                        },
+                        {
+                            "0": "F",
+                            "1": "가수"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "sex",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "job_title",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 3 records retrieved in 1.436ms"
+                    },
+                    "totalRowCount": 3,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT sex, job_title FROM celeb WHERE job_title like '%가수%'",
+                    "updatable": false,
+                    "fullTableName": "celeb"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 32,
+                "end": 32,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "348f5c81-5ad5-4b56-c048-6cd382685fec"
+                    ]
+                },
+                "currentHeight": 118.3125,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 70
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "07113b82-f507-434e-96ca-687980f233e2",
+                    "resultId": "348f5c81-5ad5-4b56-c048-6cd382685fec",
+                    "rows": [
+                        {
+                            "0": "F",
+                            "1": "가수, 텔런트"
+                        },
+                        {
+                            "0": "F",
+                            "1": "가수"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "sex",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "job_title",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 2 records retrieved in 0.514ms"
+                    },
+                    "totalRowCount": 2,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT DISTINCT sex, job_title FROM celeb WHERE job_title like '%가수%'",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 33,
+                "end": 33,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}

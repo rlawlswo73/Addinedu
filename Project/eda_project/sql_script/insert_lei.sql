@@ -1,0 +1,1 @@
+insert into lei values (%s, %s);

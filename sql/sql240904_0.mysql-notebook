@@ -1,0 +1,2495 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "\\about\nUSE amrbase;\nDROP table person\n\ncreate table person\n(\n    id int,\n    name varchar(16),\n    age int,\n    sex char\n);\ndesc person\ninsert into person (id, name, age, sex)\nvalue (1, '이효리', 43, 'F')\nselect * from person;\nINSERT INTO person\nVALUES (2, '이상순', 48, 'M');\nselect * from person;\nSELECT name, age, sex FROM person;\nSELECT *\nFROM person;\nSELECT * FROM person WHERE sex='F';\nUPDATE person SET age=23 WHERE name='이효리';\nselect * from person;\nDELETE FROM person WHERE name='이상순';\nselect * from person;\ninsert into person value (2, '이미자', 28, 'F');\nselect * from person;\ninsert into person value (3, '유재석', 50, 'F');\nselect * from person;\nselect * from person where age=50;\nselect * from person where sex='F';\nupdate person set sex='M' where name='유재석';\nselect * from person;\nupdate person set name='이미주' where name='이미자';\nselect * from person;\ndelete from person where sex='F';\nselect * from person;\ndelete from person;\nselect * from person;\ndesc person\ndrop table person\nshow TABLES\n",
+    "options": {
+        "tabSize": 4,
+        "indentSize": 4,
+        "insertSpaces": true,
+        "defaultEOL": "LF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 44,
+                    "column": 1
+                },
+                "position": {
+                    "lineNumber": 44,
+                    "column": 1
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 29,
+                "column": 1
+            },
+            "firstPositionDeltaTop": 129
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "content": "Welcome to the MySQL Shell - DB Notebook.\n\nPress Ctrl+Enter to execute the code block.\n\nExecute \\sql to switch to SQL, \\js to JavaScript and \\ts to TypeScript mode.\nExecute \\help or \\? for help;",
+                            "language": "ansi"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 2,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "e682fa15-e3f0-429c-efb1-cb8360d1608f",
+                            "content": "OK, 0 records retrieved in 0.313ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 12,
+                            "length": 0
+                        },
+                        "contentStart": 11,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 3,
+                "end": 4,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "f7ed32bb-adff-433c-b149-a63a25c21306",
+                            "content": "OK, 0 records retrieved in 23.473ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 18
+                        },
+                        "contentStart": 1,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 5,
+                "end": 11,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "f9336faf-eba5-4cd6-9c53-2f9429738e07",
+                            "content": "OK, 0 records retrieved in 35.323ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 84
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 12,
+                "end": 12,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "61d62a64-3170-4718-e60a-26ecd081e18c"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 11
+                        },
+                        "contentStart": 1,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "17e70c56-b433-40d9-f9fc-76ecc87b45f3",
+                    "resultId": "61d62a64-3170-4718-e60a-26ecd081e18c",
+                    "rows": [
+                        {
+                            "0": "id",
+                            "1": "int",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "name",
+                            "1": "varchar(16)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "age",
+                            "1": "int",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "sex",
+                            "1": "char(1)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Field",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Type",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Null",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Key",
+                            "field": "3",
+                            "dataType": {
+                                "type": 43,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Default",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Extra",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 1.122ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "desc person",
+                    "updatable": false
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 13,
+                "end": 14,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "196b2177-97b2-4429-e9e8-21749c1b7c59",
+                            "content": "OK, 1 row affected in 6.388ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 65
+                        },
+                        "contentStart": 0,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 15,
+                "end": 15,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "f4d08bd6-91a1-4c00-91de-e0175e7c7332"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 21
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "17e70c56-b433-40d9-f9fc-76ecc87b45f3",
+                    "resultId": "f4d08bd6-91a1-4c00-91de-e0175e7c7332",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "이효리",
+                            "2": 43,
+                            "3": "F"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "age",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "sex",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 0.366ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from person",
+                    "updatable": false,
+                    "fullTableName": "person"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 16,
+                "end": 17,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "833b365a-2903-45e3-c947-27f000f205b7",
+                            "content": "OK, 1 row affected in 6.882ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 46
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 18,
+                "end": 18,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "c82d0692-30be-4e68-f61e-63fc9bb88e19"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 21
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "17e70c56-b433-40d9-f9fc-76ecc87b45f3",
+                    "resultId": "c82d0692-30be-4e68-f61e-63fc9bb88e19",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "이효리",
+                            "2": 43,
+                            "3": "F"
+                        },
+                        {
+                            "0": 2,
+                            "1": "이상순",
+                            "2": 48,
+                            "3": "M"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "age",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "sex",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 2 records retrieved in 0.357ms"
+                    },
+                    "totalRowCount": 2,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from person",
+                    "updatable": false,
+                    "fullTableName": "person"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 19,
+                "end": 19,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "22be48a8-81e8-4c8e-d5b4-bdfdccb84925"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 34
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "17e70c56-b433-40d9-f9fc-76ecc87b45f3",
+                    "resultId": "22be48a8-81e8-4c8e-d5b4-bdfdccb84925",
+                    "rows": [
+                        {
+                            "0": "이효리",
+                            "1": 43,
+                            "2": "F"
+                        },
+                        {
+                            "0": "이상순",
+                            "1": 48,
+                            "2": "M"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "name",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "age",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "sex",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 2 records retrieved in 0.645ms"
+                    },
+                    "totalRowCount": 2,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT name, age, sex FROM person",
+                    "updatable": false,
+                    "fullTableName": "person"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 20,
+                "end": 21,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "ed1d4c5f-cbb2-4295-d0d9-7bca80bb6b7f"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 21
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "17e70c56-b433-40d9-f9fc-76ecc87b45f3",
+                    "resultId": "ed1d4c5f-cbb2-4295-d0d9-7bca80bb6b7f",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "이효리",
+                            "2": 43,
+                            "3": "F"
+                        },
+                        {
+                            "0": 2,
+                            "1": "이상순",
+                            "2": 48,
+                            "3": "M"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "age",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "sex",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 2 records retrieved in 0.384ms"
+                    },
+                    "totalRowCount": 2,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT *\nFROM person",
+                    "updatable": false,
+                    "fullTableName": "person"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 22,
+                "end": 22,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "3ccbe5d5-f550-469c-b88b-6e08cea38658"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 35
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "17e70c56-b433-40d9-f9fc-76ecc87b45f3",
+                    "resultId": "3ccbe5d5-f550-469c-b88b-6e08cea38658",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "이효리",
+                            "2": 23,
+                            "3": "F"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "age",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "sex",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 0.38ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT * FROM person WHERE sex='F'",
+                    "updatable": false,
+                    "fullTableName": "person"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 23,
+                "end": 24,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "a29341ed-bcac-4b92-c95a-d03ef4a894a9",
+                        "0cc21d0a-8472-4cb1-ff15-0184fc93c321"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 42
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 42,
+                            "length": 22
+                        },
+                        "contentStart": 43,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "17e70c56-b433-40d9-f9fc-76ecc87b45f3",
+                    "resultId": "a29341ed-bcac-4b92-c95a-d03ef4a894a9",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "이효리",
+                            "2": 23,
+                            "3": "F"
+                        },
+                        {
+                            "0": 2,
+                            "1": "이상순",
+                            "2": 48,
+                            "3": "M"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "age",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "sex",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 2 records retrieved in 0.38ms"
+                    },
+                    "totalRowCount": 2,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 1,
+                    "sql": "\nselect * from person",
+                    "updatable": false,
+                    "fullTableName": "person"
+                },
+                {
+                    "tabId": "17e70c56-b433-40d9-f9fc-76ecc87b45f3",
+                    "resultId": "0cc21d0a-8472-4cb1-ff15-0184fc93c321",
+                    "rows": [],
+                    "executionInfo": {
+                        "text": "OK, 1 row affected in 5.421ms",
+                        "type": 4
+                    },
+                    "totalRowCount": 0,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "UPDATE person SET age=23 WHERE name='이효리'",
+                    "updatable": false
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 25,
+                "end": 26,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "112cfa33-4bac-4735-a7cd-32e586ea4dd7",
+                        "967169b5-92a7-4221-ba9e-61d6829c3a9f"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 36
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 36,
+                            "length": 22
+                        },
+                        "contentStart": 37,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "17e70c56-b433-40d9-f9fc-76ecc87b45f3",
+                    "resultId": "112cfa33-4bac-4735-a7cd-32e586ea4dd7",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "이효리",
+                            "2": 23,
+                            "3": "F"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "age",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "sex",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 0.575ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 1,
+                    "sql": "\nselect * from person",
+                    "updatable": false,
+                    "fullTableName": "person"
+                },
+                {
+                    "tabId": "17e70c56-b433-40d9-f9fc-76ecc87b45f3",
+                    "resultId": "967169b5-92a7-4221-ba9e-61d6829c3a9f",
+                    "rows": [],
+                    "executionInfo": {
+                        "text": "OK, 1 row affected in 24.3ms",
+                        "type": 4
+                    },
+                    "totalRowCount": 0,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "DELETE FROM person WHERE name='이상순'",
+                    "updatable": false
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 27,
+                "end": 28,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "3a3977af-5792-4920-a571-cacfb14a5563",
+                        "96ea5d69-ca30-46e8-f771-265046276bc8"
+                    ]
+                },
+                "currentHeight": 146,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 45
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 45,
+                            "length": 22
+                        },
+                        "contentStart": 46,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "17e70c56-b433-40d9-f9fc-76ecc87b45f3",
+                    "resultId": "3a3977af-5792-4920-a571-cacfb14a5563",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "이효리",
+                            "2": 23,
+                            "3": "F"
+                        },
+                        {
+                            "0": 2,
+                            "1": "이미자",
+                            "2": 28,
+                            "3": "F"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "age",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "sex",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 2 records retrieved in 0.438ms"
+                    },
+                    "totalRowCount": 2,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 1,
+                    "sql": "\nselect * from person",
+                    "updatable": false,
+                    "fullTableName": "person"
+                },
+                {
+                    "tabId": "17e70c56-b433-40d9-f9fc-76ecc87b45f3",
+                    "resultId": "96ea5d69-ca30-46e8-f771-265046276bc8",
+                    "rows": [],
+                    "executionInfo": {
+                        "text": "OK, 1 row affected in 12.423ms",
+                        "type": 4
+                    },
+                    "totalRowCount": 0,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "insert into person value (2, '이미자', 28, 'F')",
+                    "updatable": false
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 29,
+                "end": 30,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "a084228e-bf57-4ea4-9907-b8300f6803f8",
+                        "fa796cd1-1fbe-4ceb-c63e-7a7201c67034"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 45
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 45,
+                            "length": 22
+                        },
+                        "contentStart": 46,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "17e70c56-b433-40d9-f9fc-76ecc87b45f3",
+                    "resultId": "a084228e-bf57-4ea4-9907-b8300f6803f8",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "이효리",
+                            "2": 23,
+                            "3": "F"
+                        },
+                        {
+                            "0": 2,
+                            "1": "이미자",
+                            "2": 28,
+                            "3": "F"
+                        },
+                        {
+                            "0": 3,
+                            "1": "유재석",
+                            "2": 50,
+                            "3": "F"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "age",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "sex",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 3 records retrieved in 0.461ms"
+                    },
+                    "totalRowCount": 3,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 1,
+                    "sql": "\nselect * from person",
+                    "updatable": false,
+                    "fullTableName": "person"
+                },
+                {
+                    "tabId": "17e70c56-b433-40d9-f9fc-76ecc87b45f3",
+                    "resultId": "fa796cd1-1fbe-4ceb-c63e-7a7201c67034",
+                    "rows": [],
+                    "executionInfo": {
+                        "text": "OK, 1 row affected in 5.3ms",
+                        "type": 4
+                    },
+                    "totalRowCount": 0,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "insert into person value (3, '유재석', 50, 'F')",
+                    "updatable": false
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 31,
+                "end": 31,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "d4574c64-932c-472d-f572-3c1faa85568c"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 34
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 34,
+                            "length": 0
+                        },
+                        "contentStart": 33,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "17e70c56-b433-40d9-f9fc-76ecc87b45f3",
+                    "resultId": "d4574c64-932c-472d-f572-3c1faa85568c",
+                    "rows": [
+                        {
+                            "0": 3,
+                            "1": "유재석",
+                            "2": 50,
+                            "3": "F"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "age",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "sex",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 0.635ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from person where age=50",
+                    "updatable": false,
+                    "fullTableName": "person"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 32,
+                "end": 32,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "afd25b16-7838-4a51-b385-ca8945236e86"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 35
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "17e70c56-b433-40d9-f9fc-76ecc87b45f3",
+                    "resultId": "afd25b16-7838-4a51-b385-ca8945236e86",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "이효리",
+                            "2": 23,
+                            "3": "F"
+                        },
+                        {
+                            "0": 2,
+                            "1": "이미자",
+                            "2": 28,
+                            "3": "F"
+                        },
+                        {
+                            "0": 3,
+                            "1": "유재석",
+                            "2": 50,
+                            "3": "F"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "age",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "sex",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 3 records retrieved in 1.322ms"
+                    },
+                    "totalRowCount": 3,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from person where sex='F'",
+                    "updatable": false,
+                    "fullTableName": "person"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 33,
+                "end": 34,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "54ceb460-2ada-4ade-fb5a-f4695182bf6c",
+                        "65a65dd8-ecde-45b7-b6df-714a1365f234"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 43
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 43,
+                            "length": 22
+                        },
+                        "contentStart": 44,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "17e70c56-b433-40d9-f9fc-76ecc87b45f3",
+                    "resultId": "54ceb460-2ada-4ade-fb5a-f4695182bf6c",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "이효리",
+                            "2": 23,
+                            "3": "F"
+                        },
+                        {
+                            "0": 2,
+                            "1": "이미주",
+                            "2": 28,
+                            "3": "F"
+                        },
+                        {
+                            "0": 3,
+                            "1": "유재석",
+                            "2": 50,
+                            "3": "M"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "age",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "sex",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 3 records retrieved in 0.336ms"
+                    },
+                    "totalRowCount": 3,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 1,
+                    "sql": "\nselect * from person",
+                    "updatable": false,
+                    "fullTableName": "person"
+                },
+                {
+                    "tabId": "17e70c56-b433-40d9-f9fc-76ecc87b45f3",
+                    "resultId": "65a65dd8-ecde-45b7-b6df-714a1365f234",
+                    "rows": [],
+                    "executionInfo": {
+                        "text": "OK, 1 row affected in 8.435ms",
+                        "type": 4
+                    },
+                    "totalRowCount": 0,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "update person set sex='M' where name='유재석'",
+                    "updatable": false
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 35,
+                "end": 36,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "fc58a258-9c11-4389-8356-267a50089805",
+                        "f45e0a30-3391-4486-b6ec-82bb3ac436cb"
+                    ]
+                },
+                "currentHeight": 172,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 46
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 46,
+                            "length": 22
+                        },
+                        "contentStart": 47,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "17e70c56-b433-40d9-f9fc-76ecc87b45f3",
+                    "resultId": "fc58a258-9c11-4389-8356-267a50089805",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "이효리",
+                            "2": 23,
+                            "3": "F"
+                        },
+                        {
+                            "0": 2,
+                            "1": "이미주",
+                            "2": 28,
+                            "3": "F"
+                        },
+                        {
+                            "0": 3,
+                            "1": "유재석",
+                            "2": 50,
+                            "3": "M"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "age",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "sex",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 3 records retrieved in 0.715ms"
+                    },
+                    "totalRowCount": 3,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 1,
+                    "sql": "\nselect * from person",
+                    "updatable": false,
+                    "fullTableName": "person"
+                },
+                {
+                    "tabId": "17e70c56-b433-40d9-f9fc-76ecc87b45f3",
+                    "resultId": "f45e0a30-3391-4486-b6ec-82bb3ac436cb",
+                    "rows": [],
+                    "executionInfo": {
+                        "text": "OK, 1 row affected in 7.834ms",
+                        "type": 4
+                    },
+                    "totalRowCount": 0,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "update person set name='이미주' where name='이미자'",
+                    "updatable": false
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 37,
+                "end": 38,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "a71e7ab5-5e65-4ca4-a7e8-30b00d7521cb",
+                            "content": "OK, 2 rows affected in 7.195ms"
+                        },
+                        {
+                            "type": 4,
+                            "index": 1,
+                            "resultId": "408f392a-e6bb-4d81-e54e-c02dc5a43c32",
+                            "content": "OK, 0 records retrieved in 0.316ms"
+                        }
+                    ]
+                },
+                "currentHeight": 120,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 33
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 33,
+                            "length": 22
+                        },
+                        "contentStart": 34,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 39,
+                "end": 41,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "275088d3-854b-42e7-dfe4-920fda9f23e7",
+                            "content": "OK, 1 row affected in 7.146ms"
+                        },
+                        {
+                            "type": 0,
+                            "index": 1,
+                            "content": "MySQL Error (1146): ClassicSession.run_sql: Table 'amrbase.person' doesn't exist",
+                            "language": "ansi"
+                        },
+                        {
+                            "type": 0,
+                            "index": 2,
+                            "content": "MySQL Error (1146): ClassicSession.run_sql: Table 'amrbase.person' doesn't exist",
+                            "language": "ansi"
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": ""
+                    }
+                },
+                "currentHeight": 197,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 19
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 19,
+                            "length": 22
+                        },
+                        "contentStart": 20,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 41,
+                            "length": 12
+                        },
+                        "contentStart": 43,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 42,
+                "end": 42,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "05f8bf24-ac73-4a6a-9b67-c33662910e58",
+                            "content": "OK, 0 records retrieved in 22.164ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 17
+                        },
+                        "contentStart": 1,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 43,
+                "end": 43,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "9ac7321e-5485-4521-cdea-2cf9cf2b1d3d",
+                            "content": "OK, 0 records retrieved in 1.331ms"
+                        }
+                    ]
+                },
+                "currentHeight": 92,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 11
+                        },
+                        "contentStart": 0,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 44,
+                "end": 44,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}

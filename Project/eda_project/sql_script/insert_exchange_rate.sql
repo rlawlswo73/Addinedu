@@ -1,0 +1,1 @@
+insert into exchange_rate values (%s, %s)

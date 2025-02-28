@@ -1,0 +1,3481 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "\\about\nuse amrbase;\nselect * from sandwich;\nselect ucase('This Is ucase Test.');\nselect ucase(menu) from sandwich where price > 15;\nSELECT lcase('This Is LCASE Test.');\nselect lcase(menu) from sandwich where price < 5;\nselect MID('This is mid test', 1, 4);\nselect mid('This is mid test', 6, 5);\nselect mid('This is mid test', -4, 4);\nselect mid('This id mid test', -8, 3);\nSELECT cafe from sandwich where ranking = 11;\nselect mid(cafe, 6, 4) from sandwich where ranking = 11;\nselect mid(cafe, -4, 4) from sandwich where ranking = 11;\nselect length('This is len test');\nselect length('');\nselect length(' ');\nselect length(NULL);\nselect length(address), address from sandwich where ranking <= 3;\nselect round(315.625);\nselect round(315.625,0);\nselect round(315.625, 1);\nselect round(315.625, 2);\nselect round(315.625, -1);\nselect round(315.625, -2);\nselect ranking, price, round(price) from sandwich order by ranking DESC limit 3;\nselect NOW();\nselect format(12345.6789, 0);\nselect format(12345.6789, 2);\nselect format(12345.6789, 10);\nselect format(가격, 0) from oil_price where round(가격, -3) >= 2000;\nselect ucase(cafe), lcase(menu) from sandwich;\nselect ranking, menu from sandwich where ranking=10;\nselect ranking, menu, mid(menu, -3, 3) from sandwich where ranking=10;\nselect avg(length(menu)) from sandwich;\nselect sum(length(menu)) from sandwich;\nselect 가격, round(가격, -2) from oil_price;\nselect format(가격, 0), 가격 from oil_price where round(가격, -2) >= 2000;\n",
+    "options": {
+        "tabSize": 4,
+        "indentSize": 4,
+        "insertSpaces": true,
+        "defaultEOL": "LF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 39,
+                    "column": 1
+                },
+                "position": {
+                    "lineNumber": 39,
+                    "column": 1
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 36,
+                "column": 1
+            },
+            "firstPositionDeltaTop": 69
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "content": "Welcome to the MySQL Shell - DB Notebook.\n\nPress Ctrl+Enter to execute the code block.\n\nExecute \\sql to switch to SQL, \\js to JavaScript and \\ts to TypeScript mode.\nExecute \\help or \\? for help;",
+                            "language": "ansi"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 2,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "fe9b13bf-87ba-4d19-80fd-838381b3e668",
+                            "content": "OK, 0 records retrieved in 15.592ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 12,
+                            "length": 0
+                        },
+                        "contentStart": 11,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 3,
+                "end": 3,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "eddb4ec1-20d8-4c38-bdc6-fc3b7ae673cf"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 23
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "eddb4ec1-20d8-4c38-bdc6-fc3b7ae673cf",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "Old Oak Tap",
+                            "2": "BLT",
+                            "3": 10,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 2,
+                            "1": "Au Cheval",
+                            "2": "Fried Bologna",
+                            "3": 9,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 3,
+                            "1": "Xoco",
+                            "2": "Woodland Mushroom",
+                            "3": 9.5,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 4,
+                            "1": "Al’s Deli",
+                            "2": "Roast Beef",
+                            "3": 9.4,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 5,
+                            "1": "Publican Quality Meats",
+                            "2": "PB&L",
+                            "3": 10,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 6,
+                            "1": "Hendrickx Belgian Bread Crafter",
+                            "2": "Belgian Chicken Curry Salad",
+                            "3": 7.25,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 7,
+                            "1": "Acadia",
+                            "2": "Lobster Roll",
+                            "3": 16,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 8,
+                            "1": "Birchwood Kitchen",
+                            "2": "Smoked Salmon Salad",
+                            "3": 10,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 9,
+                            "1": "Cemitas Puebla",
+                            "2": "Atomica Cemitas",
+                            "3": 9,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 10,
+                            "1": "Nana",
+                            "2": "Grilled Laughing Bird Shrimp and Fried Po’ Boy",
+                            "3": 17,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 11,
+                            "1": "Lula Cafe",
+                            "2": "Ham and Raclette Panino",
+                            "3": 11,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 12,
+                            "1": "Ricobene’s",
+                            "2": "Breaded Steak",
+                            "3": 5.49,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 13,
+                            "1": "Frog n Snail",
+                            "2": "The Hawkeye",
+                            "3": 14,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 14,
+                            "1": "Crosby’s Kitchen",
+                            "2": "Chicken Dip",
+                            "3": 10,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 15,
+                            "1": "Longman & Eagle",
+                            "2": "Wild Boar Sloppy Joe",
+                            "3": 13,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 16,
+                            "1": "Bari",
+                            "2": "Meatball Sub",
+                            "3": 4.5,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 17,
+                            "1": "Manny’s",
+                            "2": "Corned Beef",
+                            "3": 11.95,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 18,
+                            "1": "Eggy’s",
+                            "2": "Turkey Club",
+                            "3": 11.5,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 19,
+                            "1": "Old Jerusalem",
+                            "2": "Falafel",
+                            "3": 6.25,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 20,
+                            "1": "Mindy’s HotChocolate",
+                            "2": "Crab Cake",
+                            "3": 15,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 21,
+                            "1": "Olga’s Delicatessen",
+                            "2": "Chicken Schnitzel",
+                            "3": 5,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 22,
+                            "1": "Dawali Mediterranean Kitchen",
+                            "2": "Shawarma",
+                            "3": 6,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 23,
+                            "1": "Big Jones",
+                            "2": "Toasted Pimiento Cheese",
+                            "3": 8,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 24,
+                            "1": "La Pane",
+                            "2": "Vegetarian Panino",
+                            "3": 5.99,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 25,
+                            "1": "Pastoral",
+                            "2": "Cali Chèvre",
+                            "3": 7.52,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 26,
+                            "1": "Max’s Deli",
+                            "2": "Pastrami",
+                            "3": 11.95,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 27,
+                            "1": "Lucky’s Sandwich Co.",
+                            "2": "The Fredo",
+                            "3": 7.5,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 28,
+                            "1": "City Provisions",
+                            "2": "Smoked Ham",
+                            "3": 12.95,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 29,
+                            "1": "Papa’s Cache Sabroso",
+                            "2": "Jibarito",
+                            "3": 7,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 30,
+                            "1": "Bavette’s Bar & Boeuf",
+                            "2": "Shaved Prime Rib",
+                            "3": 21,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 31,
+                            "1": "Hannah’s Bretzel",
+                            "2": "Serrano Ham and Manchego Cheese",
+                            "3": 9.79,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 32,
+                            "1": "La Fournette",
+                            "2": "Tuna Salad",
+                            "3": 9.75,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 33,
+                            "1": "Paramount Room",
+                            "2": "Paramount Reuben",
+                            "3": 13,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 34,
+                            "1": "Melt Sandwich Shoppe",
+                            "2": "The Istanbul",
+                            "3": 7.95,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 35,
+                            "1": "Floriole Cafe & Bakery",
+                            "2": "B.A.D.",
+                            "3": 9,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 36,
+                            "1": "First Slice Pie Café",
+                            "2": "Duck Confit and Mozzarella",
+                            "3": 9,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 37,
+                            "1": "Troquet",
+                            "2": "Croque Monsieur",
+                            "3": 8,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 38,
+                            "1": "Grahamwich",
+                            "2": "Green Garbanzo",
+                            "3": 8,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 39,
+                            "1": "Saigon Sisters",
+                            "2": "The Hen House",
+                            "3": 7,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 40,
+                            "1": "Rosalia’s Deli",
+                            "2": "Tuscan Chicken",
+                            "3": 6,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 41,
+                            "1": "Z&H MarketCafe",
+                            "2": "The Marty ",
+                            "3": 7.25,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 42,
+                            "1": "Market House on the Square",
+                            "2": "Whitefish",
+                            "3": 11,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 43,
+                            "1": "Elaine’s Coffee Call",
+                            "2": "Oat Bread, Pecan Butter, and Fruit Jam",
+                            "3": 6,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 44,
+                            "1": "Marion Street Cheese Market",
+                            "2": "Cauliflower Melt",
+                            "3": 9,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 45,
+                            "1": "Cafecito",
+                            "2": "Cubana",
+                            "3": 5.49,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 46,
+                            "1": "Chickpea",
+                            "2": "Kufta",
+                            "3": 8,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 47,
+                            "1": "The Goddess and Grocer",
+                            "2": "Debbie’s Egg Salad",
+                            "3": 6.5,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 48,
+                            "1": "Zenwich",
+                            "2": "Beef Curry",
+                            "3": 7.5,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 49,
+                            "1": "Toni Patisserie",
+                            "2": "Le Végétarien",
+                            "3": 8.75,
+                            "4": "https://www.chicagomag.com/Chica"
+                        },
+                        {
+                            "0": 50,
+                            "1": "Phoebe’s Bakery",
+                            "2": "The Gatsby",
+                            "3": 6.85,
+                            "4": "https://www.chicagomag.com/Chica"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ranking",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "cafe",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "menu",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "price",
+                            "field": "3",
+                            "dataType": {
+                                "type": 7,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 53,
+                                "numericScale": 30,
+                                "parameterFormatType": "TwoOrOneOrZero",
+                                "synonyms": [
+                                    "FLOAT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "address",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 50 records retrieved in 17.781ms"
+                    },
+                    "totalRowCount": 50,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from sandwich",
+                    "updatable": false,
+                    "fullTableName": "sandwich"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 4,
+                "end": 4,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "d93ef447-9329-4d6d-fcc0-3c28169d239b"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 36
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "d93ef447-9329-4d6d-fcc0-3c28169d239b",
+                    "rows": [
+                        {
+                            "0": "THIS IS UCASE TEST."
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ucase('This Is ucase Test.')",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 10.84ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select ucase('This Is ucase Test.')",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 5,
+                "end": 5,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "61a5482f-abd9-49b5-9833-02e5bc5f9b6d"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 50
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "61a5482f-abd9-49b5-9833-02e5bc5f9b6d",
+                    "rows": [
+                        {
+                            "0": "LOBSTER ROLL"
+                        },
+                        {
+                            "0": "GRILLED LAUGHING BIRD SHRIMP AND FRIED PO’ BOY"
+                        },
+                        {
+                            "0": "SHAVED PRIME RIB"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ucase(menu)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 3 records retrieved in 6.281ms"
+                    },
+                    "totalRowCount": 3,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select ucase(menu) from sandwich where price > 15",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 6,
+                "end": 6,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "156f6896-cca2-47f8-b2ac-30a89b723ce7"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 36
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "156f6896-cca2-47f8-b2ac-30a89b723ce7",
+                    "rows": [
+                        {
+                            "0": "this is lcase test."
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "lcase('This Is LCASE Test.')",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 7.18ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT lcase('This Is LCASE Test.')",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 7,
+                "end": 7,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "93bad0c4-d5f5-4a2c-f6c9-8a1c8babd9c3"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 49
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "93bad0c4-d5f5-4a2c-f6c9-8a1c8babd9c3",
+                    "rows": [
+                        {
+                            "0": "meatball sub"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "lcase(menu)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 7.356ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select lcase(menu) from sandwich where price < 5",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 8,
+                "end": 8,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "660b7360-d840-449c-bcbd-038471b71e67"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 37
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "660b7360-d840-449c-bcbd-038471b71e67",
+                    "rows": [
+                        {
+                            "0": "This"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "MID('This is mid test', 1, 4)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 6.518ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select MID('This is mid test', 1, 4)",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 9,
+                "end": 9,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "157d69c8-eb5f-4cf2-af25-40fbb2a9240d"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 37
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "157d69c8-eb5f-4cf2-af25-40fbb2a9240d",
+                    "rows": [
+                        {
+                            "0": "is mi"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "mid('This is mid test', 6, 5)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 6.653ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select mid('This is mid test', 6, 5)",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 10,
+                "end": 10,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "d5488f4a-7740-4e19-f4a8-2323ec3ede7e"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 38
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 38,
+                            "length": 0
+                        },
+                        "contentStart": 37,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "d5488f4a-7740-4e19-f4a8-2323ec3ede7e",
+                    "rows": [
+                        {
+                            "0": "test"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "mid('This is mid test', -4, 4)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 7.173ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select mid('This is mid test', -4, 4)",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 11,
+                "end": 11,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "46b85cb1-7ddc-416c-9ff2-a28bc544a4a2"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 38
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "46b85cb1-7ddc-416c-9ff2-a28bc544a4a2",
+                    "rows": [
+                        {
+                            "0": "mid"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "mid('This id mid test', -8, 3)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 5.71ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select mid('This id mid test', -8, 3)",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 12,
+                "end": 12,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "ab2307b2-7db6-4d43-8e52-b9e5b16de7fa"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 45
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "ab2307b2-7db6-4d43-8e52-b9e5b16de7fa",
+                    "rows": [
+                        {
+                            "0": "Lula Cafe"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "cafe",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 5.266ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT cafe from sandwich where ranking = 11",
+                    "updatable": false,
+                    "fullTableName": "sandwich"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 13,
+                "end": 13,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "20048857-4cf9-49a9-86d3-2153fdbe5f0e"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 56
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 56,
+                            "length": 0
+                        },
+                        "contentStart": 56,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "20048857-4cf9-49a9-86d3-2153fdbe5f0e",
+                    "rows": [
+                        {
+                            "0": "Cafe"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "mid(cafe, 6, 4)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 7.842ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select mid(cafe, 6, 4) from sandwich where ranking = 11",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 14,
+                "end": 14,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "743d7844-c49c-438e-eeb9-6ec131b135b5"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 57
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "743d7844-c49c-438e-eeb9-6ec131b135b5",
+                    "rows": [
+                        {
+                            "0": "Cafe"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "mid(cafe, -4, 4)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 7.513ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select mid(cafe, -4, 4) from sandwich where ranking = 11",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 15,
+                "end": 15,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "9ac59608-1e17-44e5-8e2a-d63ed055c81f"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 34
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "9ac59608-1e17-44e5-8e2a-d63ed055c81f",
+                    "rows": [
+                        {
+                            "0": 16
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "length('This is len test')",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 7.073ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select length('This is len test')",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 16,
+                "end": 16,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "3385a63f-de0d-4a26-b626-a3f972afcdc3"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 18
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "3385a63f-de0d-4a26-b626-a3f972afcdc3",
+                    "rows": [
+                        {
+                            "0": 0
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "length('')",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 6.598ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select length('')",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 17,
+                "end": 17,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "716e6290-3842-4175-dd79-96d7d309bf57"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 19
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "716e6290-3842-4175-dd79-96d7d309bf57",
+                    "rows": [
+                        {
+                            "0": 1
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "length(' ')",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 7.728ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select length(' ')",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 18,
+                "end": 18,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "35e7fa4b-d97e-4ff0-cba4-257becd571d0"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 20
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "35e7fa4b-d97e-4ff0-cba4-257becd571d0",
+                    "rows": [
+                        {
+                            "0": null
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "length(NULL)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 7.415ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select length(NULL)",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 19,
+                "end": 19,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "18d5354d-45a0-4a85-a7f7-3917c27c157e"
+                    ]
+                },
+                "currentHeight": 171.609375,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 65
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "18d5354d-45a0-4a85-a7f7-3917c27c157e",
+                    "rows": [
+                        {
+                            "0": 19,
+                            "1": "2109 W. Chicago Ave"
+                        },
+                        {
+                            "0": 18,
+                            "1": "800 W. Randolph St"
+                        },
+                        {
+                            "0": 16,
+                            "1": " 445 N. Clark St"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "length(address)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "address",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 3 records retrieved in 12.46ms"
+                    },
+                    "totalRowCount": 3,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select length(address), address from sandwich where ranking <= 3",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 20,
+                "end": 20,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "9f5cb746-6e27-4151-ce3c-53afdfef59de"
+                    ]
+                },
+                "currentHeight": 132.15625,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 22
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "9f5cb746-6e27-4151-ce3c-53afdfef59de",
+                    "rows": [
+                        {
+                            "0": "316"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "round(315.625)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 10,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 65,
+                                "numericScale": 30,
+                                "parameterFormatType": "TwoOrOneOrZero",
+                                "synonyms": [
+                                    "FIXED",
+                                    "NUMERIC",
+                                    "DEC"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 6.665ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select round(315.625)",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 21,
+                "end": 21,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "07a699b5-fd5b-43ac-9552-f9462da7cb10"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 24
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "07a699b5-fd5b-43ac-9552-f9462da7cb10",
+                    "rows": [
+                        {
+                            "0": "316"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "round(315.625,0)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 10,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 65,
+                                "numericScale": 30,
+                                "parameterFormatType": "TwoOrOneOrZero",
+                                "synonyms": [
+                                    "FIXED",
+                                    "NUMERIC",
+                                    "DEC"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 7.222ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select round(315.625,0)",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 22,
+                "end": 22,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "1028c17c-eda6-45bb-ad1f-7f621eb31737"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 25
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "1028c17c-eda6-45bb-ad1f-7f621eb31737",
+                    "rows": [
+                        {
+                            "0": "315.6"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "round(315.625,1)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 10,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 65,
+                                "numericScale": 30,
+                                "parameterFormatType": "TwoOrOneOrZero",
+                                "synonyms": [
+                                    "FIXED",
+                                    "NUMERIC",
+                                    "DEC"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 5.662ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select round(315.625,1)",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 23,
+                "end": 23,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "da666545-6a53-4d15-dcee-30d0e38d0b94"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 25
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "da666545-6a53-4d15-dcee-30d0e38d0b94",
+                    "rows": [
+                        {
+                            "0": "315.63"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "round(315.625, 2)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 10,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 65,
+                                "numericScale": 30,
+                                "parameterFormatType": "TwoOrOneOrZero",
+                                "synonyms": [
+                                    "FIXED",
+                                    "NUMERIC",
+                                    "DEC"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 7.296ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select round(315.625, 2)",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 24,
+                "end": 24,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "6fc9751b-3f50-42b6-f162-6f1db0672841"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 26
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "6fc9751b-3f50-42b6-f162-6f1db0672841",
+                    "rows": [
+                        {
+                            "0": "320"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "round(315.625, -1)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 10,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 65,
+                                "numericScale": 30,
+                                "parameterFormatType": "TwoOrOneOrZero",
+                                "synonyms": [
+                                    "FIXED",
+                                    "NUMERIC",
+                                    "DEC"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 4.735ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select round(315.625, -1)",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 25,
+                "end": 25,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "889b4589-1a28-462f-b03f-ba3a67a5fcc4"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 26
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "889b4589-1a28-462f-b03f-ba3a67a5fcc4",
+                    "rows": [
+                        {
+                            "0": "300"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "round(315.625, -2)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 10,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 65,
+                                "numericScale": 30,
+                                "parameterFormatType": "TwoOrOneOrZero",
+                                "synonyms": [
+                                    "FIXED",
+                                    "NUMERIC",
+                                    "DEC"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 6.439ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select round(315.625, -2)",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 26,
+                "end": 26,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "2661c237-47d3-47e6-aed3-de6eb07a61eb"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 80
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "2661c237-47d3-47e6-aed3-de6eb07a61eb",
+                    "rows": [
+                        {
+                            "0": 50,
+                            "1": 6.85,
+                            "2": 7
+                        },
+                        {
+                            "0": 49,
+                            "1": 8.75,
+                            "2": 9
+                        },
+                        {
+                            "0": 48,
+                            "1": 7.5,
+                            "2": 8
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ranking",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "price",
+                            "field": "1",
+                            "dataType": {
+                                "type": 7,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 53,
+                                "numericScale": 30,
+                                "parameterFormatType": "TwoOrOneOrZero",
+                                "synonyms": [
+                                    "FLOAT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "round(price)",
+                            "field": "2",
+                            "dataType": {
+                                "type": 9,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 53,
+                                "numericScale": 30,
+                                "parameterFormatType": "TwoOrZero",
+                                "synonyms": [
+                                    "FLOAT8"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 3 records retrieved in 7.438ms"
+                    },
+                    "totalRowCount": 3,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select ranking, price, round(price) from sandwich order by ranking DESC limit 3",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 27,
+                "end": 27,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "0f9d94a9-48c6-49bd-f3f3-819b7b1eae93"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 13
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "0f9d94a9-48c6-49bd-f3f3-819b7b1eae93",
+                    "rows": [
+                        {
+                            "0": "2024-09-11 01:25:15"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "NOW()",
+                            "field": "0",
+                            "dataType": {
+                                "type": 26,
+                                "dateTimePrecision": 8,
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 10.73ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select NOW()",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 28,
+                "end": 28,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "5670626f-8a4b-410c-9f6e-ac9c9ef09946"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 29
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "5670626f-8a4b-410c-9f6e-ac9c9ef09946",
+                    "rows": [
+                        {
+                            "0": "12,346"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "format(12345.6789, 0)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 8.04ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select format(12345.6789, 0)",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 29,
+                "end": 29,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "1bf1fdf2-e7da-4971-97e1-b470579e4cea"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 29
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "1bf1fdf2-e7da-4971-97e1-b470579e4cea",
+                    "rows": [
+                        {
+                            "0": "12,345.68"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "format(12345.6789, 2)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 8.286ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select format(12345.6789, 2)",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 30,
+                "end": 30,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "a4fc42f8-de84-4087-bf82-49bea252dc11"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 30
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "a4fc42f8-de84-4087-bf82-49bea252dc11",
+                    "rows": [
+                        {
+                            "0": "12,345.6789000000"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "format(12345.6789, 10)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 6.757ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select format(12345.6789, 10)",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 31,
+                "end": 31,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "3ace0a1e-8dfd-472d-dcc0-da4aa0f0edb2"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 64
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "3ace0a1e-8dfd-472d-dcc0-da4aa0f0edb2",
+                    "rows": [
+                        {
+                            "0": "1,509"
+                        },
+                        {
+                            "0": "1,598"
+                        },
+                        {
+                            "0": "1,635"
+                        },
+                        {
+                            "0": "2,160"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "format(가격, 0)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 8.098ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select format(가격, 0) from oil_price where round(가격, -3) >= 2000",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 32,
+                "end": 32,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "015a043b-0376-45d8-af28-376179975ec2"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 46
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "015a043b-0376-45d8-af28-376179975ec2",
+                    "rows": [
+                        {
+                            "0": "OLD OAK TAP",
+                            "1": "blt"
+                        },
+                        {
+                            "0": "AU CHEVAL",
+                            "1": "fried bologna"
+                        },
+                        {
+                            "0": "XOCO",
+                            "1": "woodland mushroom"
+                        },
+                        {
+                            "0": "AL’S DELI",
+                            "1": "roast beef"
+                        },
+                        {
+                            "0": "PUBLICAN QUALITY MEATS",
+                            "1": "pb&l"
+                        },
+                        {
+                            "0": "HENDRICKX BELGIAN BREAD CRAFTER",
+                            "1": "belgian chicken curry salad"
+                        },
+                        {
+                            "0": "ACADIA",
+                            "1": "lobster roll"
+                        },
+                        {
+                            "0": "BIRCHWOOD KITCHEN",
+                            "1": "smoked salmon salad"
+                        },
+                        {
+                            "0": "CEMITAS PUEBLA",
+                            "1": "atomica cemitas"
+                        },
+                        {
+                            "0": "NANA",
+                            "1": "grilled laughing bird shrimp and fried po’ boy"
+                        },
+                        {
+                            "0": "LULA CAFE",
+                            "1": "ham and raclette panino"
+                        },
+                        {
+                            "0": "RICOBENE’S",
+                            "1": "breaded steak"
+                        },
+                        {
+                            "0": "FROG N SNAIL",
+                            "1": "the hawkeye"
+                        },
+                        {
+                            "0": "CROSBY’S KITCHEN",
+                            "1": "chicken dip"
+                        },
+                        {
+                            "0": "LONGMAN & EAGLE",
+                            "1": "wild boar sloppy joe"
+                        },
+                        {
+                            "0": "BARI",
+                            "1": "meatball sub"
+                        },
+                        {
+                            "0": "MANNY’S",
+                            "1": "corned beef"
+                        },
+                        {
+                            "0": "EGGY’S",
+                            "1": "turkey club"
+                        },
+                        {
+                            "0": "OLD JERUSALEM",
+                            "1": "falafel"
+                        },
+                        {
+                            "0": "MINDY’S HOTCHOCOLATE",
+                            "1": "crab cake"
+                        },
+                        {
+                            "0": "OLGA’S DELICATESSEN",
+                            "1": "chicken schnitzel"
+                        },
+                        {
+                            "0": "DAWALI MEDITERRANEAN KITCHEN",
+                            "1": "shawarma"
+                        },
+                        {
+                            "0": "BIG JONES",
+                            "1": "toasted pimiento cheese"
+                        },
+                        {
+                            "0": "LA PANE",
+                            "1": "vegetarian panino"
+                        },
+                        {
+                            "0": "PASTORAL",
+                            "1": "cali chèvre"
+                        },
+                        {
+                            "0": "MAX’S DELI",
+                            "1": "pastrami"
+                        },
+                        {
+                            "0": "LUCKY’S SANDWICH CO.",
+                            "1": "the fredo"
+                        },
+                        {
+                            "0": "CITY PROVISIONS",
+                            "1": "smoked ham"
+                        },
+                        {
+                            "0": "PAPA’S CACHE SABROSO",
+                            "1": "jibarito"
+                        },
+                        {
+                            "0": "BAVETTE’S BAR & BOEUF",
+                            "1": "shaved prime rib"
+                        },
+                        {
+                            "0": "HANNAH’S BRETZEL",
+                            "1": "serrano ham and manchego cheese"
+                        },
+                        {
+                            "0": "LA FOURNETTE",
+                            "1": "tuna salad"
+                        },
+                        {
+                            "0": "PARAMOUNT ROOM",
+                            "1": "paramount reuben"
+                        },
+                        {
+                            "0": "MELT SANDWICH SHOPPE",
+                            "1": "the istanbul"
+                        },
+                        {
+                            "0": "FLORIOLE CAFE & BAKERY",
+                            "1": "b.a.d."
+                        },
+                        {
+                            "0": "FIRST SLICE PIE CAFÉ",
+                            "1": "duck confit and mozzarella"
+                        },
+                        {
+                            "0": "TROQUET",
+                            "1": "croque monsieur"
+                        },
+                        {
+                            "0": "GRAHAMWICH",
+                            "1": "green garbanzo"
+                        },
+                        {
+                            "0": "SAIGON SISTERS",
+                            "1": "the hen house"
+                        },
+                        {
+                            "0": "ROSALIA’S DELI",
+                            "1": "tuscan chicken"
+                        },
+                        {
+                            "0": "Z&H MARKETCAFE",
+                            "1": "the marty "
+                        },
+                        {
+                            "0": "MARKET HOUSE ON THE SQUARE",
+                            "1": "whitefish"
+                        },
+                        {
+                            "0": "ELAINE’S COFFEE CALL",
+                            "1": "oat bread, pecan butter, and fruit jam"
+                        },
+                        {
+                            "0": "MARION STREET CHEESE MARKET",
+                            "1": "cauliflower melt"
+                        },
+                        {
+                            "0": "CAFECITO",
+                            "1": "cubana"
+                        },
+                        {
+                            "0": "CHICKPEA",
+                            "1": "kufta"
+                        },
+                        {
+                            "0": "THE GODDESS AND GROCER",
+                            "1": "debbie’s egg salad"
+                        },
+                        {
+                            "0": "ZENWICH",
+                            "1": "beef curry"
+                        },
+                        {
+                            "0": "TONI PATISSERIE",
+                            "1": "le végétarien"
+                        },
+                        {
+                            "0": "PHOEBE’S BAKERY",
+                            "1": "the gatsby"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ucase(cafe)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "lcase(menu)",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 50 records retrieved in 6.659ms"
+                    },
+                    "totalRowCount": 50,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select ucase(cafe), lcase(menu) from sandwich",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 33,
+                "end": 33,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "a46caef5-5e66-465e-d4f2-f174432de081"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 52
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "a46caef5-5e66-465e-d4f2-f174432de081",
+                    "rows": [
+                        {
+                            "0": 10,
+                            "1": "Grilled Laughing Bird Shrimp and Fried Po’ Boy"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ranking",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "menu",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 9.503ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select ranking, menu from sandwich where ranking=10",
+                    "updatable": false,
+                    "fullTableName": "sandwich"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 34,
+                "end": 34,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "76f82290-4dec-4d0f-d4d5-a1f9c57a0fa2"
+                    ]
+                },
+                "currentHeight": 107.15625762939453,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 70
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "76f82290-4dec-4d0f-d4d5-a1f9c57a0fa2",
+                    "rows": [
+                        {
+                            "0": 10,
+                            "1": "Grilled Laughing Bird Shrimp and Fried Po’ Boy",
+                            "2": "Boy"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ranking",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "menu",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "mid(menu, -3, 3)",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 6.585ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select ranking, menu, mid(menu, -3, 3) from sandwich where ranking=10",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 35,
+                "end": 35,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "f9fcc384-7885-4d9c-b04d-c46c7c436d0b"
+                    ]
+                },
+                "currentHeight": 107.15625,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 39
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 39,
+                            "length": 0
+                        },
+                        "contentStart": 38,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "f9fcc384-7885-4d9c-b04d-c46c7c436d0b",
+                    "rows": [
+                        {
+                            "0": "14.4000"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "avg(length(menu))",
+                            "field": "0",
+                            "dataType": {
+                                "type": 10,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 65,
+                                "numericScale": 30,
+                                "parameterFormatType": "TwoOrOneOrZero",
+                                "synonyms": [
+                                    "FIXED",
+                                    "NUMERIC",
+                                    "DEC"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 7.019ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select avg(length(menu)) from sandwich",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 36,
+                "end": 36,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "cd9ca327-a3d7-4e6d-eefb-2682337d5918"
+                    ]
+                },
+                "currentHeight": 107.15625,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 39
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "cd9ca327-a3d7-4e6d-eefb-2682337d5918",
+                    "rows": [
+                        {
+                            "0": "720"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "sum(length(menu))",
+                            "field": "0",
+                            "dataType": {
+                                "type": 10,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 65,
+                                "numericScale": 30,
+                                "parameterFormatType": "TwoOrOneOrZero",
+                                "synonyms": [
+                                    "FIXED",
+                                    "NUMERIC",
+                                    "DEC"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 8.741ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select sum(length(menu)) from sandwich",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 37,
+                "end": 37,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "75f9f472-bde3-4496-9100-f56eed484fcb"
+                    ]
+                },
+                "currentHeight": 351.984375,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 40
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "75f9f472-bde3-4496-9100-f56eed484fcb",
+                    "rows": [
+                        {
+                            "0": 1484,
+                            "1": 1500
+                        },
+                        {
+                            "0": 1485,
+                            "1": 1500
+                        },
+                        {
+                            "0": 1498,
+                            "1": 1500
+                        },
+                        {
+                            "0": 1498,
+                            "1": 1500
+                        },
+                        {
+                            "0": 1509,
+                            "1": 1500
+                        },
+                        {
+                            "0": 1598,
+                            "1": 1600
+                        },
+                        {
+                            "0": 1635,
+                            "1": 1600
+                        },
+                        {
+                            "0": 2160,
+                            "1": 2200
+                        },
+                        {
+                            "0": 1498,
+                            "1": 1500
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "가격",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "round(가격, -2)",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 9 records retrieved in 5.192ms"
+                    },
+                    "totalRowCount": 9,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select 가격, round(가격, -2) from oil_price",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 38,
+                "end": 38,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "b0f60c1f-fdb9-43aa-fecf-9a05525dc087"
+                    ]
+                },
+                "currentHeight": 109.15625,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 68
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "4b99ad7c-a612-4e66-ac41-5cffd98dedb6",
+                    "resultId": "b0f60c1f-fdb9-43aa-fecf-9a05525dc087",
+                    "rows": [
+                        {
+                            "0": "2,160",
+                            "1": 2160
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "format(가격, 0)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "가격",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 4.55ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select format(가격, 0), 가격 from oil_price where round(가격, -2) >= 2000",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 39,
+                "end": 39,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}

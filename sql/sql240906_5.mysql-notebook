@@ -1,0 +1,3594 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "\\about\nuse amrbase;\nCREATE TABLE refueling\n(\n  ID int,\n  이름 varchar(16),\n  주유소 varchar(16),\n  주유일 date,\n  금액 int\n);\nDESC refueling;\nINSERT INTO refueling VALUES (1, '유재석', '뉴서울(강남)', '2021-10-01', 50000);\nINSERT INTO refueling VALUES (2, '이미주', '뉴서울(강남)', '2021-10-01', 120000);\nINSERT INTO refueling VALUES (3, '이효리', '제주주유소', '2021-10-03', 80000);\nINSERT INTO refueling VALUES (4, '아이유', '타이거주유소', '2021-10-03', 80000);\nINSERT INTO refueling VALUES (5, '유재석', '뉴서울(강남)', '2021-10-03', 60000);\nINSERT INTO refueling VALUES (6, '강동원', '타이거주유소', '2021-10-10', 50000);\nINSERT INTO refueling VALUES (7, '유재석', '쌍문주유소', '2021-10-10', 60000);\nINSERT INTO refueling VALUES (8, '이미주', '타이거주유소', '2021-10-10', 50000);\nINSERT INTO refueling VALUES (9, '아이유', '뉴서울(강남)', '2021-10-14', 150000);\nINSERT INTO refueling VALUES (10, '아이유', '뉴서울(강남)', '2021-10-14', 120000);\nINSERT INTO refueling VALUES (11, '유재석', '쌍문주유소', '2021-10-14', 80000);\nINSERT INTO refueling VALUES (12, '유재석', '뉴서울(강남)', '2021-10-16', 110000);\nINSERT INTO refueling VALUES (13, '이미주', '타이거주유소', '2021-10-16', 50000);\nINSERT INTO refueling VALUES (14, '이효리', '제주주유소', '2021-10-20', 80000);\nINSERT INTO refueling VALUES (15, '이상순', '제주주유소', '2021-10-20', 50000);\nINSERT INTO refueling VALUES (16, '이상순', '타이거주유소', '2021-10-20', 140000);\nselect * from refueling;\nselect * from celeb\ninner join refueling\non celeb.name = refueling.이름\nORDER BY age;\nselect * from oil_price\nleft join refueling\non oil_price.상호 = refueling.주유소\nORDER BY oil_price.가격;\nselect * from oil_price\nright join refueling\non oil_price.상호 = refueling.주유소\nORDER BY refueling.이름, oil_price.상호 DESC;\nselect * from celeb\nLEFT join refueling\non celeb.name = refueling.이름\nUNION\nselect * from celeb\nright join  refueling \non celeb.name = refueling.이름\n\nselect DISTINCT agency, r.주유소 from celeb c, refueling r\nwhere c.name=r.이름\norder by c.agency;\nselect c.name, r.금액 , job_title from celeb c, refueling r\nwhere name=이름 and (JOB_TITLE like '%가수%' or JOB_TITLE like '%텔런트%')\norder by 금액 DESC;\nselect c.name, r.금액 from celeb c, refueling r\nwhere name=이름 and (주유소 like '%강남%')\norder by 금액;\nselect c.name, r.금액, r.주유일 from celeb c, refueling r, oil_price o\nwhere name=이름 and (\n    (not 상호 like '%주유소%') and 셀프='N'\n)\norder by 주유일 DESC;\nselect * from oil_price;\n\n",
+    "options": {
+        "tabSize": 4,
+        "indentSize": 4,
+        "insertSpaces": true,
+        "defaultEOL": "LF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 63,
+                    "column": 25
+                },
+                "position": {
+                    "lineNumber": 63,
+                    "column": 25
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 58,
+                "column": 1
+            },
+            "firstPositionDeltaTop": 37
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "content": "Welcome to the MySQL Shell - DB Notebook.\n\nPress Ctrl+Enter to execute the code block.\n\nExecute \\sql to switch to SQL, \\js to JavaScript and \\ts to TypeScript mode.\nExecute \\help or \\? for help;",
+                            "language": "ansi"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 2,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "5122ba64-67bc-4d2f-adc3-f0bc1a3aa6b0",
+                            "content": "OK, 0 records retrieved in 0.354ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 3,
+                "end": 10,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "981dd182-c8e9-4f10-fc43-3096a26dacad",
+                            "content": "OK, 0 records retrieved in 33.109ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 95
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 11,
+                "end": 11,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "73696521-f42d-4be5-8276-c9620ff5f760"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 15
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9fcfd36b-514b-48b4-a297-3ccdef327a3c",
+                    "resultId": "73696521-f42d-4be5-8276-c9620ff5f760",
+                    "rows": [
+                        {
+                            "0": "ID",
+                            "1": "int",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "이름",
+                            "1": "varchar(16)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "주유소",
+                            "1": "varchar(16)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "주유일",
+                            "1": "date",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "금액",
+                            "1": "int",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Field",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Type",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Null",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Key",
+                            "field": "3",
+                            "dataType": {
+                                "type": 43,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Default",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Extra",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 1.364ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "DESC refueling",
+                    "updatable": false
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 12,
+                "end": 27,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "cf4f302e-0070-4790-b1d2-1125d7b37245",
+                            "content": "OK, 1 row affected in 7.665ms"
+                        },
+                        {
+                            "type": 4,
+                            "index": 1,
+                            "resultId": "22c36e73-9ecf-4971-96bb-02f533326ad1",
+                            "content": "OK, 1 row affected in 5.332ms"
+                        },
+                        {
+                            "type": 4,
+                            "index": 2,
+                            "resultId": "1ceec200-9c2e-482e-bc09-3d247c3271c2",
+                            "content": "OK, 1 row affected in 7.505ms"
+                        },
+                        {
+                            "type": 4,
+                            "index": 3,
+                            "resultId": "8af1d61d-0840-483e-84be-3eeaf530ce0e",
+                            "content": "OK, 1 row affected in 6.191ms"
+                        },
+                        {
+                            "type": 4,
+                            "index": 4,
+                            "resultId": "d5754300-e06d-4002-fa6c-b59741beca58",
+                            "content": "OK, 1 row affected in 8.89ms"
+                        },
+                        {
+                            "type": 4,
+                            "index": 5,
+                            "resultId": "74db427a-e0fd-4eec-d5d9-f58ea9d2fbc4",
+                            "content": "OK, 1 row affected in 9.549ms"
+                        },
+                        {
+                            "type": 4,
+                            "index": 6,
+                            "resultId": "e02f4184-5eea-4763-f8f7-97f85dd98121",
+                            "content": "OK, 1 row affected in 6.62ms"
+                        },
+                        {
+                            "type": 4,
+                            "index": 7,
+                            "resultId": "d625bb92-fc03-4dad-df41-4584146b7b43",
+                            "content": "OK, 1 row affected in 6.471ms"
+                        },
+                        {
+                            "type": 4,
+                            "index": 8,
+                            "resultId": "9969540f-c6f6-4b43-b9ea-7e4aabceae66",
+                            "content": "OK, 1 row affected in 28.062ms"
+                        },
+                        {
+                            "type": 4,
+                            "index": 9,
+                            "resultId": "29747671-c2ee-4567-aff0-d3b3d65ed91f",
+                            "content": "OK, 1 row affected in 8.37ms"
+                        },
+                        {
+                            "type": 4,
+                            "index": 10,
+                            "resultId": "c425b75c-76b8-4b60-8e9f-448ad87c6a59",
+                            "content": "OK, 1 row affected in 6.967ms"
+                        },
+                        {
+                            "type": 4,
+                            "index": 11,
+                            "resultId": "b533b8c3-7d18-40f2-da2b-351d406c9edc",
+                            "content": "OK, 1 row affected in 6.683ms"
+                        },
+                        {
+                            "type": 4,
+                            "index": 12,
+                            "resultId": "1a37b30f-88fd-4fd9-d261-c5cdff972787",
+                            "content": "OK, 1 row affected in 6.484ms"
+                        },
+                        {
+                            "type": 4,
+                            "index": 13,
+                            "resultId": "5e1f17b6-e264-44d5-9233-d7b4cc263020",
+                            "content": "OK, 1 row affected in 6.222ms"
+                        },
+                        {
+                            "type": 4,
+                            "index": 14,
+                            "resultId": "15e995fa-f192-4e58-e96a-f985537002d7",
+                            "content": "OK, 1 row affected in 4.781ms"
+                        },
+                        {
+                            "type": 4,
+                            "index": 15,
+                            "resultId": "9b5ce1f6-608e-4b34-dffe-d38603840538",
+                            "content": "OK, 1 row affected in 4.576ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 72
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 72,
+                            "length": 74
+                        },
+                        "contentStart": 73,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 146,
+                            "length": 71
+                        },
+                        "contentStart": 147,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 217,
+                            "length": 72
+                        },
+                        "contentStart": 218,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 289,
+                            "length": 73
+                        },
+                        "contentStart": 290,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 362,
+                            "length": 72
+                        },
+                        "contentStart": 363,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 434,
+                            "length": 71
+                        },
+                        "contentStart": 435,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 505,
+                            "length": 72
+                        },
+                        "contentStart": 506,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 577,
+                            "length": 74
+                        },
+                        "contentStart": 578,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 651,
+                            "length": 75
+                        },
+                        "contentStart": 652,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 726,
+                            "length": 72
+                        },
+                        "contentStart": 727,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 798,
+                            "length": 75
+                        },
+                        "contentStart": 799,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 873,
+                            "length": 73
+                        },
+                        "contentStart": 874,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 946,
+                            "length": 72
+                        },
+                        "contentStart": 947,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 1018,
+                            "length": 72
+                        },
+                        "contentStart": 1019,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 1090,
+                            "length": 74
+                        },
+                        "contentStart": 1091,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 28,
+                "end": 28,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "9ac00277-184f-4ba2-d9bd-891e3ecf11f8"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 24
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9fcfd36b-514b-48b4-a297-3ccdef327a3c",
+                    "resultId": "9ac00277-184f-4ba2-d9bd-891e3ecf11f8",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "유재석",
+                            "2": "뉴서울(강남)",
+                            "3": "2021-10-01",
+                            "4": 50000
+                        },
+                        {
+                            "0": 2,
+                            "1": "이미주",
+                            "2": "뉴서울(강남)",
+                            "3": "2021-10-01",
+                            "4": 120000
+                        },
+                        {
+                            "0": 3,
+                            "1": "이효리",
+                            "2": "제주주유소",
+                            "3": "2021-10-03",
+                            "4": 80000
+                        },
+                        {
+                            "0": 4,
+                            "1": "아이유",
+                            "2": "타이거주유소",
+                            "3": "2021-10-03",
+                            "4": 80000
+                        },
+                        {
+                            "0": 5,
+                            "1": "유재석",
+                            "2": "뉴서울(강남)",
+                            "3": "2021-10-03",
+                            "4": 60000
+                        },
+                        {
+                            "0": 6,
+                            "1": "강동원",
+                            "2": "타이거주유소",
+                            "3": "2021-10-10",
+                            "4": 50000
+                        },
+                        {
+                            "0": 7,
+                            "1": "유재석",
+                            "2": "쌍문주유소",
+                            "3": "2021-10-10",
+                            "4": 60000
+                        },
+                        {
+                            "0": 8,
+                            "1": "이미주",
+                            "2": "타이거주유소",
+                            "3": "2021-10-10",
+                            "4": 50000
+                        },
+                        {
+                            "0": 9,
+                            "1": "아이유",
+                            "2": "뉴서울(강남)",
+                            "3": "2021-10-14",
+                            "4": 150000
+                        },
+                        {
+                            "0": 10,
+                            "1": "아이유",
+                            "2": "뉴서울(강남)",
+                            "3": "2021-10-14",
+                            "4": 120000
+                        },
+                        {
+                            "0": 11,
+                            "1": "유재석",
+                            "2": "쌍문주유소",
+                            "3": "2021-10-14",
+                            "4": 80000
+                        },
+                        {
+                            "0": 12,
+                            "1": "유재석",
+                            "2": "뉴서울(강남)",
+                            "3": "2021-10-16",
+                            "4": 110000
+                        },
+                        {
+                            "0": 13,
+                            "1": "이미주",
+                            "2": "타이거주유소",
+                            "3": "2021-10-16",
+                            "4": 50000
+                        },
+                        {
+                            "0": 14,
+                            "1": "이효리",
+                            "2": "제주주유소",
+                            "3": "2021-10-20",
+                            "4": 80000
+                        },
+                        {
+                            "0": 15,
+                            "1": "이상순",
+                            "2": "제주주유소",
+                            "3": "2021-10-20",
+                            "4": 50000
+                        },
+                        {
+                            "0": 16,
+                            "1": "이상순",
+                            "2": "타이거주유소",
+                            "3": "2021-10-20",
+                            "4": 140000
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "이름",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주유소",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주유일",
+                            "field": "3",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "금액",
+                            "field": "4",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 16 records retrieved in 1.363ms"
+                    },
+                    "totalRowCount": 16,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from refueling",
+                    "updatable": false,
+                    "fullTableName": "refueling"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 29,
+                "end": 32,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "4a936dcc-41c0-48e6-fd4e-781bd8170085"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 83
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9fcfd36b-514b-48b4-a297-3ccdef327a3c",
+                    "resultId": "4a936dcc-41c0-48e6-fd4e-781bd8170085",
+                    "rows": [
+                        {
+                            "0": 2,
+                            "1": "이미주",
+                            "2": "1994-09-23",
+                            "3": 28,
+                            "4": "F",
+                            "5": "가수",
+                            "6": "울림엔터테이먼트",
+                            "7": 2,
+                            "8": "이미주",
+                            "9": "뉴서울(강남)",
+                            "10": "2021-10-01",
+                            "11": 120000
+                        },
+                        {
+                            "0": 2,
+                            "1": "이미주",
+                            "2": "1994-09-23",
+                            "3": 28,
+                            "4": "F",
+                            "5": "가수",
+                            "6": "울림엔터테이먼트",
+                            "7": 8,
+                            "8": "이미주",
+                            "9": "타이거주유소",
+                            "10": "2021-10-10",
+                            "11": 50000
+                        },
+                        {
+                            "0": 2,
+                            "1": "이미주",
+                            "2": "1994-09-23",
+                            "3": 28,
+                            "4": "F",
+                            "5": "가수",
+                            "6": "울림엔터테이먼트",
+                            "7": 13,
+                            "8": "이미주",
+                            "9": "타이거주유소",
+                            "10": "2021-10-16",
+                            "11": 50000
+                        },
+                        {
+                            "0": 1,
+                            "1": "아이유",
+                            "2": "1993-05-16",
+                            "3": 29,
+                            "4": "F",
+                            "5": "가수, 텔런트",
+                            "6": "EDAM엔터테이먼트",
+                            "7": 4,
+                            "8": "아이유",
+                            "9": "타이거주유소",
+                            "10": "2021-10-03",
+                            "11": 80000
+                        },
+                        {
+                            "0": 1,
+                            "1": "아이유",
+                            "2": "1993-05-16",
+                            "3": 29,
+                            "4": "F",
+                            "5": "가수, 텔런트",
+                            "6": "EDAM엔터테이먼트",
+                            "7": 9,
+                            "8": "아이유",
+                            "9": "뉴서울(강남)",
+                            "10": "2021-10-14",
+                            "11": 150000
+                        },
+                        {
+                            "0": 1,
+                            "1": "아이유",
+                            "2": "1993-05-16",
+                            "3": 29,
+                            "4": "F",
+                            "5": "가수, 텔런트",
+                            "6": "EDAM엔터테이먼트",
+                            "7": 10,
+                            "8": "아이유",
+                            "9": "뉴서울(강남)",
+                            "10": "2021-10-14",
+                            "11": 120000
+                        },
+                        {
+                            "0": 4,
+                            "1": "강동원",
+                            "2": "1981-01-18",
+                            "3": 41,
+                            "4": "M",
+                            "5": "영화배우, 텔런트",
+                            "6": "YG엔터테이먼트",
+                            "7": 6,
+                            "8": "강동원",
+                            "9": "타이거주유소",
+                            "10": "2021-10-10",
+                            "11": 50000
+                        },
+                        {
+                            "0": 5,
+                            "1": "유재석",
+                            "2": "1972-08-14",
+                            "3": 50,
+                            "4": "M",
+                            "5": "MC, 개그맨",
+                            "6": "안테나",
+                            "7": 1,
+                            "8": "유재석",
+                            "9": "뉴서울(강남)",
+                            "10": "2021-10-01",
+                            "11": 50000
+                        },
+                        {
+                            "0": 5,
+                            "1": "유재석",
+                            "2": "1972-08-14",
+                            "3": 50,
+                            "4": "M",
+                            "5": "MC, 개그맨",
+                            "6": "안테나",
+                            "7": 5,
+                            "8": "유재석",
+                            "9": "뉴서울(강남)",
+                            "10": "2021-10-03",
+                            "11": 60000
+                        },
+                        {
+                            "0": 5,
+                            "1": "유재석",
+                            "2": "1972-08-14",
+                            "3": 50,
+                            "4": "M",
+                            "5": "MC, 개그맨",
+                            "6": "안테나",
+                            "7": 7,
+                            "8": "유재석",
+                            "9": "쌍문주유소",
+                            "10": "2021-10-10",
+                            "11": 60000
+                        },
+                        {
+                            "0": 5,
+                            "1": "유재석",
+                            "2": "1972-08-14",
+                            "3": 50,
+                            "4": "M",
+                            "5": "MC, 개그맨",
+                            "6": "안테나",
+                            "7": 11,
+                            "8": "유재석",
+                            "9": "쌍문주유소",
+                            "10": "2021-10-14",
+                            "11": 80000
+                        },
+                        {
+                            "0": 5,
+                            "1": "유재석",
+                            "2": "1972-08-14",
+                            "3": 50,
+                            "4": "M",
+                            "5": "MC, 개그맨",
+                            "6": "안테나",
+                            "7": 12,
+                            "8": "유재석",
+                            "9": "뉴서울(강남)",
+                            "10": "2021-10-16",
+                            "11": 110000
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "NAME",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "BIRTHDAY",
+                            "field": "2",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "AGE",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "SEX",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "JOB_TITLE",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "AGENCY",
+                            "field": "6",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "ID",
+                            "field": "7",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "이름",
+                            "field": "8",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주유소",
+                            "field": "9",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주유일",
+                            "field": "10",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "금액",
+                            "field": "11",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 12 records retrieved in 0.673ms"
+                    },
+                    "totalRowCount": 12,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from celeb\ninner join refueling\non celeb.name = refueling.이름\nORDER BY age",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 33,
+                "end": 36,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "b1f77c1a-c903-4943-bd00-5745c4b1e365"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 98
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9fcfd36b-514b-48b4-a297-3ccdef327a3c",
+                    "resultId": "b1f77c1a-c903-4943-bd00-5745c4b1e365",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "타이거주유소",
+                            "2": "서울 은평구 수색로 188(중산동)",
+                            "3": 1484,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "은평구",
+                            "7": 13,
+                            "8": "이미주",
+                            "9": "타이거주유소",
+                            "10": "2021-10-16",
+                            "11": 50000
+                        },
+                        {
+                            "0": 1,
+                            "1": "타이거주유소",
+                            "2": "서울 은평구 수색로 188(중산동)",
+                            "3": 1484,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "은평구",
+                            "7": 8,
+                            "8": "이미주",
+                            "9": "타이거주유소",
+                            "10": "2021-10-10",
+                            "11": 50000
+                        },
+                        {
+                            "0": 1,
+                            "1": "타이거주유소",
+                            "2": "서울 은평구 수색로 188(중산동)",
+                            "3": 1484,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "은평구",
+                            "7": 6,
+                            "8": "강동원",
+                            "9": "타이거주유소",
+                            "10": "2021-10-10",
+                            "11": 50000
+                        },
+                        {
+                            "0": 1,
+                            "1": "타이거주유소",
+                            "2": "서울 은평구 수색로 188(중산동)",
+                            "3": 1484,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "은평구",
+                            "7": 4,
+                            "8": "아이유",
+                            "9": "타이거주유소",
+                            "10": "2021-10-03",
+                            "11": 80000
+                        },
+                        {
+                            "0": 1,
+                            "1": "타이거주유소",
+                            "2": "서울 은평구 수색로 188(중산동)",
+                            "3": 1484,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "은평구",
+                            "7": 16,
+                            "8": "이상순",
+                            "9": "타이거주유소",
+                            "10": "2021-10-20",
+                            "11": 140000
+                        },
+                        {
+                            "0": 2,
+                            "1": "(주)명연에너지",
+                            "2": "서울 은평구 수색로 236(수색동)",
+                            "3": 1485,
+                            "4": "Y",
+                            "5": "현대오일뱅크",
+                            "6": "은평구",
+                            "7": null,
+                            "8": null,
+                            "9": null,
+                            "10": null,
+                            "11": null
+                        },
+                        {
+                            "0": 9,
+                            "1": "신길주유소",
+                            "2": "서울특별시 영등포구 신길로 74(신길동)",
+                            "3": 1498,
+                            "4": "Y",
+                            "5": "GS칼텍스",
+                            "6": "영등포구",
+                            "7": null,
+                            "8": null,
+                            "9": null,
+                            "10": null,
+                            "11": null
+                        },
+                        {
+                            "0": 4,
+                            "1": "(주)MS주유소",
+                            "2": "서울특별시 영등포구 대림로 230(대림동)",
+                            "3": 1498,
+                            "4": "N",
+                            "5": "현대오일뱅크",
+                            "6": "영등포구",
+                            "7": null,
+                            "8": null,
+                            "9": null,
+                            "10": null,
+                            "11": null
+                        },
+                        {
+                            "0": 3,
+                            "1": "성락주유소",
+                            "2": "서울 영등포구 가마산로 414(신길동)",
+                            "3": 1498,
+                            "4": "Y",
+                            "5": "S-OIL",
+                            "6": "영등포구",
+                            "7": null,
+                            "8": null,
+                            "9": null,
+                            "10": null,
+                            "11": null
+                        },
+                        {
+                            "0": 5,
+                            "1": "쌍문주유소",
+                            "2": "서울특별시 도봉구 도봉로 547(쌍문동)",
+                            "3": 1509,
+                            "4": "Y",
+                            "5": "S-OIL",
+                            "6": "도봉구",
+                            "7": 11,
+                            "8": "유재석",
+                            "9": "쌍문주유소",
+                            "10": "2021-10-14",
+                            "11": 80000
+                        },
+                        {
+                            "0": 5,
+                            "1": "쌍문주유소",
+                            "2": "서울특별시 도봉구 도봉로 547(쌍문동)",
+                            "3": 1509,
+                            "4": "Y",
+                            "5": "S-OIL",
+                            "6": "도봉구",
+                            "7": 7,
+                            "8": "유재석",
+                            "9": "쌍문주유소",
+                            "10": "2021-10-10",
+                            "11": 60000
+                        },
+                        {
+                            "0": 6,
+                            "1": "21세기주유소",
+                            "2": "서울 동작구 시흥대로 616(신대방동)",
+                            "3": 1598,
+                            "4": "Y",
+                            "5": "SK에너지",
+                            "6": "동작구",
+                            "7": null,
+                            "8": null,
+                            "9": null,
+                            "10": null,
+                            "11": null
+                        },
+                        {
+                            "0": 7,
+                            "1": "살피재주유소",
+                            "2": "서울 동작구 상도로 334(상도동)",
+                            "3": 1635,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "동작구",
+                            "7": null,
+                            "8": null,
+                            "9": null,
+                            "10": null,
+                            "11": null
+                        },
+                        {
+                            "0": 8,
+                            "1": "뉴서울(강남)",
+                            "2": "서울 강남구 언주로 716(논현동)",
+                            "3": 2160,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "강남구",
+                            "7": 12,
+                            "8": "유재석",
+                            "9": "뉴서울(강남)",
+                            "10": "2021-10-16",
+                            "11": 110000
+                        },
+                        {
+                            "0": 8,
+                            "1": "뉴서울(강남)",
+                            "2": "서울 강남구 언주로 716(논현동)",
+                            "3": 2160,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "강남구",
+                            "7": 10,
+                            "8": "아이유",
+                            "9": "뉴서울(강남)",
+                            "10": "2021-10-14",
+                            "11": 120000
+                        },
+                        {
+                            "0": 8,
+                            "1": "뉴서울(강남)",
+                            "2": "서울 강남구 언주로 716(논현동)",
+                            "3": 2160,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "강남구",
+                            "7": 9,
+                            "8": "아이유",
+                            "9": "뉴서울(강남)",
+                            "10": "2021-10-14",
+                            "11": 150000
+                        },
+                        {
+                            "0": 8,
+                            "1": "뉴서울(강남)",
+                            "2": "서울 강남구 언주로 716(논현동)",
+                            "3": 2160,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "강남구",
+                            "7": 5,
+                            "8": "유재석",
+                            "9": "뉴서울(강남)",
+                            "10": "2021-10-03",
+                            "11": 60000
+                        },
+                        {
+                            "0": 8,
+                            "1": "뉴서울(강남)",
+                            "2": "서울 강남구 언주로 716(논현동)",
+                            "3": 2160,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "강남구",
+                            "7": 2,
+                            "8": "이미주",
+                            "9": "뉴서울(강남)",
+                            "10": "2021-10-01",
+                            "11": 120000
+                        },
+                        {
+                            "0": 8,
+                            "1": "뉴서울(강남)",
+                            "2": "서울 강남구 언주로 716(논현동)",
+                            "3": 2160,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "강남구",
+                            "7": 1,
+                            "8": "유재석",
+                            "9": "뉴서울(강남)",
+                            "10": "2021-10-01",
+                            "11": 50000
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상호",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주소",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "가격",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "셀프",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상표",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "구",
+                            "field": "6",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "ID",
+                            "field": "7",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "이름",
+                            "field": "8",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주유소",
+                            "field": "9",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주유일",
+                            "field": "10",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "금액",
+                            "field": "11",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 19 records retrieved in 0.617ms"
+                    },
+                    "totalRowCount": 19,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from oil_price\nleft join refueling\non oil_price.상호 = refueling.주유소\nORDER BY oil_price.가격",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 37,
+                "end": 40,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "b4eba933-7611-487f-d9ef-deb63ca98e01"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 118
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9fcfd36b-514b-48b4-a297-3ccdef327a3c",
+                    "resultId": "b4eba933-7611-487f-d9ef-deb63ca98e01",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "타이거주유소",
+                            "2": "서울 은평구 수색로 188(중산동)",
+                            "3": 1484,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "은평구",
+                            "7": 6,
+                            "8": "강동원",
+                            "9": "타이거주유소",
+                            "10": "2021-10-10",
+                            "11": 50000
+                        },
+                        {
+                            "0": 1,
+                            "1": "타이거주유소",
+                            "2": "서울 은평구 수색로 188(중산동)",
+                            "3": 1484,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "은평구",
+                            "7": 4,
+                            "8": "아이유",
+                            "9": "타이거주유소",
+                            "10": "2021-10-03",
+                            "11": 80000
+                        },
+                        {
+                            "0": 8,
+                            "1": "뉴서울(강남)",
+                            "2": "서울 강남구 언주로 716(논현동)",
+                            "3": 2160,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "강남구",
+                            "7": 9,
+                            "8": "아이유",
+                            "9": "뉴서울(강남)",
+                            "10": "2021-10-14",
+                            "11": 150000
+                        },
+                        {
+                            "0": 8,
+                            "1": "뉴서울(강남)",
+                            "2": "서울 강남구 언주로 716(논현동)",
+                            "3": 2160,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "강남구",
+                            "7": 10,
+                            "8": "아이유",
+                            "9": "뉴서울(강남)",
+                            "10": "2021-10-14",
+                            "11": 120000
+                        },
+                        {
+                            "0": 5,
+                            "1": "쌍문주유소",
+                            "2": "서울특별시 도봉구 도봉로 547(쌍문동)",
+                            "3": 1509,
+                            "4": "Y",
+                            "5": "S-OIL",
+                            "6": "도봉구",
+                            "7": 7,
+                            "8": "유재석",
+                            "9": "쌍문주유소",
+                            "10": "2021-10-10",
+                            "11": 60000
+                        },
+                        {
+                            "0": 5,
+                            "1": "쌍문주유소",
+                            "2": "서울특별시 도봉구 도봉로 547(쌍문동)",
+                            "3": 1509,
+                            "4": "Y",
+                            "5": "S-OIL",
+                            "6": "도봉구",
+                            "7": 11,
+                            "8": "유재석",
+                            "9": "쌍문주유소",
+                            "10": "2021-10-14",
+                            "11": 80000
+                        },
+                        {
+                            "0": 8,
+                            "1": "뉴서울(강남)",
+                            "2": "서울 강남구 언주로 716(논현동)",
+                            "3": 2160,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "강남구",
+                            "7": 1,
+                            "8": "유재석",
+                            "9": "뉴서울(강남)",
+                            "10": "2021-10-01",
+                            "11": 50000
+                        },
+                        {
+                            "0": 8,
+                            "1": "뉴서울(강남)",
+                            "2": "서울 강남구 언주로 716(논현동)",
+                            "3": 2160,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "강남구",
+                            "7": 5,
+                            "8": "유재석",
+                            "9": "뉴서울(강남)",
+                            "10": "2021-10-03",
+                            "11": 60000
+                        },
+                        {
+                            "0": 8,
+                            "1": "뉴서울(강남)",
+                            "2": "서울 강남구 언주로 716(논현동)",
+                            "3": 2160,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "강남구",
+                            "7": 12,
+                            "8": "유재석",
+                            "9": "뉴서울(강남)",
+                            "10": "2021-10-16",
+                            "11": 110000
+                        },
+                        {
+                            "0": 1,
+                            "1": "타이거주유소",
+                            "2": "서울 은평구 수색로 188(중산동)",
+                            "3": 1484,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "은평구",
+                            "7": 8,
+                            "8": "이미주",
+                            "9": "타이거주유소",
+                            "10": "2021-10-10",
+                            "11": 50000
+                        },
+                        {
+                            "0": 1,
+                            "1": "타이거주유소",
+                            "2": "서울 은평구 수색로 188(중산동)",
+                            "3": 1484,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "은평구",
+                            "7": 13,
+                            "8": "이미주",
+                            "9": "타이거주유소",
+                            "10": "2021-10-16",
+                            "11": 50000
+                        },
+                        {
+                            "0": 8,
+                            "1": "뉴서울(강남)",
+                            "2": "서울 강남구 언주로 716(논현동)",
+                            "3": 2160,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "강남구",
+                            "7": 2,
+                            "8": "이미주",
+                            "9": "뉴서울(강남)",
+                            "10": "2021-10-01",
+                            "11": 120000
+                        },
+                        {
+                            "0": 1,
+                            "1": "타이거주유소",
+                            "2": "서울 은평구 수색로 188(중산동)",
+                            "3": 1484,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "은평구",
+                            "7": 16,
+                            "8": "이상순",
+                            "9": "타이거주유소",
+                            "10": "2021-10-20",
+                            "11": 140000
+                        },
+                        {
+                            "0": null,
+                            "1": null,
+                            "2": null,
+                            "3": null,
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": 15,
+                            "8": "이상순",
+                            "9": "제주주유소",
+                            "10": "2021-10-20",
+                            "11": 50000
+                        },
+                        {
+                            "0": null,
+                            "1": null,
+                            "2": null,
+                            "3": null,
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": 3,
+                            "8": "이효리",
+                            "9": "제주주유소",
+                            "10": "2021-10-03",
+                            "11": 80000
+                        },
+                        {
+                            "0": null,
+                            "1": null,
+                            "2": null,
+                            "3": null,
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": 14,
+                            "8": "이효리",
+                            "9": "제주주유소",
+                            "10": "2021-10-20",
+                            "11": 80000
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상호",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주소",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "가격",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "셀프",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상표",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "구",
+                            "field": "6",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "ID",
+                            "field": "7",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "이름",
+                            "field": "8",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주유소",
+                            "field": "9",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주유일",
+                            "field": "10",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "금액",
+                            "field": "11",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 16 records retrieved in 1.992ms"
+                    },
+                    "totalRowCount": 16,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from oil_price\nright join refueling\non oil_price.상호 = refueling.주유소\nORDER BY refueling.이름, oil_price.상호 DESC",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 41,
+                "end": 48,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "5a269aa9-be2d-4457-9a02-26d0f9e39b24"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 147
+                        },
+                        "contentStart": 0,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9fcfd36b-514b-48b4-a297-3ccdef327a3c",
+                    "resultId": "5a269aa9-be2d-4457-9a02-26d0f9e39b24",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "아이유",
+                            "2": "1993-05-16",
+                            "3": 29,
+                            "4": "F",
+                            "5": "가수, 텔런트",
+                            "6": "EDAM엔터테이먼트",
+                            "7": 10,
+                            "8": "아이유",
+                            "9": "뉴서울(강남)",
+                            "10": "2021-10-14",
+                            "11": 120000
+                        },
+                        {
+                            "0": 1,
+                            "1": "아이유",
+                            "2": "1993-05-16",
+                            "3": 29,
+                            "4": "F",
+                            "5": "가수, 텔런트",
+                            "6": "EDAM엔터테이먼트",
+                            "7": 9,
+                            "8": "아이유",
+                            "9": "뉴서울(강남)",
+                            "10": "2021-10-14",
+                            "11": 150000
+                        },
+                        {
+                            "0": 1,
+                            "1": "아이유",
+                            "2": "1993-05-16",
+                            "3": 29,
+                            "4": "F",
+                            "5": "가수, 텔런트",
+                            "6": "EDAM엔터테이먼트",
+                            "7": 4,
+                            "8": "아이유",
+                            "9": "타이거주유소",
+                            "10": "2021-10-03",
+                            "11": 80000
+                        },
+                        {
+                            "0": 2,
+                            "1": "이미주",
+                            "2": "1994-09-23",
+                            "3": 28,
+                            "4": "F",
+                            "5": "가수",
+                            "6": "울림엔터테이먼트",
+                            "7": 13,
+                            "8": "이미주",
+                            "9": "타이거주유소",
+                            "10": "2021-10-16",
+                            "11": 50000
+                        },
+                        {
+                            "0": 2,
+                            "1": "이미주",
+                            "2": "1994-09-23",
+                            "3": 28,
+                            "4": "F",
+                            "5": "가수",
+                            "6": "울림엔터테이먼트",
+                            "7": 8,
+                            "8": "이미주",
+                            "9": "타이거주유소",
+                            "10": "2021-10-10",
+                            "11": 50000
+                        },
+                        {
+                            "0": 2,
+                            "1": "이미주",
+                            "2": "1994-09-23",
+                            "3": 28,
+                            "4": "F",
+                            "5": "가수",
+                            "6": "울림엔터테이먼트",
+                            "7": 2,
+                            "8": "이미주",
+                            "9": "뉴서울(강남)",
+                            "10": "2021-10-01",
+                            "11": 120000
+                        },
+                        {
+                            "0": 3,
+                            "1": "송강",
+                            "2": "1994-04-23",
+                            "3": 28,
+                            "4": "M",
+                            "5": "텔런트",
+                            "6": "나무엑터스",
+                            "7": null,
+                            "8": null,
+                            "9": null,
+                            "10": null,
+                            "11": null
+                        },
+                        {
+                            "0": 4,
+                            "1": "강동원",
+                            "2": "1981-01-18",
+                            "3": 41,
+                            "4": "M",
+                            "5": "영화배우, 텔런트",
+                            "6": "YG엔터테이먼트",
+                            "7": 6,
+                            "8": "강동원",
+                            "9": "타이거주유소",
+                            "10": "2021-10-10",
+                            "11": 50000
+                        },
+                        {
+                            "0": 5,
+                            "1": "유재석",
+                            "2": "1972-08-14",
+                            "3": 50,
+                            "4": "M",
+                            "5": "MC, 개그맨",
+                            "6": "안테나",
+                            "7": 12,
+                            "8": "유재석",
+                            "9": "뉴서울(강남)",
+                            "10": "2021-10-16",
+                            "11": 110000
+                        },
+                        {
+                            "0": 5,
+                            "1": "유재석",
+                            "2": "1972-08-14",
+                            "3": 50,
+                            "4": "M",
+                            "5": "MC, 개그맨",
+                            "6": "안테나",
+                            "7": 11,
+                            "8": "유재석",
+                            "9": "쌍문주유소",
+                            "10": "2021-10-14",
+                            "11": 80000
+                        },
+                        {
+                            "0": 5,
+                            "1": "유재석",
+                            "2": "1972-08-14",
+                            "3": 50,
+                            "4": "M",
+                            "5": "MC, 개그맨",
+                            "6": "안테나",
+                            "7": 7,
+                            "8": "유재석",
+                            "9": "쌍문주유소",
+                            "10": "2021-10-10",
+                            "11": 60000
+                        },
+                        {
+                            "0": 5,
+                            "1": "유재석",
+                            "2": "1972-08-14",
+                            "3": 50,
+                            "4": "M",
+                            "5": "MC, 개그맨",
+                            "6": "안테나",
+                            "7": 5,
+                            "8": "유재석",
+                            "9": "뉴서울(강남)",
+                            "10": "2021-10-03",
+                            "11": 60000
+                        },
+                        {
+                            "0": 5,
+                            "1": "유재석",
+                            "2": "1972-08-14",
+                            "3": 50,
+                            "4": "M",
+                            "5": "MC, 개그맨",
+                            "6": "안테나",
+                            "7": 1,
+                            "8": "유재석",
+                            "9": "뉴서울(강남)",
+                            "10": "2021-10-01",
+                            "11": 50000
+                        },
+                        {
+                            "0": 6,
+                            "1": "차승원",
+                            "2": "1970-06-07",
+                            "3": 48,
+                            "4": "M",
+                            "5": "영화배우, 모델",
+                            "6": "YG엔터테이먼트",
+                            "7": null,
+                            "8": null,
+                            "9": null,
+                            "10": null,
+                            "11": null
+                        },
+                        {
+                            "0": 7,
+                            "1": "이수현",
+                            "2": "1999-05-04",
+                            "3": 23,
+                            "4": "F",
+                            "5": "가수",
+                            "6": "YG엔터테이먼트",
+                            "7": null,
+                            "8": null,
+                            "9": null,
+                            "10": null,
+                            "11": null
+                        },
+                        {
+                            "0": null,
+                            "1": null,
+                            "2": null,
+                            "3": null,
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": 3,
+                            "8": "이효리",
+                            "9": "제주주유소",
+                            "10": "2021-10-03",
+                            "11": 80000
+                        },
+                        {
+                            "0": null,
+                            "1": null,
+                            "2": null,
+                            "3": null,
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": 14,
+                            "8": "이효리",
+                            "9": "제주주유소",
+                            "10": "2021-10-20",
+                            "11": 80000
+                        },
+                        {
+                            "0": null,
+                            "1": null,
+                            "2": null,
+                            "3": null,
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": 15,
+                            "8": "이상순",
+                            "9": "제주주유소",
+                            "10": "2021-10-20",
+                            "11": 50000
+                        },
+                        {
+                            "0": null,
+                            "1": null,
+                            "2": null,
+                            "3": null,
+                            "4": null,
+                            "5": null,
+                            "6": null,
+                            "7": 16,
+                            "8": "이상순",
+                            "9": "타이거주유소",
+                            "10": "2021-10-20",
+                            "11": 140000
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "NAME",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "BIRTHDAY",
+                            "field": "2",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "AGE",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "SEX",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "JOB_TITLE",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "AGENCY",
+                            "field": "6",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "ID",
+                            "field": "7",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "이름",
+                            "field": "8",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주유소",
+                            "field": "9",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주유일",
+                            "field": "10",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "금액",
+                            "field": "11",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 19 records retrieved in 0.607ms"
+                    },
+                    "totalRowCount": 19,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "\nselect * from celeb\nLEFT join refueling\non celeb.name = refueling.이름\nUNION\nselect * from celeb\nright join  refueling \non celeb.name = refueling.이름\n",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 49,
+                "end": 51,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "105c93f2-9ba3-411c-9914-9be0d896af11"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 92
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9fcfd36b-514b-48b4-a297-3ccdef327a3c",
+                    "resultId": "105c93f2-9ba3-411c-9914-9be0d896af11",
+                    "rows": [
+                        {
+                            "0": "EDAM엔터테이먼트",
+                            "1": "타이거주유소"
+                        },
+                        {
+                            "0": "EDAM엔터테이먼트",
+                            "1": "뉴서울(강남)"
+                        },
+                        {
+                            "0": "YG엔터테이먼트",
+                            "1": "타이거주유소"
+                        },
+                        {
+                            "0": "안테나",
+                            "1": "뉴서울(강남)"
+                        },
+                        {
+                            "0": "안테나",
+                            "1": "쌍문주유소"
+                        },
+                        {
+                            "0": "울림엔터테이먼트",
+                            "1": "뉴서울(강남)"
+                        },
+                        {
+                            "0": "울림엔터테이먼트",
+                            "1": "타이거주유소"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "agency",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주유소",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 7 records retrieved in 0.516ms"
+                    },
+                    "totalRowCount": 7,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select DISTINCT agency, r.주유소 from celeb c, refueling r\nwhere c.name=r.이름\norder by c.agency",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 52,
+                "end": 54,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "64a8ea74-9044-44a0-d1e9-c36c4fa9636a"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 143
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9fcfd36b-514b-48b4-a297-3ccdef327a3c",
+                    "resultId": "64a8ea74-9044-44a0-d1e9-c36c4fa9636a",
+                    "rows": [
+                        {
+                            "0": "아이유",
+                            "1": 150000,
+                            "2": "가수, 텔런트"
+                        },
+                        {
+                            "0": "이미주",
+                            "1": 120000,
+                            "2": "가수"
+                        },
+                        {
+                            "0": "아이유",
+                            "1": 120000,
+                            "2": "가수, 텔런트"
+                        },
+                        {
+                            "0": "아이유",
+                            "1": 80000,
+                            "2": "가수, 텔런트"
+                        },
+                        {
+                            "0": "강동원",
+                            "1": 50000,
+                            "2": "영화배우, 텔런트"
+                        },
+                        {
+                            "0": "이미주",
+                            "1": 50000,
+                            "2": "가수"
+                        },
+                        {
+                            "0": "이미주",
+                            "1": 50000,
+                            "2": "가수"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "name",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "금액",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "job_title",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 7 records retrieved in 2.328ms"
+                    },
+                    "totalRowCount": 7,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select c.name, r.금액 , job_title from celeb c, refueling r\nwhere name=이름 and (JOB_TITLE like '%가수%' or JOB_TITLE like '%텔런트%')\norder by 금액 DESC",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 55,
+                "end": 57,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "bbbe68f1-c097-4569-cd7b-ecc1ec3fda7e"
+                    ]
+                },
+                "currentHeight": 226.078125,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 94
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9fcfd36b-514b-48b4-a297-3ccdef327a3c",
+                    "resultId": "bbbe68f1-c097-4569-cd7b-ecc1ec3fda7e",
+                    "rows": [
+                        {
+                            "0": "유재석",
+                            "1": 50000
+                        },
+                        {
+                            "0": "유재석",
+                            "1": 60000
+                        },
+                        {
+                            "0": "유재석",
+                            "1": 110000
+                        },
+                        {
+                            "0": "아이유",
+                            "1": 120000
+                        },
+                        {
+                            "0": "이미주",
+                            "1": 120000
+                        },
+                        {
+                            "0": "아이유",
+                            "1": 150000
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "name",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "금액",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 6 records retrieved in 0.612ms"
+                    },
+                    "totalRowCount": 6,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select c.name, r.금액 from celeb c, refueling r\nwhere name=이름 and (주유소 like '%강남%')\norder by 금액",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 58,
+                "end": 62,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "c2f5c910-8902-41b4-e96b-0c82ba3f0f71"
+                    ]
+                },
+                "currentHeight": 351.984375,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 143
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9fcfd36b-514b-48b4-a297-3ccdef327a3c",
+                    "resultId": "c2f5c910-8902-41b4-e96b-0c82ba3f0f71",
+                    "rows": [
+                        {
+                            "0": "유재석",
+                            "1": 110000,
+                            "2": "2021-10-16"
+                        },
+                        {
+                            "0": "이미주",
+                            "1": 50000,
+                            "2": "2021-10-16"
+                        },
+                        {
+                            "0": "아이유",
+                            "1": 150000,
+                            "2": "2021-10-14"
+                        },
+                        {
+                            "0": "아이유",
+                            "1": 120000,
+                            "2": "2021-10-14"
+                        },
+                        {
+                            "0": "유재석",
+                            "1": 80000,
+                            "2": "2021-10-14"
+                        },
+                        {
+                            "0": "강동원",
+                            "1": 50000,
+                            "2": "2021-10-10"
+                        },
+                        {
+                            "0": "유재석",
+                            "1": 60000,
+                            "2": "2021-10-10"
+                        },
+                        {
+                            "0": "이미주",
+                            "1": 50000,
+                            "2": "2021-10-10"
+                        },
+                        {
+                            "0": "아이유",
+                            "1": 80000,
+                            "2": "2021-10-03"
+                        },
+                        {
+                            "0": "유재석",
+                            "1": 60000,
+                            "2": "2021-10-03"
+                        },
+                        {
+                            "0": "유재석",
+                            "1": 50000,
+                            "2": "2021-10-01"
+                        },
+                        {
+                            "0": "이미주",
+                            "1": 120000,
+                            "2": "2021-10-01"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "name",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "금액",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주유일",
+                            "field": "2",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 12 records retrieved in 0.725ms"
+                    },
+                    "totalRowCount": 12,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select c.name, r.금액, r.주유일 from celeb c, refueling r, oil_price o\nwhere name=이름 and (\n    (not 상호 like '%주유소%') and 셀프='N'\n)\norder by 주유일 DESC",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 63,
+                "end": 63,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "26d5cd52-3eba-4d34-a1b4-21aaf1b4647a"
+                    ]
+                },
+                "currentHeight": 304.65625,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 24
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9fcfd36b-514b-48b4-a297-3ccdef327a3c",
+                    "resultId": "26d5cd52-3eba-4d34-a1b4-21aaf1b4647a",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "타이거주유소",
+                            "2": "서울 은평구 수색로 188(중산동)",
+                            "3": 1484,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "은평구"
+                        },
+                        {
+                            "0": 2,
+                            "1": "(주)명연에너지",
+                            "2": "서울 은평구 수색로 236(수색동)",
+                            "3": 1485,
+                            "4": "Y",
+                            "5": "현대오일뱅크",
+                            "6": "은평구"
+                        },
+                        {
+                            "0": 3,
+                            "1": "성락주유소",
+                            "2": "서울 영등포구 가마산로 414(신길동)",
+                            "3": 1498,
+                            "4": "Y",
+                            "5": "S-OIL",
+                            "6": "영등포구"
+                        },
+                        {
+                            "0": 4,
+                            "1": "(주)MS주유소",
+                            "2": "서울특별시 영등포구 대림로 230(대림동)",
+                            "3": 1498,
+                            "4": "N",
+                            "5": "현대오일뱅크",
+                            "6": "영등포구"
+                        },
+                        {
+                            "0": 5,
+                            "1": "쌍문주유소",
+                            "2": "서울특별시 도봉구 도봉로 547(쌍문동)",
+                            "3": 1509,
+                            "4": "Y",
+                            "5": "S-OIL",
+                            "6": "도봉구"
+                        },
+                        {
+                            "0": 6,
+                            "1": "21세기주유소",
+                            "2": "서울 동작구 시흥대로 616(신대방동)",
+                            "3": 1598,
+                            "4": "Y",
+                            "5": "SK에너지",
+                            "6": "동작구"
+                        },
+                        {
+                            "0": 7,
+                            "1": "살피재주유소",
+                            "2": "서울 동작구 상도로 334(상도동)",
+                            "3": 1635,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "동작구"
+                        },
+                        {
+                            "0": 8,
+                            "1": "뉴서울(강남)",
+                            "2": "서울 강남구 언주로 716(논현동)",
+                            "3": 2160,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "강남구"
+                        },
+                        {
+                            "0": 9,
+                            "1": "신길주유소",
+                            "2": "서울특별시 영등포구 신길로 74(신길동)",
+                            "3": 1498,
+                            "4": "Y",
+                            "5": "GS칼텍스",
+                            "6": "영등포구"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상호",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주소",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "가격",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "셀프",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상표",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "구",
+                            "field": "6",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 9 records retrieved in 0.621ms"
+                    },
+                    "totalRowCount": 9,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from oil_price",
+                    "updatable": false,
+                    "fullTableName": "oil_price"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 64,
+                "end": 64,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 65,
+                "end": 65,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}

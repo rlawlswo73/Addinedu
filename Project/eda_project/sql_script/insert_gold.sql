@@ -1,0 +1,1 @@
+insert into gold values (%s, %s, %s);

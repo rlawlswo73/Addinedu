@@ -1,0 +1,1 @@
+insert into gdp values (%s, %s, %s);

@@ -1,0 +1,60 @@
+
+
+Wed Dec 11 16:12:20 2024
+Command line: TestDisk
+
+TestDisk 7.1, Data Recovery Utility, July 2019
+Christophe GRENIER <grenier@cgsecurity.org>
+https://www.cgsecurity.org
+OS: Linux, kernel 6.8.0-49-generic (#49~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Wed Nov  6 17:42:15 UTC 2) x86_64
+Compiler: GCC 11.2
+ext2fs lib: 1.46.5, ntfs lib: libntfs-3g, reiserfs lib: none, ewf lib: none, curses lib: ncurses 6.3
+Warning: can't get size for Disk /dev/mapper/control - 0 B - 0 sectors, sector size=512
+Warning: can't get size for Disk /dev/loop24 - 0 B - 0 sectors, sector size=512
+Hard disk list
+Disk /dev/sda - 2000 GB / 1862 GiB - CHS 243197 255 63, sector size=512 - SanDisk Extreme Pro 55AF, FW:4055
+Disk /dev/loop0 - 109 MB / 104 MiB - 213384 sectors (RO), sector size=512
+Disk /dev/loop1 - 4096 B - 8 sectors (RO), sector size=512
+Disk /dev/loop10 - 228 MB / 218 MiB - 447264 sectors (RO), sector size=512
+Disk /dev/loop11 - 366 MB / 349 MiB - 716176 sectors (RO), sector size=512
+Disk /dev/loop12 - 521 MB / 496 MiB - 1017816 sectors (RO), sector size=512
+Disk /dev/loop13 - 529 MB / 505 MiB - 1034424 sectors (RO), sector size=512
+Disk /dev/loop14 - 143 KB / 140 KiB - 280 sectors (RO), sector size=512
+Disk /dev/loop15 - 96 MB / 91 MiB - 187776 sectors (RO), sector size=512
+Disk /dev/loop16 - 127 MB / 121 MiB - 249424 sectors (RO), sector size=512
+Disk /dev/loop17 - 127 MB / 121 MiB - 249480 sectors (RO), sector size=512
+Disk /dev/loop18 - 12 MB / 12 MiB - 24984 sectors (RO), sector size=512
+Disk /dev/loop19 - 12 MB / 12 MiB - 25240 sectors (RO), sector size=512
+Disk /dev/loop2 - 58 MB / 55 MiB - 113384 sectors (RO), sector size=512
+Disk /dev/loop20 - 40 MB / 38 MiB - 79520 sectors (RO), sector size=512
+Disk /dev/loop21 - 46 MB / 44 MiB - 90720 sectors (RO), sector size=512
+Disk /dev/loop22 - 581 KB / 568 KiB - 1136 sectors (RO), sector size=512
+Disk /dev/loop23 - 462 KB / 452 KiB - 904 sectors (RO), sector size=512
+Disk /dev/loop3 - 67 MB / 63 MiB - 131016 sectors (RO), sector size=512
+Disk /dev/loop4 - 66 MB / 63 MiB - 130448 sectors (RO), sector size=512
+Disk /dev/loop5 - 77 MB / 73 MiB - 151296 sectors (RO), sector size=512
+Disk /dev/loop6 - 77 MB / 73 MiB - 151288 sectors (RO), sector size=512
+Disk /dev/loop7 - 287 MB / 274 MiB - 561248 sectors (RO), sector size=512
+Disk /dev/loop8 - 286 MB / 273 MiB - 560488 sectors (RO), sector size=512
+Disk /dev/loop9 - 540 MB / 515 MiB - 1056096 sectors (RO), sector size=512
+Disk /dev/nvme0n1 - 512 GB / 476 GiB - CHS 488386 64 32, sector size=512
+
+Partition table type (auto): EFI GPT
+Disk /dev/nvme0n1 - 512 GB / 476 GiB
+Partition table type: EFI GPT
+
+Interface Advanced
+hdr_size=92
+hdr_lba_self=1
+hdr_lba_alt=1000215215 (expected 1000215215)
+hdr_lba_start=34
+hdr_lba_end=1000215182
+hdr_lba_table=2
+hdr_entries=128
+hdr_entsz=128
+ 1 P EFI System                  2048    1050623    1048576 [EFI System Partition]
+ 2 P Linux filesys. data      1050624 1000214527  999163904
+disk_image write() failed: No space left on device
+No space left for the file image.
+
+TestDisk exited normally.

@@ -1,0 +1,3274 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "\\about\nuse amrbase;\nselect avg(case_number)\nfrom crime_status\nwhere crime_type like '폭력' and status_type='검거';\nselect police_station, crime_type, status_type, case_number\nfrom crime_status\nwhere crime_type like '폭력' and status_type='검거';\nselect max(case_number)\nfrom crime_status\nwhere police_station like '강남' and status_type LIKE '발생';\nselect police_station, crime_type, status_type, case_number\nfrom crime_status\nwhere police_station like '강남' and status_type like '발생';\nselect avg(case_number) from crime_status\nwhere crime_type like '%살인%' and status_type like '발생';\nselect police_station, crime_type, status_type, case_number from crime_status\nwhere crime_type like '%살인%' and status_type like '발생';\nselect avg(case_number) from crime_status\nwhere police_station like '서초' and status_type like '검거';\nselect police_station, crime_type, status_type, case_number from crime_status\nwhere police_station like '서초' and status_type like '검거';\nselect avg(case_number) from crime_status\nwhere (police_station like '구로' or police_station like '도봉') and status_type like '검거' and crime_type like '살인';\nselect * from crime_status\nwhere (police_station like '구로' or police_station like '도봉') and status_type like '검거' and crime_type like '살인';\nselect min(case_number) from crime_status\nwhere police_station like '광진' and status_type like '검거';\nselect * from crime_status\nwhere police_station like '광진' and status_type like '검거';\nselect min(case_number) from crime_status\nwhere police_station like '성북' and status_type like '발생';\nselect * from crime_status\nwhere police_station like '성북' and status_type like '발생';\nselect max(case_number) from crime_status\nwhere police_station like '영등포' and status_type like '발생';\nselect * from crime_status\nwhere police_station like '영등포' and status_type like '발생';\nselect max(case_number) from crime_status\nwhere crime_type like '%절도%' and status_type like '검거';\nselect * from crime_status\nwhere crime_type like '%절도%' and status_type like '검거';\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+    "options": {
+        "tabSize": 4,
+        "indentSize": 4,
+        "insertSpaces": true,
+        "defaultEOL": "LF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 43,
+                    "column": 1
+                },
+                "position": {
+                    "lineNumber": 43,
+                    "column": 1
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 41,
+                "column": 1
+            },
+            "firstPositionDeltaTop": -23
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "content": "Welcome to the MySQL Shell - DB Notebook.\n\nPress Ctrl+Enter to execute the code block.\n\nExecute \\sql to switch to SQL, \\js to JavaScript and \\ts to TypeScript mode.\nExecute \\help or \\? for help;",
+                            "language": "ansi"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 2,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "ef3d7452-12ae-46ec-bcbe-41eb30513b87",
+                            "content": "OK, 0 records retrieved in 7.113ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 3,
+                "end": 5,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "fa1a76af-8846-406a-ab67-1cdba087cd79"
+                    ]
+                },
+                "currentHeight": 107.15625,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 90
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ddc08ee4-1a73-4676-b3f4-cc4caf9ff6ff",
+                    "resultId": "fa1a76af-8846-406a-ab67-1cdba087cd79",
+                    "rows": [
+                        {
+                            "0": "1323.1935"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "avg(case_number)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 10,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 65,
+                                "numericScale": 30,
+                                "parameterFormatType": "TwoOrOneOrZero",
+                                "synonyms": [
+                                    "FIXED",
+                                    "NUMERIC",
+                                    "DEC"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 40.185ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select avg(case_number)\nfrom crime_status\nwhere crime_type like '폭력' and status_type='검거'",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 6,
+                "end": 8,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "c171cb2b-84c6-4b9e-8658-c37976b683a9"
+                    ]
+                },
+                "currentHeight": 351.984375,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 126
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ddc08ee4-1a73-4676-b3f4-cc4caf9ff6ff",
+                    "resultId": "c171cb2b-84c6-4b9e-8658-c37976b683a9",
+                    "rows": [
+                        {
+                            "0": "중부",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 830
+                        },
+                        {
+                            "0": "종로",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 792
+                        },
+                        {
+                            "0": "남대문",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 494
+                        },
+                        {
+                            "0": "서대문",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 1029
+                        },
+                        {
+                            "0": "혜화",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 628
+                        },
+                        {
+                            "0": "용산",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 1327
+                        },
+                        {
+                            "0": "성북",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 610
+                        },
+                        {
+                            "0": "동대문",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 1597
+                        },
+                        {
+                            "0": "마포",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 1557
+                        },
+                        {
+                            "0": "영등포",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 2157
+                        },
+                        {
+                            "0": "성동",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 1103
+                        },
+                        {
+                            "0": "동작",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 1370
+                        },
+                        {
+                            "0": "광진",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 1407
+                        },
+                        {
+                            "0": "서부",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 667
+                        },
+                        {
+                            "0": "강북",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 1625
+                        },
+                        {
+                            "0": "금천",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 1310
+                        },
+                        {
+                            "0": "중랑",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 1724
+                        },
+                        {
+                            "0": "강남",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 1911
+                        },
+                        {
+                            "0": "관악",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 2355
+                        },
+                        {
+                            "0": "강서",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 2087
+                        },
+                        {
+                            "0": "강동",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 1697
+                        },
+                        {
+                            "0": "종암",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 630
+                        },
+                        {
+                            "0": "구로",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 1823
+                        },
+                        {
+                            "0": "서초",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 1415
+                        },
+                        {
+                            "0": "양천",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 1270
+                        },
+                        {
+                            "0": "송파",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 2280
+                        },
+                        {
+                            "0": "노원",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 1781
+                        },
+                        {
+                            "0": "방배",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 365
+                        },
+                        {
+                            "0": "은평",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 956
+                        },
+                        {
+                            "0": "도봉",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 1022
+                        },
+                        {
+                            "0": "수서",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 1200
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "police_station",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "crime_type",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "status_type",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "case_number",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 31 records retrieved in 6.324ms"
+                    },
+                    "totalRowCount": 31,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select police_station, crime_type, status_type, case_number\nfrom crime_status\nwhere crime_type like '폭력' and status_type='검거'",
+                    "updatable": false,
+                    "fullTableName": "crime_status"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 9,
+                "end": 11,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "acebf845-1c01-4607-9805-ef4243f5fdd3"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 99
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 99,
+                            "length": 0
+                        },
+                        "contentStart": 98,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ddc08ee4-1a73-4676-b3f4-cc4caf9ff6ff",
+                    "resultId": "acebf845-1c01-4607-9805-ef4243f5fdd3",
+                    "rows": [
+                        {
+                            "0": 2283
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "max(case_number)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 7.246ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select max(case_number)\nfrom crime_status\nwhere police_station like '강남' and status_type LIKE '발생'",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 12,
+                "end": 14,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "ab882eab-68f8-4d71-91b5-baf2658c8133"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 135
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ddc08ee4-1a73-4676-b3f4-cc4caf9ff6ff",
+                    "resultId": "ab882eab-68f8-4d71-91b5-baf2658c8133",
+                    "rows": [
+                        {
+                            "0": "강남",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 5
+                        },
+                        {
+                            "0": "강남",
+                            "1": "강도",
+                            "2": "발생",
+                            "3": 12
+                        },
+                        {
+                            "0": "강남",
+                            "1": "강간,추행",
+                            "2": "발생",
+                            "3": 513
+                        },
+                        {
+                            "0": "강남",
+                            "1": "절도",
+                            "2": "발생",
+                            "3": 1941
+                        },
+                        {
+                            "0": "강남",
+                            "1": "폭력",
+                            "2": "발생",
+                            "3": 2283
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "police_station",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "crime_type",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "status_type",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "case_number",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 9.952ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select police_station, crime_type, status_type, case_number\nfrom crime_status\nwhere police_station like '강남' and status_type like '발생'",
+                    "updatable": false,
+                    "fullTableName": "crime_status"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 15,
+                "end": 16,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "05d198b4-c9b0-4688-d333-e9fe2e0540fd"
+                    ]
+                },
+                "currentHeight": 107.15625,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 97
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ddc08ee4-1a73-4676-b3f4-cc4caf9ff6ff",
+                    "resultId": "05d198b4-c9b0-4688-d333-e9fe2e0540fd",
+                    "rows": [
+                        {
+                            "0": "4.5484"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "avg(case_number)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 10,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 65,
+                                "numericScale": 30,
+                                "parameterFormatType": "TwoOrOneOrZero",
+                                "synonyms": [
+                                    "FIXED",
+                                    "NUMERIC",
+                                    "DEC"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 6.911ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select avg(case_number) from crime_status\nwhere  crime_type like '%살인%' and status_type like '발생'",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 17,
+                "end": 18,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "b1cc38dc-490d-4ae9-9d07-53768c83bc28"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 133
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ddc08ee4-1a73-4676-b3f4-cc4caf9ff6ff",
+                    "resultId": "b1cc38dc-490d-4ae9-9d07-53768c83bc28",
+                    "rows": [
+                        {
+                            "0": "중부",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 1
+                        },
+                        {
+                            "0": "종로",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 9
+                        },
+                        {
+                            "0": "남대문",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 1
+                        },
+                        {
+                            "0": "서대문",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 3
+                        },
+                        {
+                            "0": "혜화",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 0
+                        },
+                        {
+                            "0": "용산",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 5
+                        },
+                        {
+                            "0": "성북",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 0
+                        },
+                        {
+                            "0": "동대문",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 10
+                        },
+                        {
+                            "0": "마포",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 9
+                        },
+                        {
+                            "0": "영등포",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 7
+                        },
+                        {
+                            "0": "성동",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 5
+                        },
+                        {
+                            "0": "동작",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 1
+                        },
+                        {
+                            "0": "광진",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 2
+                        },
+                        {
+                            "0": "서부",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 3
+                        },
+                        {
+                            "0": "강북",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 9
+                        },
+                        {
+                            "0": "금천",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 4
+                        },
+                        {
+                            "0": "중랑",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 10
+                        },
+                        {
+                            "0": "강남",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 5
+                        },
+                        {
+                            "0": "관악",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 12
+                        },
+                        {
+                            "0": "강서",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 10
+                        },
+                        {
+                            "0": "강동",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 3
+                        },
+                        {
+                            "0": "종암",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 4
+                        },
+                        {
+                            "0": "구로",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 6
+                        },
+                        {
+                            "0": "서초",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 4
+                        },
+                        {
+                            "0": "양천",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 5
+                        },
+                        {
+                            "0": "송파",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 6
+                        },
+                        {
+                            "0": "노원",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 4
+                        },
+                        {
+                            "0": "방배",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 1
+                        },
+                        {
+                            "0": "은평",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 1
+                        },
+                        {
+                            "0": "도봉",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 0
+                        },
+                        {
+                            "0": "수서",
+                            "1": "살인",
+                            "2": "발생",
+                            "3": 1
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "police_station",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "crime_type",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "status_type",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "case_number",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 31 records retrieved in 7.047ms"
+                    },
+                    "totalRowCount": 31,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select police_station, crime_type, status_type, case_number from crime_status\nwhere crime_type like '%살인%' and status_type like '발생'",
+                    "updatable": false,
+                    "fullTableName": "crime_status"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 19,
+                "end": 20,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "8eb97fc2-a540-4fb9-e401-345c155f1f8f"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 99
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ddc08ee4-1a73-4676-b3f4-cc4caf9ff6ff",
+                    "resultId": "8eb97fc2-a540-4fb9-e401-345c155f1f8f",
+                    "rows": [
+                        {
+                            "0": "495.2000"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "avg(case_number)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 10,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 65,
+                                "numericScale": 30,
+                                "parameterFormatType": "TwoOrOneOrZero",
+                                "synonyms": [
+                                    "FIXED",
+                                    "NUMERIC",
+                                    "DEC"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 7.889ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select avg(case_number) from crime_status\nwhere police_station like '서초' and status_type like '검거'",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 21,
+                "end": 22,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "c4a9071d-2262-485f-e06f-55b85721bda0"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 135
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ddc08ee4-1a73-4676-b3f4-cc4caf9ff6ff",
+                    "resultId": "c4a9071d-2262-485f-e06f-55b85721bda0",
+                    "rows": [
+                        {
+                            "0": "서초",
+                            "1": "살인",
+                            "2": "검거",
+                            "3": 4
+                        },
+                        {
+                            "0": "서초",
+                            "1": "강도",
+                            "2": "검거",
+                            "3": 3
+                        },
+                        {
+                            "0": "서초",
+                            "1": "강간,추행",
+                            "2": "검거",
+                            "3": 253
+                        },
+                        {
+                            "0": "서초",
+                            "1": "절도",
+                            "2": "검거",
+                            "3": 801
+                        },
+                        {
+                            "0": "서초",
+                            "1": "폭력",
+                            "2": "검거",
+                            "3": 1415
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "police_station",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "crime_type",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "status_type",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "case_number",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 6.539ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select police_station, crime_type, status_type, case_number from crime_status\nwhere police_station like '서초' and status_type like '검거'",
+                    "updatable": false,
+                    "fullTableName": "crime_status"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 23,
+                "end": 24,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "7a9f6b1d-df97-40aa-9ca7-56d07176f154"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 154
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ddc08ee4-1a73-4676-b3f4-cc4caf9ff6ff",
+                    "resultId": "7a9f6b1d-df97-40aa-9ca7-56d07176f154",
+                    "rows": [
+                        {
+                            "0": "3.0000"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "avg(case_number)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 10,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 65,
+                                "numericScale": 30,
+                                "parameterFormatType": "TwoOrOneOrZero",
+                                "synonyms": [
+                                    "FIXED",
+                                    "NUMERIC",
+                                    "DEC"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 8.183ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select avg(case_number) from crime_status\nwhere (police_station like '구로' or police_station like '도봉') and status_type like '검거' and crime_type like '살인'",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 25,
+                "end": 26,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "a80bc2b9-a780-4dbf-c946-0e8b2737bf69"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 139
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ddc08ee4-1a73-4676-b3f4-cc4caf9ff6ff",
+                    "resultId": "a80bc2b9-a780-4dbf-c946-0e8b2737bf69",
+                    "rows": [
+                        {
+                            "0": 2020,
+                            "1": "구로",
+                            "2": "살인",
+                            "3": "검거",
+                            "4": 6,
+                            "5": "서울구로경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "도봉",
+                            "2": "살인",
+                            "3": "검거",
+                            "4": 0,
+                            "5": "서울도봉경찰서"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "year",
+                            "field": "0",
+                            "dataType": {
+                                "type": 1,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 3,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "BOOL",
+                                    "BOOLEAN",
+                                    "INT1"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "police_station",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "crime_type",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "status_type",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "case_number",
+                            "field": "4",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "reference",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 2 records retrieved in 7.142ms"
+                    },
+                    "totalRowCount": 2,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from crime_status\nwhere (police_station like '구로' or police_station like '도봉') and status_type like '검거' and crime_type like '살인'",
+                    "updatable": false,
+                    "fullTableName": "crime_status"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 27,
+                "end": 28,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "5cab9855-9968-49e2-bb79-f4919c2e0ab1"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 99
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ddc08ee4-1a73-4676-b3f4-cc4caf9ff6ff",
+                    "resultId": "5cab9855-9968-49e2-bb79-f4919c2e0ab1",
+                    "rows": [
+                        {
+                            "0": 2
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "min(case_number)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 6.093ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select min(case_number) from crime_status\nwhere police_station like '광진' and status_type like '검거'",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 29,
+                "end": 30,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "025a7f1a-6ff5-4967-efe2-70bdede092df"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 84
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ddc08ee4-1a73-4676-b3f4-cc4caf9ff6ff",
+                    "resultId": "025a7f1a-6ff5-4967-efe2-70bdede092df",
+                    "rows": [
+                        {
+                            "0": 2020,
+                            "1": "광진",
+                            "2": "살인",
+                            "3": "검거",
+                            "4": 2,
+                            "5": "서울광진경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "광진",
+                            "2": "강도",
+                            "3": "검거",
+                            "4": 4,
+                            "5": "서울광진경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "광진",
+                            "2": "강간,추행",
+                            "3": "검거",
+                            "4": 224,
+                            "5": "서울광진경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "광진",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 874,
+                            "5": "서울광진경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "광진",
+                            "2": "폭력",
+                            "3": "검거",
+                            "4": 1407,
+                            "5": "서울광진경찰서"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "year",
+                            "field": "0",
+                            "dataType": {
+                                "type": 1,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 3,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "BOOL",
+                                    "BOOLEAN",
+                                    "INT1"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "police_station",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "crime_type",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "status_type",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "case_number",
+                            "field": "4",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "reference",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 10.094ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from crime_status\nwhere police_station like '광진' and status_type like '검거'",
+                    "updatable": false,
+                    "fullTableName": "crime_status"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 31,
+                "end": 32,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "e88e2070-8147-4dd8-9a04-d4e5d1d5fa78"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 99
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ddc08ee4-1a73-4676-b3f4-cc4caf9ff6ff",
+                    "resultId": "e88e2070-8147-4dd8-9a04-d4e5d1d5fa78",
+                    "rows": [
+                        {
+                            "0": 0
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "min(case_number)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 7.658ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select min(case_number) from crime_status\nwhere police_station like '성북' and status_type like '발생'",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 33,
+                "end": 34,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "344b2e73-454d-4ae7-fcc0-8b6886a12a83"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 84
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ddc08ee4-1a73-4676-b3f4-cc4caf9ff6ff",
+                    "resultId": "344b2e73-454d-4ae7-fcc0-8b6886a12a83",
+                    "rows": [
+                        {
+                            "0": 2020,
+                            "1": "성북",
+                            "2": "살인",
+                            "3": "발생",
+                            "4": 0,
+                            "5": "서울성북경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "성북",
+                            "2": "강도",
+                            "3": "발생",
+                            "4": 2,
+                            "5": "서울성북경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "성북",
+                            "2": "강간",
+                            "3": "발생",
+                            "4": 95,
+                            "5": "서울성북경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "성북",
+                            "2": "절도",
+                            "3": "발생",
+                            "4": 439,
+                            "5": "서울성북경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "성북",
+                            "2": "폭력",
+                            "3": "발생",
+                            "4": 672,
+                            "5": "서울성북경찰서"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "year",
+                            "field": "0",
+                            "dataType": {
+                                "type": 1,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 3,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "BOOL",
+                                    "BOOLEAN",
+                                    "INT1"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "police_station",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "crime_type",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "status_type",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "case_number",
+                            "field": "4",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "reference",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 6.531ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from crime_status\nwhere police_station like '성북' and status_type like '발생'",
+                    "updatable": false,
+                    "fullTableName": "crime_status"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 35,
+                "end": 36,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "2e381a4f-46cc-4f13-dba3-e342b292810e"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 100
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ddc08ee4-1a73-4676-b3f4-cc4caf9ff6ff",
+                    "resultId": "2e381a4f-46cc-4f13-dba3-e342b292810e",
+                    "rows": [
+                        {
+                            "0": 2701
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "max(case_number)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 7.137ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select max(case_number) from crime_status\nwhere police_station like '영등포' and status_type like '발생'",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 37,
+                "end": 38,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "1cdb0c58-e0d1-4434-8835-9592090bff6b"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 85
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ddc08ee4-1a73-4676-b3f4-cc4caf9ff6ff",
+                    "resultId": "1cdb0c58-e0d1-4434-8835-9592090bff6b",
+                    "rows": [
+                        {
+                            "0": 2020,
+                            "1": "영등포",
+                            "2": "살인",
+                            "3": "발생",
+                            "4": 7,
+                            "5": "서울영등포경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "영등포",
+                            "2": "강도",
+                            "3": "발생",
+                            "4": 6,
+                            "5": "서울영등포경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "영등포",
+                            "2": "강간,추행",
+                            "3": "발생",
+                            "4": 315,
+                            "5": "서울영등포경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "영등포",
+                            "2": "절도",
+                            "3": "발생",
+                            "4": 2188,
+                            "5": "서울영등포경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "영등포",
+                            "2": "폭력",
+                            "3": "발생",
+                            "4": 2701,
+                            "5": "서울영등포경찰서"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "year",
+                            "field": "0",
+                            "dataType": {
+                                "type": 1,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 3,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "BOOL",
+                                    "BOOLEAN",
+                                    "INT1"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "police_station",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "crime_type",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "status_type",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "case_number",
+                            "field": "4",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "reference",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 6.058ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from crime_status\nwhere police_station like '영등포' and status_type like '발생'",
+                    "updatable": false,
+                    "fullTableName": "crime_status"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 39,
+                "end": 40,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "815c0e38-3814-4f60-971b-48508480913e"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 97
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ddc08ee4-1a73-4676-b3f4-cc4caf9ff6ff",
+                    "resultId": "815c0e38-3814-4f60-971b-48508480913e",
+                    "rows": [
+                        {
+                            "0": 1137
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "max(case_number)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 7.441ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select max(case_number) from crime_status\nwhere crime_type like '%절도%' and status_type like '검거'",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 41,
+                "end": 42,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "f0c0d548-730d-4d23-de83-a5b700e8632a"
+                    ]
+                },
+                "currentHeight": 351.984375,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 82
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ddc08ee4-1a73-4676-b3f4-cc4caf9ff6ff",
+                    "resultId": "f0c0d548-730d-4d23-de83-a5b700e8632a",
+                    "rows": [
+                        {
+                            "0": 2020,
+                            "1": "중부",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 495,
+                            "5": "서울중부경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "종로",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 284,
+                            "5": "서울종로경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "남대문",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 368,
+                            "5": "서울남대문경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "서대문",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 524,
+                            "5": "서울서대문경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "혜화",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 310,
+                            "5": "서울혜화경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "용산",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 534,
+                            "5": "서울용산경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "성북",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 233,
+                            "5": "서울성북경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "동대문",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 713,
+                            "5": "서울동대문경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "마포",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 679,
+                            "5": "서울마포경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "영등포",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 953,
+                            "5": "서울영등포경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "성동",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 565,
+                            "5": "서울성동경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "동작",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 592,
+                            "5": "서울동작경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "광진",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 874,
+                            "5": "서울광진경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "서부",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 322,
+                            "5": "서울서부경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "강북",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 490,
+                            "5": "서울강북경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "금천",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 553,
+                            "5": "서울금천경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "중랑",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 889,
+                            "5": "서울중랑경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "강남",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 1016,
+                            "5": "서울강남경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "관악",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 1137,
+                            "5": "서울관악경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "강서",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 1070,
+                            "5": "서울강서경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "강동",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 781,
+                            "5": "서울강동경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "종암",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 347,
+                            "5": "서울종암경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "구로",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 1008,
+                            "5": "서울구로경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "서초",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 801,
+                            "5": "서울서초경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "양천",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 718,
+                            "5": "서울양천경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "송파",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 1006,
+                            "5": "서울송파경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "노원",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 646,
+                            "5": "서울노원경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "방배",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 159,
+                            "5": "서울방배경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "은평",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 434,
+                            "5": "서울은평경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "도봉",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 379,
+                            "5": "서울도봉경찰서"
+                        },
+                        {
+                            "0": 2020,
+                            "1": "수서",
+                            "2": "절도",
+                            "3": "검거",
+                            "4": 475,
+                            "5": "서울수서경찰서"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "year",
+                            "field": "0",
+                            "dataType": {
+                                "type": 1,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 3,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "BOOL",
+                                    "BOOLEAN",
+                                    "INT1"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "police_station",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "crime_type",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "status_type",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "case_number",
+                            "field": "4",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "reference",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 31 records retrieved in 6.002ms"
+                    },
+                    "totalRowCount": 31,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from crime_status\nwhere crime_type like '%절도%' and status_type like '검거'",
+                    "updatable": false,
+                    "fullTableName": "crime_status"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 43,
+                "end": 43,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 44,
+                "end": 44,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 45,
+                "end": 45,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 46,
+                "end": 46,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 47,
+                "end": 47,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 48,
+                "end": 48,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 49,
+                "end": 49,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 50,
+                "end": 50,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 51,
+                "end": 51,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 52,
+                "end": 52,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 53,
+                "end": 53,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 54,
+                "end": 54,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 55,
+                "end": 55,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 56,
+                "end": 56,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 57,
+                "end": 57,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 58,
+                "end": 58,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 59,
+                "end": 59,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 60,
+                "end": 60,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 61,
+                "end": 61,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 62,
+                "end": 62,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 63,
+                "end": 63,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 64,
+                "end": 64,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}

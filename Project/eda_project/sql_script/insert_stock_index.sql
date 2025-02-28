@@ -1,0 +1,1 @@
+insert into stock_index values (%s, %s, %s);

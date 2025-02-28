@@ -1,0 +1,1 @@
+insert into interest_rate values (%s, %s, %s)

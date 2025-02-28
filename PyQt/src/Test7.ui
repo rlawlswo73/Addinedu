@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>475</width>
+    <height>408</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>13</y>
+     <width>81</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Name</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>43</y>
+     <width>81</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Gender</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>73</y>
+     <width>81</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>BirthDay</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnAdd">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>10</y>
+     <width>170</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="editName">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>10</y>
+     <width>190</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="editGender">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>40</y>
+     <width>190</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QDateEdit" name="editBirthday">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>70</y>
+     <width>190</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="displayFormat">
+    <string>yyyyMMdd</string>
+   </property>
+   <property name="calendarPopup">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>100</y>
+     <width>471</width>
+     <height>301</height>
+    </rect>
+   </property>
+   <column>
+    <property name="text">
+     <string>Name</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>New Column</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Birthday</string>
+    </property>
+   </column>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

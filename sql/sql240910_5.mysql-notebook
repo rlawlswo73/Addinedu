@@ -1,0 +1,854 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "\\about\nuse nomadb;\nshow tables;\nselect * from users;\nselect * from rides;\nselect u.name, sum(r.distance) dis from users u, rides r\nwhere u.id=r.user_id\nGROUP by u.id\nORDER BY dis DESC\nlimit 100;\nselect * from users\nwhere name='Thomas Williams';\n",
+    "options": {
+        "tabSize": 4,
+        "indentSize": 4,
+        "insertSpaces": true,
+        "defaultEOL": "LF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 8,
+                    "column": 14
+                },
+                "position": {
+                    "lineNumber": 8,
+                    "column": 14
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 5,
+                "column": 1
+            },
+            "firstPositionDeltaTop": -14
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "content": "Welcome to the MySQL Shell - DB Notebook.\n\nPress Ctrl+Enter to execute the code block.\n\nExecute \\sql to switch to SQL, \\js to JavaScript and \\ts to TypeScript mode.\nExecute \\help or \\? for help;",
+                            "language": "ansi"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 2,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "504ee202-918e-47b4-c349-c01500428212",
+                            "content": "OK, 0 records retrieved in 6.777ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 11
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 3,
+                "end": 3,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "3f4f4a5e-7971-4924-9f55-35eefc1b2504"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 12,
+                            "length": 0
+                        },
+                        "contentStart": 11,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "1a0bc470-6596-4b98-d341-da6a077063c9",
+                    "resultId": "3f4f4a5e-7971-4924-9f55-35eefc1b2504",
+                    "rows": [
+                        {
+                            "0": "cities"
+                        },
+                        {
+                            "0": "customer"
+                        },
+                        {
+                            "0": "product"
+                        },
+                        {
+                            "0": "purchase"
+                        },
+                        {
+                            "0": "rides"
+                        },
+                        {
+                            "0": "users"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Tables_in_nomadb",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 6 records retrieved in 9.557ms"
+                    },
+                    "totalRowCount": 6,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "show tables",
+                    "updatable": false
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 4,
+                "end": 4,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "b6b55abe-d336-40f8-eb48-0004ab51852a"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 20
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "1a0bc470-6596-4b98-d341-da6a077063c9",
+                    "resultId": "b6b55abe-d336-40f8-eb48-0004ab51852a",
+                    "rows": [
+                        {
+                            "0": "1",
+                            "1": "2",
+                            "2": "Rbert Deigado",
+                            "3": "robertdelgado@hotmail.com"
+                        },
+                        {
+                            "0": "2",
+                            "1": "2",
+                            "2": "Thomas Williams",
+                            "3": "thomaswilliams@bradley.org"
+                        },
+                        {
+                            "0": "3",
+                            "1": "1",
+                            "2": "Michele Peterson",
+                            "3": "michelepeterson@hotmail.com"
+                        },
+                        {
+                            "0": "4",
+                            "1": "1",
+                            "2": "Bill Wheeler",
+                            "3": "billwheeler@gmail.com"
+                        },
+                        {
+                            "0": "5",
+                            "1": "1",
+                            "2": "David Lloyd",
+                            "3": "davidlloyd@gmail.com"
+                        },
+                        {
+                            "0": "6",
+                            "1": "1",
+                            "2": "Morgan Powers",
+                            "3": "morganpowers@hansen.biz"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": true,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "city_id",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "name",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "email",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 6 records retrieved in 5.73ms"
+                    },
+                    "totalRowCount": 6,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from users",
+                    "updatable": true,
+                    "fullTableName": "users"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 5,
+                "end": 5,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "184db5b5-b0cd-4975-840f-149d8841a9d4"
+                    ]
+                },
+                "currentHeight": 351.984375,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 20
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "1a0bc470-6596-4b98-d341-da6a077063c9",
+                    "resultId": "184db5b5-b0cd-4975-840f-149d8841a9d4",
+                    "rows": [
+                        {
+                            "0": "1",
+                            "1": "1",
+                            "2": 21,
+                            "3": 200
+                        },
+                        {
+                            "0": "10",
+                            "1": "1",
+                            "2": 10,
+                            "3": 90
+                        },
+                        {
+                            "0": "11",
+                            "1": "6",
+                            "2": 11,
+                            "3": 95
+                        },
+                        {
+                            "0": "12",
+                            "1": "5",
+                            "2": 16,
+                            "3": 140
+                        },
+                        {
+                            "0": "13",
+                            "1": "3",
+                            "2": 24,
+                            "3": 220
+                        },
+                        {
+                            "0": "14",
+                            "1": "6",
+                            "2": 17,
+                            "3": 160
+                        },
+                        {
+                            "0": "15",
+                            "1": "2",
+                            "2": 23,
+                            "3": 205
+                        },
+                        {
+                            "0": "16",
+                            "1": "3",
+                            "2": 11,
+                            "3": 90
+                        },
+                        {
+                            "0": "17",
+                            "1": "6",
+                            "2": 5,
+                            "3": 50
+                        },
+                        {
+                            "0": "18",
+                            "1": "3",
+                            "2": 19,
+                            "3": 180
+                        },
+                        {
+                            "0": "19",
+                            "1": "5",
+                            "2": 22,
+                            "3": 205
+                        },
+                        {
+                            "0": "2",
+                            "1": "3",
+                            "2": 6,
+                            "3": 55
+                        },
+                        {
+                            "0": "20",
+                            "1": "4",
+                            "2": 6,
+                            "3": 60
+                        },
+                        {
+                            "0": "3",
+                            "1": "2",
+                            "2": 30,
+                            "3": 230
+                        },
+                        {
+                            "0": "4",
+                            "1": "2",
+                            "2": 16,
+                            "3": 125
+                        },
+                        {
+                            "0": "5",
+                            "1": "2",
+                            "2": 11,
+                            "3": 110
+                        },
+                        {
+                            "0": "6",
+                            "1": "6",
+                            "2": 30,
+                            "3": 285
+                        },
+                        {
+                            "0": "7",
+                            "1": "3",
+                            "2": 18,
+                            "3": 170
+                        },
+                        {
+                            "0": "8",
+                            "1": "1",
+                            "2": 6,
+                            "3": 50
+                        },
+                        {
+                            "0": "9",
+                            "1": "2",
+                            "2": 4,
+                            "3": 40
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": true,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "user_id",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "distance",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "fare",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 20 records retrieved in 6.786ms"
+                    },
+                    "totalRowCount": 20,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from rides",
+                    "updatable": true,
+                    "fullTableName": "rides"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 6,
+                "end": 10,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "d2b77b10-5157-4783-9412-9b0bbe2ea85e"
+                    ]
+                },
+                "currentHeight": 268.3125,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 120
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "1a0bc470-6596-4b98-d341-da6a077063c9",
+                    "resultId": "d2b77b10-5157-4783-9412-9b0bbe2ea85e",
+                    "rows": [
+                        {
+                            "0": "Thomas Williams",
+                            "1": "84"
+                        },
+                        {
+                            "0": "Michele Peterson",
+                            "1": "78"
+                        },
+                        {
+                            "0": "Morgan Powers",
+                            "1": "63"
+                        },
+                        {
+                            "0": "David Lloyd",
+                            "1": "38"
+                        },
+                        {
+                            "0": "Rbert Deigado",
+                            "1": "37"
+                        },
+                        {
+                            "0": "Bill Wheeler",
+                            "1": "6"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "name",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "dis",
+                            "field": "1",
+                            "dataType": {
+                                "type": 10,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 65,
+                                "numericScale": 30,
+                                "parameterFormatType": "TwoOrOneOrZero",
+                                "synonyms": [
+                                    "FIXED",
+                                    "NUMERIC",
+                                    "DEC"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 6 records retrieved in 6.246ms"
+                    },
+                    "totalRowCount": 6,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select u.name, sum(r.distance) dis from users u, rides r\nwhere u.id=r.user_id\nGROUP by u.id\nORDER BY dis DESC",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 11,
+                "end": 12,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "94191c25-eb16-44b6-fac3-e1a41ab3758b"
+                    ]
+                },
+                "currentHeight": 107.15625,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 49
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "1a0bc470-6596-4b98-d341-da6a077063c9",
+                    "resultId": "94191c25-eb16-44b6-fac3-e1a41ab3758b",
+                    "rows": [
+                        {
+                            "0": "2",
+                            "1": "2",
+                            "2": "Thomas Williams",
+                            "3": "thomaswilliams@bradley.org"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": true,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "city_id",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "name",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "email",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 6.221ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from users\nwhere name='Thomas Williams'",
+                    "updatable": true,
+                    "fullTableName": "users"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 13,
+                "end": 13,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}

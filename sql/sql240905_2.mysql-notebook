@@ -1,0 +1,2831 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "\\about\nuse amrbase;\nCREATE TABLE oil_price \n( \n    ID int, \n    상호 varchar(16), \n    주소 varchar(255), \n    가격 int, \n    셀프 char, \n    상표 varchar(16), \n    구 varchar(8) \n);\nINSERT INTO oil_price VALUES \n(1, '타이거주유소', '서울 은평구 수색로 188(중산동)', 1484, 'N', 'SK에너지', '은평구'), \n(2, '(주)명연에너지', '서울 은평구 수색로 236(수색동)', 1485, 'Y', '현대오일뱅크', '은평구'), \n(3, '성락주유소', '서울 영등포구 가마산로 414(신길동)', 1498, 'Y', 'S-OIL', '영등포구'), \n(4, '(주)MS주유소', '서울특별시 영등포구 대림로 230(대림동)', 1498, 'N', '현대오일뱅크', '영등포구'), \n(5, '쌍문주유소', '서울특별시 도봉구 도봉로 547(쌍문동)', 1509, 'Y', 'S-OIL', '도봉구'), \n(6, '21세기주유소', '서울 동작구 시흥대로 616(신대방동)', 1598, 'Y', 'SK에너지', '동작구'), \n(7, '살피재주유소', '서울 동작구 상도로 334(상도동)', 1635, 'N', 'SK에너지', '동작구'), \n(8, '뉴서울(강남)', '서울 강남구 언주로 716(논현동)', 2160, 'N', 'SK에너지', '강남구'), \n(9, '신길주유소', '서울특별시 영등포구 신길로 74(신길동)', 1498, 'Y', 'GS칼텍스', '영등포구');\ndesc oil_price;\nselect * from oil_price;\nselect * from oil_price\nwhere 셀프='Y' and 가격>1500 ORDER BY 상호;\nselect * from oil_price\nwhere 주소 like '서울%' and 주소 like '__ %' order by 구;\nselect * from oil_price\nwhere not 가격 between 1500 and 2000 ORDER BY 상표;\nselect * from oil_price\nwhere (not 상호 like '%주유소%') or (not 주소 like '%특별시%') ORDER BY 가격;\nselect * from oil_price\nwhere 상표 in ('SK에너지', 'S-OIL', 'GS칼텍스') and not 구 in ('은평구', '강남구', '영등포구');\nselect * from oil_price\nwhere (가격 between 1498 and 1598 or 셀프='N') and 구 like '%____%' ORDER BY 상호;\nselect * from oil_price\nwhere 상호 like '%주유소' and 주소 like '%시%' ORDER BY 구 DESC;\nselect * from oil_price\nwhere  not 주소 like '%특별시%' or (not 상표 in ('SK에너지', 'S-OIL') and not 상호 like '%(주)%') ORDER BY 가격 DESC;\nselect * from oil_price\nwhere (구='은평구' or 셀프='N' or 주소 like '%가%') and 가격 BETWEEN 1485 and 2000 ORDER BY 상호;\nselect * from oil_price\nwhere id%2=0 and 가격>1500 or id%2=1 and 상표 like 'S%' ORDER BY 구;\n",
+    "options": {
+        "tabSize": 4,
+        "indentSize": 4,
+        "insertSpaces": true,
+        "defaultEOL": "LF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 19,
+                    "column": 13
+                },
+                "position": {
+                    "lineNumber": 19,
+                    "column": 13
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 1,
+                "column": 1
+            },
+            "firstPositionDeltaTop": 0
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "content": "Welcome to the MySQL Shell - DB Notebook.\n\nPress Ctrl+Enter to execute the code block.\n\nExecute \\sql to switch to SQL, \\js to JavaScript and \\ts to TypeScript mode.\nExecute \\help or \\? for help;",
+                            "language": "ansi"
+                        }
+                    ]
+                },
+                "currentHeight": 115.984375,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 2,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "a17a3749-7561-4887-e7c4-edf8b59614b7",
+                            "content": "OK, 0 records retrieved in 0.25ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 3,
+                "end": 12,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "c210faa7-9377-4d1b-8831-7bbaad3f7350",
+                            "content": "OK, 0 records retrieved in 33.882ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 151
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 13,
+                "end": 22,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "3d50cc1e-5231-44a2-d2d6-8016addee229",
+                            "content": "OK, 9 rows affected in 8.604ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 644
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 23,
+                "end": 23,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "061e2980-e429-40c8-bcae-4c5958810431"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 15
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "faa02854-01a6-40eb-e349-1cda30a374c6",
+                    "resultId": "061e2980-e429-40c8-bcae-4c5958810431",
+                    "rows": [
+                        {
+                            "0": "ID",
+                            "1": "int",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "상호",
+                            "1": "varchar(16)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "주소",
+                            "1": "varchar(255)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "가격",
+                            "1": "int",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "셀프",
+                            "1": "char(1)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "상표",
+                            "1": "varchar(16)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "구",
+                            "1": "varchar(8)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Field",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Type",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Null",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Key",
+                            "field": "3",
+                            "dataType": {
+                                "type": 43,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Default",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Extra",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 7 records retrieved in 1.494ms"
+                    },
+                    "totalRowCount": 7,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "desc oil_price",
+                    "updatable": false
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 24,
+                "end": 24,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "fe40a5e2-2c43-449e-c08a-30c0c56910ca"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 24
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "faa02854-01a6-40eb-e349-1cda30a374c6",
+                    "resultId": "fe40a5e2-2c43-449e-c08a-30c0c56910ca",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "타이거주유소",
+                            "2": "서울 은평구 수색로 188(중산동)",
+                            "3": 1484,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "은평구"
+                        },
+                        {
+                            "0": 2,
+                            "1": "(주)명연에너지",
+                            "2": "서울 은평구 수색로 236(수색동)",
+                            "3": 1485,
+                            "4": "Y",
+                            "5": "현대오일뱅크",
+                            "6": "은평구"
+                        },
+                        {
+                            "0": 3,
+                            "1": "성락주유소",
+                            "2": "서울 영등포구 가마산로 414(신길동)",
+                            "3": 1498,
+                            "4": "Y",
+                            "5": "S-OIL",
+                            "6": "영등포구"
+                        },
+                        {
+                            "0": 4,
+                            "1": "(주)MS주유소",
+                            "2": "서울특별시 영등포구 대림로 230(대림동)",
+                            "3": 1498,
+                            "4": "N",
+                            "5": "현대오일뱅크",
+                            "6": "영등포구"
+                        },
+                        {
+                            "0": 5,
+                            "1": "쌍문주유소",
+                            "2": "서울특별시 도봉구 도봉로 547(쌍문동)",
+                            "3": 1509,
+                            "4": "Y",
+                            "5": "S-OIL",
+                            "6": "도봉구"
+                        },
+                        {
+                            "0": 6,
+                            "1": "21세기주유소",
+                            "2": "서울 동작구 시흥대로 616(신대방동)",
+                            "3": 1598,
+                            "4": "Y",
+                            "5": "SK에너지",
+                            "6": "동작구"
+                        },
+                        {
+                            "0": 7,
+                            "1": "살피재주유소",
+                            "2": "서울 동작구 상도로 334(상도동)",
+                            "3": 1635,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "동작구"
+                        },
+                        {
+                            "0": 8,
+                            "1": "뉴서울(강남)",
+                            "2": "서울 강남구 언주로 716(논현동)",
+                            "3": 2160,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "강남구"
+                        },
+                        {
+                            "0": 9,
+                            "1": "신길주유소",
+                            "2": "서울특별시 영등포구 신길로 74(신길동)",
+                            "3": 1498,
+                            "4": "Y",
+                            "5": "GS칼텍스",
+                            "6": "영등포구"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상호",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주소",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "가격",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "셀프",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상표",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "구",
+                            "field": "6",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 9 records retrieved in 0.43ms"
+                    },
+                    "totalRowCount": 9,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from oil_price",
+                    "updatable": false,
+                    "fullTableName": "oil_price"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 25,
+                "end": 26,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "092a1905-ed7a-48de-d1a0-107d3f202034"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 61
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "faa02854-01a6-40eb-e349-1cda30a374c6",
+                    "resultId": "092a1905-ed7a-48de-d1a0-107d3f202034",
+                    "rows": [
+                        {
+                            "0": 6,
+                            "1": "21세기주유소",
+                            "2": "서울 동작구 시흥대로 616(신대방동)",
+                            "3": 1598,
+                            "4": "Y",
+                            "5": "SK에너지",
+                            "6": "동작구"
+                        },
+                        {
+                            "0": 5,
+                            "1": "쌍문주유소",
+                            "2": "서울특별시 도봉구 도봉로 547(쌍문동)",
+                            "3": 1509,
+                            "4": "Y",
+                            "5": "S-OIL",
+                            "6": "도봉구"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상호",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주소",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "가격",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "셀프",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상표",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "구",
+                            "field": "6",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 2 records retrieved in 0.424ms"
+                    },
+                    "totalRowCount": 2,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from oil_price\nwhere 셀프='Y' and 가격>1500 ORDER BY 상호",
+                    "updatable": false,
+                    "fullTableName": "oil_price"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 27,
+                "end": 28,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "76e174f4-72e0-4ae8-cef9-63bd9664235d"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 74
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "faa02854-01a6-40eb-e349-1cda30a374c6",
+                    "resultId": "76e174f4-72e0-4ae8-cef9-63bd9664235d",
+                    "rows": [
+                        {
+                            "0": 8,
+                            "1": "뉴서울(강남)",
+                            "2": "서울 강남구 언주로 716(논현동)",
+                            "3": 2160,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "강남구"
+                        },
+                        {
+                            "0": 6,
+                            "1": "21세기주유소",
+                            "2": "서울 동작구 시흥대로 616(신대방동)",
+                            "3": 1598,
+                            "4": "Y",
+                            "5": "SK에너지",
+                            "6": "동작구"
+                        },
+                        {
+                            "0": 7,
+                            "1": "살피재주유소",
+                            "2": "서울 동작구 상도로 334(상도동)",
+                            "3": 1635,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "동작구"
+                        },
+                        {
+                            "0": 3,
+                            "1": "성락주유소",
+                            "2": "서울 영등포구 가마산로 414(신길동)",
+                            "3": 1498,
+                            "4": "Y",
+                            "5": "S-OIL",
+                            "6": "영등포구"
+                        },
+                        {
+                            "0": 1,
+                            "1": "타이거주유소",
+                            "2": "서울 은평구 수색로 188(중산동)",
+                            "3": 1484,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "은평구"
+                        },
+                        {
+                            "0": 2,
+                            "1": "(주)명연에너지",
+                            "2": "서울 은평구 수색로 236(수색동)",
+                            "3": 1485,
+                            "4": "Y",
+                            "5": "현대오일뱅크",
+                            "6": "은평구"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상호",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주소",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "가격",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "셀프",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상표",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "구",
+                            "field": "6",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 6 records retrieved in 0.391ms"
+                    },
+                    "totalRowCount": 6,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from oil_price\nwhere 주소 like '서울%' and 주소 like '__ %' order by 구",
+                    "updatable": false,
+                    "fullTableName": "oil_price"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 29,
+                "end": 30,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "4549b100-6079-4587-871d-298690d14225"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 71
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "faa02854-01a6-40eb-e349-1cda30a374c6",
+                    "resultId": "4549b100-6079-4587-871d-298690d14225",
+                    "rows": [
+                        {
+                            "0": 9,
+                            "1": "신길주유소",
+                            "2": "서울특별시 영등포구 신길로 74(신길동)",
+                            "3": 1498,
+                            "4": "Y",
+                            "5": "GS칼텍스",
+                            "6": "영등포구"
+                        },
+                        {
+                            "0": 3,
+                            "1": "성락주유소",
+                            "2": "서울 영등포구 가마산로 414(신길동)",
+                            "3": 1498,
+                            "4": "Y",
+                            "5": "S-OIL",
+                            "6": "영등포구"
+                        },
+                        {
+                            "0": 1,
+                            "1": "타이거주유소",
+                            "2": "서울 은평구 수색로 188(중산동)",
+                            "3": 1484,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "은평구"
+                        },
+                        {
+                            "0": 8,
+                            "1": "뉴서울(강남)",
+                            "2": "서울 강남구 언주로 716(논현동)",
+                            "3": 2160,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "강남구"
+                        },
+                        {
+                            "0": 2,
+                            "1": "(주)명연에너지",
+                            "2": "서울 은평구 수색로 236(수색동)",
+                            "3": 1485,
+                            "4": "Y",
+                            "5": "현대오일뱅크",
+                            "6": "은평구"
+                        },
+                        {
+                            "0": 4,
+                            "1": "(주)MS주유소",
+                            "2": "서울특별시 영등포구 대림로 230(대림동)",
+                            "3": 1498,
+                            "4": "N",
+                            "5": "현대오일뱅크",
+                            "6": "영등포구"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상호",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주소",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "가격",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "셀프",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상표",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "구",
+                            "field": "6",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 6 records retrieved in 0.805ms"
+                    },
+                    "totalRowCount": 6,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from oil_price\nwhere not 가격 between 1500 and 2000 ORDER BY 상표",
+                    "updatable": false,
+                    "fullTableName": "oil_price"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 31,
+                "end": 32,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "77234104-ccad-44bb-df25-92efa4ca4f94"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 89
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "faa02854-01a6-40eb-e349-1cda30a374c6",
+                    "resultId": "77234104-ccad-44bb-df25-92efa4ca4f94",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "타이거주유소",
+                            "2": "서울 은평구 수색로 188(중산동)",
+                            "3": 1484,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "은평구"
+                        },
+                        {
+                            "0": 2,
+                            "1": "(주)명연에너지",
+                            "2": "서울 은평구 수색로 236(수색동)",
+                            "3": 1485,
+                            "4": "Y",
+                            "5": "현대오일뱅크",
+                            "6": "은평구"
+                        },
+                        {
+                            "0": 3,
+                            "1": "성락주유소",
+                            "2": "서울 영등포구 가마산로 414(신길동)",
+                            "3": 1498,
+                            "4": "Y",
+                            "5": "S-OIL",
+                            "6": "영등포구"
+                        },
+                        {
+                            "0": 6,
+                            "1": "21세기주유소",
+                            "2": "서울 동작구 시흥대로 616(신대방동)",
+                            "3": 1598,
+                            "4": "Y",
+                            "5": "SK에너지",
+                            "6": "동작구"
+                        },
+                        {
+                            "0": 7,
+                            "1": "살피재주유소",
+                            "2": "서울 동작구 상도로 334(상도동)",
+                            "3": 1635,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "동작구"
+                        },
+                        {
+                            "0": 8,
+                            "1": "뉴서울(강남)",
+                            "2": "서울 강남구 언주로 716(논현동)",
+                            "3": 2160,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "강남구"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상호",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주소",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "가격",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "셀프",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상표",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "구",
+                            "field": "6",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 6 records retrieved in 0.419ms"
+                    },
+                    "totalRowCount": 6,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from oil_price\nwhere (not 상호 like '%주유소%') or (not 주소 like '%특별시%') ORDER BY 가격",
+                    "updatable": false,
+                    "fullTableName": "oil_price"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 33,
+                "end": 34,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "6f320386-db1b-4964-f1a3-77cb124a37fc"
+                    ]
+                },
+                "currentHeight": 147.5,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 100
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "faa02854-01a6-40eb-e349-1cda30a374c6",
+                    "resultId": "6f320386-db1b-4964-f1a3-77cb124a37fc",
+                    "rows": [
+                        {
+                            "0": 5,
+                            "1": "쌍문주유소",
+                            "2": "서울특별시 도봉구 도봉로 547(쌍문동)",
+                            "3": 1509,
+                            "4": "Y",
+                            "5": "S-OIL",
+                            "6": "도봉구"
+                        },
+                        {
+                            "0": 6,
+                            "1": "21세기주유소",
+                            "2": "서울 동작구 시흥대로 616(신대방동)",
+                            "3": 1598,
+                            "4": "Y",
+                            "5": "SK에너지",
+                            "6": "동작구"
+                        },
+                        {
+                            "0": 7,
+                            "1": "살피재주유소",
+                            "2": "서울 동작구 상도로 334(상도동)",
+                            "3": 1635,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "동작구"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상호",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주소",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "가격",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "셀프",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상표",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "구",
+                            "field": "6",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 3 records retrieved in 0.412ms"
+                    },
+                    "totalRowCount": 3,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from oil_price\nwhere 상표 in ('SK에너지', 'S-OIL', 'GS칼텍스') and not 구 in ('은평구', '강남구', '영등포구')",
+                    "updatable": false,
+                    "fullTableName": "oil_price"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 35,
+                "end": 36,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "7d985b3e-7062-42c8-f069-971d631cdc77"
+                    ]
+                },
+                "currentHeight": 147.5,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 99
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "faa02854-01a6-40eb-e349-1cda30a374c6",
+                    "resultId": "7d985b3e-7062-42c8-f069-971d631cdc77",
+                    "rows": [
+                        {
+                            "0": 4,
+                            "1": "(주)MS주유소",
+                            "2": "서울특별시 영등포구 대림로 230(대림동)",
+                            "3": 1498,
+                            "4": "N",
+                            "5": "현대오일뱅크",
+                            "6": "영등포구"
+                        },
+                        {
+                            "0": 3,
+                            "1": "성락주유소",
+                            "2": "서울 영등포구 가마산로 414(신길동)",
+                            "3": 1498,
+                            "4": "Y",
+                            "5": "S-OIL",
+                            "6": "영등포구"
+                        },
+                        {
+                            "0": 9,
+                            "1": "신길주유소",
+                            "2": "서울특별시 영등포구 신길로 74(신길동)",
+                            "3": 1498,
+                            "4": "Y",
+                            "5": "GS칼텍스",
+                            "6": "영등포구"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상호",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주소",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "가격",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "셀프",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상표",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "구",
+                            "field": "6",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 3 records retrieved in 0.444ms"
+                    },
+                    "totalRowCount": 3,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from oil_price\nwhere (가격 between 1498 and 1598 or 셀프='N') and 구 like '%____%' ORDER BY 상호",
+                    "updatable": false,
+                    "fullTableName": "oil_price"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 37,
+                "end": 38,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "dd15c20f-0bb4-4353-ea3f-d60e1ff93273"
+                    ]
+                },
+                "currentHeight": 173.6875,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 79
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "faa02854-01a6-40eb-e349-1cda30a374c6",
+                    "resultId": "dd15c20f-0bb4-4353-ea3f-d60e1ff93273",
+                    "rows": [
+                        {
+                            "0": 4,
+                            "1": "(주)MS주유소",
+                            "2": "서울특별시 영등포구 대림로 230(대림동)",
+                            "3": 1498,
+                            "4": "N",
+                            "5": "현대오일뱅크",
+                            "6": "영등포구"
+                        },
+                        {
+                            "0": 9,
+                            "1": "신길주유소",
+                            "2": "서울특별시 영등포구 신길로 74(신길동)",
+                            "3": 1498,
+                            "4": "Y",
+                            "5": "GS칼텍스",
+                            "6": "영등포구"
+                        },
+                        {
+                            "0": 6,
+                            "1": "21세기주유소",
+                            "2": "서울 동작구 시흥대로 616(신대방동)",
+                            "3": 1598,
+                            "4": "Y",
+                            "5": "SK에너지",
+                            "6": "동작구"
+                        },
+                        {
+                            "0": 5,
+                            "1": "쌍문주유소",
+                            "2": "서울특별시 도봉구 도봉로 547(쌍문동)",
+                            "3": 1509,
+                            "4": "Y",
+                            "5": "S-OIL",
+                            "6": "도봉구"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상호",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주소",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "가격",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "셀프",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상표",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "구",
+                            "field": "6",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 0.548ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from oil_price\nwhere 상호 like '%주유소' and 주소 like '%시%' ORDER BY 구 DESC",
+                    "updatable": false,
+                    "fullTableName": "oil_price"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 39,
+                "end": 40,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "71bbd418-5e0f-46f3-d0dd-e1058ed769e7"
+                    ]
+                },
+                "currentHeight": 252.28125,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 126
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "faa02854-01a6-40eb-e349-1cda30a374c6",
+                    "resultId": "71bbd418-5e0f-46f3-d0dd-e1058ed769e7",
+                    "rows": [
+                        {
+                            "0": 8,
+                            "1": "뉴서울(강남)",
+                            "2": "서울 강남구 언주로 716(논현동)",
+                            "3": 2160,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "강남구"
+                        },
+                        {
+                            "0": 7,
+                            "1": "살피재주유소",
+                            "2": "서울 동작구 상도로 334(상도동)",
+                            "3": 1635,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "동작구"
+                        },
+                        {
+                            "0": 6,
+                            "1": "21세기주유소",
+                            "2": "서울 동작구 시흥대로 616(신대방동)",
+                            "3": 1598,
+                            "4": "Y",
+                            "5": "SK에너지",
+                            "6": "동작구"
+                        },
+                        {
+                            "0": 3,
+                            "1": "성락주유소",
+                            "2": "서울 영등포구 가마산로 414(신길동)",
+                            "3": 1498,
+                            "4": "Y",
+                            "5": "S-OIL",
+                            "6": "영등포구"
+                        },
+                        {
+                            "0": 9,
+                            "1": "신길주유소",
+                            "2": "서울특별시 영등포구 신길로 74(신길동)",
+                            "3": 1498,
+                            "4": "Y",
+                            "5": "GS칼텍스",
+                            "6": "영등포구"
+                        },
+                        {
+                            "0": 2,
+                            "1": "(주)명연에너지",
+                            "2": "서울 은평구 수색로 236(수색동)",
+                            "3": 1485,
+                            "4": "Y",
+                            "5": "현대오일뱅크",
+                            "6": "은평구"
+                        },
+                        {
+                            "0": 1,
+                            "1": "타이거주유소",
+                            "2": "서울 은평구 수색로 188(중산동)",
+                            "3": 1484,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "은평구"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상호",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주소",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "가격",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "셀프",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상표",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "구",
+                            "field": "6",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 7 records retrieved in 0.567ms"
+                    },
+                    "totalRowCount": 7,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from oil_price\nwhere  not 주소 like '%특별시%' or (not 상표 in ('SK에너지', 'S-OIL') and not 상호 like '%(주)%') ORDER BY 가격 DESC",
+                    "updatable": false,
+                    "fullTableName": "oil_price"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 41,
+                "end": 42,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "7c466762-920b-405b-8c93-0546f00ab9a1"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 108
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "faa02854-01a6-40eb-e349-1cda30a374c6",
+                    "resultId": "7c466762-920b-405b-8c93-0546f00ab9a1",
+                    "rows": [
+                        {
+                            "0": 4,
+                            "1": "(주)MS주유소",
+                            "2": "서울특별시 영등포구 대림로 230(대림동)",
+                            "3": 1498,
+                            "4": "N",
+                            "5": "현대오일뱅크",
+                            "6": "영등포구"
+                        },
+                        {
+                            "0": 2,
+                            "1": "(주)명연에너지",
+                            "2": "서울 은평구 수색로 236(수색동)",
+                            "3": 1485,
+                            "4": "Y",
+                            "5": "현대오일뱅크",
+                            "6": "은평구"
+                        },
+                        {
+                            "0": 7,
+                            "1": "살피재주유소",
+                            "2": "서울 동작구 상도로 334(상도동)",
+                            "3": 1635,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "동작구"
+                        },
+                        {
+                            "0": 3,
+                            "1": "성락주유소",
+                            "2": "서울 영등포구 가마산로 414(신길동)",
+                            "3": 1498,
+                            "4": "Y",
+                            "5": "S-OIL",
+                            "6": "영등포구"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상호",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주소",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "가격",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "셀프",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상표",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "구",
+                            "field": "6",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 0.495ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from oil_price\nwhere (구='은평구' or 셀프='N' or 주소 like '%가%') and 가격 BETWEEN 1485 and 2000 ORDER BY 상호",
+                    "updatable": false,
+                    "fullTableName": "oil_price"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 43,
+                "end": 44,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "30905043-c079-4752-837a-6154f2a2da9f"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 87
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "faa02854-01a6-40eb-e349-1cda30a374c6",
+                    "resultId": "30905043-c079-4752-837a-6154f2a2da9f",
+                    "rows": [
+                        {
+                            "0": 8,
+                            "1": "뉴서울(강남)",
+                            "2": "서울 강남구 언주로 716(논현동)",
+                            "3": 2160,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "강남구"
+                        },
+                        {
+                            "0": 5,
+                            "1": "쌍문주유소",
+                            "2": "서울특별시 도봉구 도봉로 547(쌍문동)",
+                            "3": 1509,
+                            "4": "Y",
+                            "5": "S-OIL",
+                            "6": "도봉구"
+                        },
+                        {
+                            "0": 6,
+                            "1": "21세기주유소",
+                            "2": "서울 동작구 시흥대로 616(신대방동)",
+                            "3": 1598,
+                            "4": "Y",
+                            "5": "SK에너지",
+                            "6": "동작구"
+                        },
+                        {
+                            "0": 7,
+                            "1": "살피재주유소",
+                            "2": "서울 동작구 상도로 334(상도동)",
+                            "3": 1635,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "동작구"
+                        },
+                        {
+                            "0": 3,
+                            "1": "성락주유소",
+                            "2": "서울 영등포구 가마산로 414(신길동)",
+                            "3": 1498,
+                            "4": "Y",
+                            "5": "S-OIL",
+                            "6": "영등포구"
+                        },
+                        {
+                            "0": 1,
+                            "1": "타이거주유소",
+                            "2": "서울 은평구 수색로 188(중산동)",
+                            "3": 1484,
+                            "4": "N",
+                            "5": "SK에너지",
+                            "6": "은평구"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상호",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "주소",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "가격",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "셀프",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "상표",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "구",
+                            "field": "6",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 6 records retrieved in 0.506ms"
+                    },
+                    "totalRowCount": 6,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from oil_price\nwhere id%2=0 and 가격>1500 or id%2=1 and 상표 like 'S%' ORDER BY 구",
+                    "updatable": false,
+                    "fullTableName": "oil_price"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 45,
+                "end": 45,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}
